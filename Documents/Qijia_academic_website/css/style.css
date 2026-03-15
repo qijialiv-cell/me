@@ -79,8 +79,8 @@
 }
 
 html {
-    scroll-behavior: smooth;
     font-size: 16px;
+    height: 100%;
 }
 
 body {
@@ -90,7 +90,8 @@ body {
     background-color: var(--bg-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    overflow: hidden;
+    height: 100%;
 }
 
 /* Gradient Background */
@@ -103,6 +104,99 @@ body {
     background: var(--gradient-bg);
     z-index: -1;
     opacity: 0.3;
+}
+
+/* Pages Container */
+.pages-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-top: 70px;
+}
+
+/* Page Styles */
+.page {
+    min-width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    padding: var(--space-2xl) 0;
+    scroll-behavior: smooth;
+}
+
+/* Page Navigation Controls */
+.page-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+}
+
+.page-nav:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+.page-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.page-nav:disabled:hover {
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    transform: translateY(-50%);
+}
+
+.page-nav-prev {
+    left: 20px;
+}
+
+.page-nav-next {
+    right: 20px;
+}
+
+/* Page Indicators */
+.page-indicators {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--space-sm);
+    z-index: 100;
+}
+
+.page-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    background: var(--border);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.page-indicator:hover {
+    background: var(--primary);
+    transform: scale(1.2);
+}
+
+.page-indicator.active {
+    background: var(--primary);
+    transform: scale(1.2);
 }
 
 /* Typography */
@@ -439,6 +533,10 @@ a:hover {
 .section {
     padding: var(--space-2xl) 0;
     position: relative;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .section-header {
@@ -1338,9 +1436,46 @@ a:hover {
     .footer-social {
         justify-content: center;
     }
+
+    .page-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .page-nav-prev {
+        left: 10px;
+    }
+
+    .page-nav-next {
+        right: 10px;
+    }
 }
 
 @media (max-width: 768px) {
+    /* Restore vertical scrolling on mobile */
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .pages-container {
+        flex-direction: column;
+        transition: none;
+        transform: none !important;
+        padding-top: 0;
+    }
+
+    .page {
+        min-width: 100%;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .page-nav,
+    .page-indicators {
+        display: none;
+    }
+
     .nav-menu {
         position: absolute;
         top: 100%;
@@ -1365,6 +1500,7 @@ a:hover {
 
     .section {
         padding: var(--space-2xl) 0;
+        min-height: auto;
     }
 
     .papers-grid {

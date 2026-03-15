@@ -1,19 +1,18 @@
-# 玛丽居里博士后项目 - 学术研究资料目录
+# Yelp Research Project - Academic Research Materials
 
-## 目录概述
+## Project Overview
 
-本目录用于支持玛丽居里博士后（Marie Curie Postdoctoral Fellowship）项目的申请和研究工作。目录包含从 Web of Science 数据库检索的学术文献资料，主要研究主题围绕 Yelp 在线评论平台及其对消费者行为、商业决策和市场动态的影响。
+This directory contains academic research materials focused on the Yelp online review platform and its impact on consumer behavior, business decisions, and market dynamics. The materials include literature records retrieved from the Web of Science database.
 
-## 项目背景
+## Research Focus
 
-- **项目名称**：玛丽居里博士后项目
-- **研究方向**：数字营销、在线评论平台、消费者行为、平台经济
-- **研究重点**：利用 Yelp 数据集研究在线评论对消费者决策、企业绩效和市场机制的影响
-- **目标期刊**：顶级管理和营销类期刊，包括 Information Systems Research、MIS Quarterly、Journal of Marketing、Marketing Science、Management Science 等
+- **Research Areas**: Digital Marketing, Online Review Platforms, Consumer Behavior, Platform Economy
+- **Key Focus**: Utilizing Yelp dataset to study the impact of online reviews on consumer decision-making, business performance, and market mechanisms
+- **Target Journals**: Top-tier management and marketing journals, including Information Systems Research, MIS Quarterly, Journal of Marketing, Marketing Science, Management Science, etc.
 
 ## 关键文件说明
 
-### 1. `savedrecs (1).txt`
+### 1. `wos_export_data.txt`
 
 **文件类型**：Web of Science 导出的文献记录文件
 
@@ -42,13 +41,13 @@
 - 照片在评论中的作用
 - 零工经济对产品质量的影响
 
-**使用方法**：
-1. 可用于文献综述写作
-2. 可通过文本分析工具提取关键信息
-3. 可用于构建研究背景和理论基础
-4. 可用于识别研究空白和未来研究方向
+**Usage**:
+1. Can be used for literature review writing
+2. Extract key information using text analysis tools
+3. Build research background and theoretical foundation
+4. Identify research gaps and future research directions
 
-### 2. `wos_code.txt`
+### 2. `wos_search_query.txt`
 
 **文件类型**：Web of Science 搜索查询代码
 
@@ -66,10 +65,10 @@ TS=(yelp OR "yelp dataset" OR "Yelp data") AND SO=("Information Systems Research
 - **主题词（TS）**：yelp、yelp dataset、Yelp data
 - **期刊列表（SO）**：15 个顶级期刊，涵盖信息系统、管理科学、营销、运营管理等领域
 
-**使用方法**：
-1. 可在 Web of Science 高级搜索中使用此查询
-2. 可根据需要调整搜索条件
-3. 可用于定期更新文献数据库
+**Usage**:
+1. Can be used in Web of Science advanced search
+2. Adjust search conditions as needed
+3. Can be used to periodically update literature database
 
 ## 研究领域和方法论
 
@@ -113,39 +112,39 @@ TS=(yelp OR "yelp dataset" OR "Yelp data") AND SO=("Information Systems Research
 
 ## 使用建议
 
-### 对于博士后申请
+### For Research Applications
 
-1. **文献综述**：
-   - 使用 `savedrecs (1).txt` 撰写全面的文献综述
-   - 识别研究空白和创新点
-   - 建立理论基础
+1. **Literature Review**:
+   - Use `wos_export_data.txt` to write comprehensive literature reviews
+   - Identify research gaps and innovation points
+   - Establish theoretical foundation
 
-2. **研究设计**：
-   - 参考现有研究的方法论
-   - 学习数据分析和建模技术
-   - 设计有竞争力的研究方案
+2. **Research Design**:
+   - Reference methodologies from existing research
+   - Learn data analysis and modeling techniques
+   - Design competitive research proposals
 
-3. **论文撰写**：
-   - 了解目标期刊的发表偏好
-   - 学习顶级论文的写作风格
-   - 建立学术网络
+3. **Paper Writing**:
+   - Understand publication preferences of target journals
+   - Learn writing styles of top-tier papers
+   - Build academic networks
 
-### 对于后续研究
+### For Ongoing Research
 
-1. **数据管理**：
-   - 建立文献数据库
-   - 使用文献管理软件（如 EndNote、Zotero）
-   - 定期更新文献
+1. **Data Management**:
+   - Establish literature database
+   - Use reference management software (e.g., EndNote, Zotero)
+   - Regularly update literature
 
-2. **研究方向**：
-   - 深入研究特定主题
-   - 探索跨学科研究机会
-   - 关注最新研究趋势
+2. **Research Directions**:
+   - Deep dive into specific topics
+   - Explore interdisciplinary research opportunities
+   - Follow latest research trends
 
-3. **合作机会**：
-   - 识别潜在的合作者
-   - 关注相关领域的研究团队
-   - 参加学术会议
+3. **Collaboration Opportunities**:
+   - Identify potential collaborators
+   - Follow research teams in related fields
+   - Attend academic conferences
 
 ## 技术工具建议
 
@@ -163,23 +162,19 @@ TS=(yelp OR "yelp dataset" OR "Yelp data") AND SO=("Information Systems Research
 3. **SQL**：数据库查询
 4. **Tableau/Power BI**：数据可视化
 
-## 注意事项
+## Important Notes
 
-1. **版权问题**：
-   - 使用文献时遵守版权规定
-   - 合理引用和标注来源
+1. **Copyright Issues**:
+   - Comply with copyright regulations when using literature
+   - Properly cite and attribute sources
 
-2. **数据使用**：
-   - 遵守平台数据使用政策
-   - 注意数据隐私保护
+2. **Data Usage**:
+   - Follow platform data usage policies
+   - Pay attention to data privacy protection
 
-3. **学术诚信**：
-   - 严格遵守学术规范
-   - 避免抄袭和数据造假
-
-## 联系与支持
-
-如需进一步了解或有任何问题，请联系项目负责人。
+3. **Academic Integrity**:
+   - Strictly follow academic standards
+   - Avoid plagiarism and data fabrication
 
 ## 更新日志
 
@@ -187,4 +182,4 @@ TS=(yelp OR "yelp dataset" OR "Yelp data") AND SO=("Information Systems Research
 
 ---
 
-**备注**：本目录的 AGENTS.md 文件旨在为 AI 助手提供项目上下文，以便更好地协助用户完成学术研究任务。
+**Note**: The `project_context.md` file in this directory is designed to provide project context for AI assistants to better assist users in completing academic research tasks.

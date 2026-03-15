@@ -158,16 +158,16 @@
 
 ---
 
-## Summary Table 9: Key Insights for Marie Curie Fellowship Application
+## Summary Table 9: Key Insights for Research Grant Applications
 
 | Category | Key Points | Relevance |
 |----------|------------|-----------|
-| **Research Importance** | • Yelp dataset enables rigorous examination of digital platforms' economic and social impacts<br>• High relevance to understanding platform economy, consumer behavior, and business outcomes | Demonstrates significance and timeliness of proposed research |
+| **Relevance** | Demonstrates significance and timeliness of proposed research |
 | **Methodological Sophistication** | • Heavy use of causal inference methods (DID, RDD, RCT)<br>• Integration of advanced ML and NLP techniques<br>• Multimethod approaches combining quantitative and qualitative methods | Shows methodological rigor and innovation potential |
 | **Theoretical Contributions** | • Applications of diverse theories across disciplines<br>• Extensions and integrations of existing frameworks<br>• Development of new constructs and relationships | Highlights theoretical contribution opportunities |
 | **Practical Relevance** | • Clear implications for businesses, platforms, policymakers<br>• Addresses real-world challenges (bias, fraud, trust)<br>• Informs design and regulation of digital platforms | Demonstrates societal and practical impact |
-| **Innovation Potential** | • Opportunities to examine emerging phenomena (AI, AR/VR, sustainability)<br>• Gaps in cross-platform, international, and longitudinal research<br>• Need for methodological advances in bias detection and causal inference | Identifies novel research directions for fellowship proposal |
-| **Interdisciplinary Appeal** | • Spans marketing, information systems, operations, economics, public policy<br>• Connects business research with social impact<br>• Integrates data science with social science | Strengthens competitiveness for interdisciplinary fellowship |
+| **Innovation Potential** | • Opportunities to examine emerging phenomena (AI, AR/VR, sustainability)<br>• Gaps in cross-platform, international, and longitudinal research<br>• Need for methodological advances in bias detection and causal inference | Identifies novel research directions for grant proposals |
+| **Interdisciplinary Appeal** | • Spans marketing, information systems, operations, economics, public policy<br>• Connects business research with social impact<br>• Integrates data science with social science | Strengthens competitiveness for interdisciplinary research |
 | **Data Accessibility** | • Yelp dataset publicly available through academic partnerships<br>• Rich data structure enables diverse research questions<br>• Complementary data sources readily available | Demonstrates feasibility and resource availability |
 | **Publication Potential** | • Published in top-tier journals across disciplines<br>• High citation rates indicating impact<br>• Active research community with strong network | Supports track record and future publication potential |
 
@@ -183,7 +183,7 @@ This comprehensive review demonstrates that the Yelp dataset has enabled signifi
 4. **Interdisciplinary Reach**: Spanning multiple academic fields
 5. **Innovation Potential**: Numerous gaps and future directions identified
 
-For a Marie Curie Fellowship application, this landscape provides strong justification for novel research that can address identified gaps, particularly in cross-platform effects, bias mitigation, emerging technologies, and global contexts.
+For research grant applications, this landscape provides strong justification for novel research that can address identified gaps, particularly in cross-platform effects, bias mitigation, emerging technologies, and global contexts.
 
 ---
 

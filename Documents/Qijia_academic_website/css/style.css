@@ -808,6 +808,7 @@ a:hover {
 /* Research Section */
 .research-content {
     max-width: 800px;
+    padding-bottom: var(--space-2xl);
 }
 
 .research-intro {
@@ -877,6 +878,7 @@ a:hover {
 /* Teaching Section */
 .teaching-content {
     max-width: 800px;
+    padding-bottom: var(--space-2xl);
 }
 
 .teaching-intro {
@@ -1127,6 +1129,7 @@ a:hover {
 /* CV Section */
 .cv-content {
     max-width: 800px;
+    padding-bottom: var(--space-2xl);
 }
 
 .cv-category {
@@ -1194,6 +1197,7 @@ a:hover {
 /* Skills Section */
 .skills-content {
     max-width: 800px;
+    padding-bottom: var(--space-2xl);
 }
 
 .skill-category {
@@ -1225,6 +1229,7 @@ a:hover {
 /* Contact Section */
 .contact-content {
     max-width: 800px;
+    padding-bottom: var(--space-2xl);
 }
 
 .contact-info {

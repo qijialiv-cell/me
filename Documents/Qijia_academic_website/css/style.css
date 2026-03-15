@@ -1125,29 +1125,6 @@ a:hover {
 }
 
 /* CV Section */
-.cv-container {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-2xl);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-}
-
-.cv-iframe {
-    width: 100%;
-    min-height: 800px;
-    border: none;
-    display: block;
-}
-
-.cv-download-section {
-    padding: var(--space-lg);
-    text-align: center;
-    border-top: 1px solid var(--border);
-    background: var(--bg-secondary);
-}
-
-/* CV Section */
 .cv-content {
     max-width: 800px;
 }

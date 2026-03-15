@@ -86,7 +86,7 @@ html {
 body {
     font-family: var(--font-primary);
     color: var(--text-primary);
-    line-height: 1.7;
+    line-height: 1.6;
     background-color: var(--bg-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -120,7 +120,7 @@ body {
     min-width: 100%;
     height: 100vh;
     overflow-y: auto;
-    padding: var(--space-2xl) 0 var(--space-3xl) 0;
+    padding: var(--space-2xl) 0 var(--space-3xl) 0 var(--space-4xl) 0;
     scroll-behavior: smooth;
 }
 
@@ -812,8 +812,8 @@ a:hover {
 
 .research-intro {
     font-size: 1.125rem;
-    line-height: 1.8;
-    margin-bottom: var(--space-xl);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
     color: var(--text-secondary);
 }
 
@@ -837,7 +837,7 @@ a:hover {
 
 .research-stream-item p {
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.6;
     margin-bottom: 0;
 }
 
@@ -882,8 +882,8 @@ a:hover {
 
 .teaching-intro {
     font-size: 1.125rem;
-    line-height: 1.7;
-    margin-bottom: var(--space-xl);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
     color: var(--text-secondary);
 }
 
@@ -898,7 +898,7 @@ a:hover {
 }
 
 .teaching-philosophy p {
-    line-height: 1.7;
+    line-height: 1.6;
     color: var(--text-secondary);
     margin-bottom: 0;
 }
@@ -1179,7 +1179,7 @@ a:hover {
 .cv-item p {
     margin-bottom: 0;
     color: var(--text-secondary);
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 .cv-item ul {
@@ -1190,7 +1190,7 @@ a:hover {
 .cv-item li {
     margin-bottom: 0;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* Skills Section */
@@ -1237,7 +1237,7 @@ a:hover {
 
 .contact-info p {
     font-size: 1.1rem;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
     color: var(--text-secondary);
 }
 

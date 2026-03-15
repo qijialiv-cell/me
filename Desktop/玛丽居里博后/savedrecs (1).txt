@@ -1,0 +1,2160 @@
+﻿FN Clarivate Analytics Web of Science
+VR 1.0
+PT J
+AU Huang, R
+AF Huang, Ruidi
+TI The Financial Consequences of Online Review Aggregators: Evidence from
+   Yelp Ratings and SBA Loans
+SO MANAGEMENT SCIENCE
+LA English
+DT Review
+DE online review; credit rating; small business loan; bank lending
+ID LENDING RELATIONSHIPS; INFORMATION; DISTANCE; CREDIT; REPUTATION
+AB This paper demonstrates the financial and real consequences of online review aggregators. Exploiting a regression discontinuity design that overcomes the endogenous relationship between Yelp reviews and Small Business Administration loan outcomes, I show that higher coarse Yelp ratings lead to improved loan terms and performance. Specifically, a one-half-star increase in Yelp ratings corresponds to a 25-basis-point decrease in loan spread and 6% lower collateral requirements. The effects are more pronounced when banks have less borrower information. Higher Yelp ratings also contribute to increased consumer demand and the likelihood of future business openings. These findings indicate that online review aggregators influence both consumer choices and banks' financing decisions.
+C1 [Huang, Ruidi] Southern Methodist Univ, Dallas, TX 75275 USA.
+C3 Southern Methodist University
+RP Huang, R (corresponding author), Southern Methodist Univ, Dallas, TX 75275 USA.
+EM ruidih@smu.edu
+NR 28
+TC 5
+Z9 6
+U1 12
+U2 60
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 0025-1909
+EI 1526-5501
+J9 MANAGE SCI
+JI Manage. Sci.
+PD JAN
+PY 2025
+VL 71
+IS 1
+BP 59
+EP 82
+DI 10.1287/mnsc.2020.03003
+EA MAR 2024
+PG 25
+WC Management; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Business & Economics; Operations Research & Management Science
+GA W0Z6U
+UT WOS:001196329400001
+DA 2026-03-15
+ER
+
+PT J
+AU Luca, M
+   Zervas, G
+AF Luca, Michael
+   Zervas, Georgios
+TI Fake It Till You Make It: Reputation, Competition, and Yelp Review Fraud
+SO MANAGEMENT SCIENCE
+LA English
+DT Article
+DE marketing; advertising and media; information systems; economics;
+   organizational studies; decision making
+ID ONLINE; RATINGS
+AB Consumer reviews are now part of everyday decision making. Yet the credibility of these reviews is fundamentally undermined when businesses commit review fraud, creating fake reviews for themselves or their competitors. We investigate the economic incentives to commit review fraud on the popular review platform Yelp, using two complementary approaches and data sets. We begin by analyzing restaurant reviews that are identified by Yelp's filtering algorithm as suspicious, or fake-and treat these as a proxy for review fraud (an assumption we provide evidence for). We present four main findings. First, roughly 16% of restaurant reviews on Yelp are filtered. These reviews tend to be more extreme (favorable or unfavorable) than other reviews, and the prevalence of suspicious reviews has grown significantly over time. Second, a restaurant is more likely to commit review fraud when its reputation is weak, i.e., when it has few reviews or it has recently received bad reviews. Third, chain restaurants-which benefit less from Yelp-are also less likely to commit review fraud. Fourth, when restaurants face increased competition, they become more likely to receive unfavorable fake reviews. Using a separate data set, we analyze businesses that were caught soliciting fake reviews through a sting conducted by Yelp. These data support our main results and shed further light on the economic incentives behind a business's decision to leave fake reviews.
+C1 [Luca, Michael] Harvard Sch Business, Boston, MA 02163 USA.
+   [Zervas, Georgios] Boston Univ, Questrom Sch Business, Boston, MA 02215 USA.
+C3 Harvard University; Boston University
+RP Luca, M (corresponding author), Harvard Sch Business, Boston, MA 02163 USA.
+EM mluca@hbs.edu; zg@bu.edu
+RI Zervas, Georgios/GOJ-9424-2022
+NR 26
+TC 689
+Z9 976
+U1 27
+U2 558
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 0025-1909
+EI 1526-5501
+J9 MANAGE SCI
+JI Manage. Sci.
+PD DEC
+PY 2016
+VL 62
+IS 12
+BP 3412
+EP 3427
+DI 10.1287/mnsc.2015.2304
+PG 16
+WC Management; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Business & Economics; Operations Research & Management Science
+GA EF9VI
+UT WOS:000390678600002
+OA Green Submitted, gold
+DA 2026-03-15
+ER
+
+PT J
+AU Jiang, LL
+   Hou, JH
+   Ma, X
+   Pavlou, PA
+AF Jiang, Lianlian (Dorothy)
+   Hou, Jinghui (Jove)
+   Ma, Xiao
+   Pavlou, Paul A.
+TI Punished for Success? A Natural Experiment of Displaying Clinical
+   Hospital Quality on Review Platforms
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Review; Early Access
+DE clinical quality measures; online consumer ratings; hospital selection;
+   natural experiment; transfer deep learning difference in differences;
+   hospital staffing capacity; natural language processing; SafeGraph
+ID WORD-OF-MOUTH; SOCIAL MEDIA; ONLINE; RATINGS; CARE; EXPECTATION;
+   UNCERTAINTY; PERFORMANCE; BIAS; GO
+AB The healthcare market faces severe information asymmetry; patients struggle to evaluate the quality of hospitals and make informed decisions about their healthcare. Review platforms (e.g., Yelp) have begun to display the clinical quality of hospitals (alongside consumer reviews) to inform patients about hospital selection. In 2017 and 2019, Yelp introduced a feature with clinical measures of maternity care for hospitals that deliver babies in select markets. We study how clinical quality measures displayed on Yelp- especially for those (clinically) high -quality hospitals-influence subsequent patients' ratings of hospitals. Our difference -in -differences estimation shows that when clinical quality measures are displayed, high -quality hospitals are surprisingly punished with lower subsequent ratings on Yelp, especially hospitals with low staffing capacity. This novel finding is consequential for hospitals as patient dissatisfaction can jeopardize the federal funding that hospitals receive (CMS.gov). To tease out the underlying mechanism, we queried SafeGraph's precise foot traffic data, and we observed a significant patient surge for hospitals that have high maternity care clinical scores displayed on Yelp. We used transfer deep learning to show that because of the patient surge, (only) hospitals with high maternity scores that were short staffed received significantly more negative patient reviews and more complaints about key hospital service areas, thus driving patient dissatisfaction and lower ratings. We contribute to theory and practice by elucidating the role of publicly displaying clinical quality measures in patient (dis-)satisfaction with hospitals.
+C1 [Jiang, Lianlian (Dorothy); Hou, Jinghui (Jove); Ma, Xiao; Pavlou, Paul A.] Univ Houston, CT Bauer Coll Business, Decis & Informat Sci, Houston, TX 77004 USA.
+C3 University of Houston System; University of Houston
+RP Ma, X (corresponding author), Univ Houston, CT Bauer Coll Business, Decis & Informat Sci, Houston, TX 77004 USA.
+EM ljiang@central.uh.edu; jhou@bauer.uh.edu; xma@bauer.uh.edu;
+   pavlou@bauer.uh.edu
+RI ; Pavlou, Paul/D-3561-2014
+OI Jiang, Dorothy Lianlian/0000-0002-0719-7761; Pavlou,
+   Paul/0000-0002-8830-5727; Hou, Jinghui/0000-0003-0151-230X
+FU C. T. Bauer College of Business, University of Houston
+FX Supported by the Behavioral Research Assistance Grant, generously
+   provided by the C. T. Bauer College of Business, University of Houston.
+NR 68
+TC 2
+Z9 2
+U1 33
+U2 126
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD 2024 APR 4
+PY 2024
+DI 10.1287/isre.2021.0630
+EA APR 2024
+PG 23
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA NC1P2
+UT WOS:001198158200001
+DA 2026-03-15
+ER
+
+PT J
+AU Zhang, MX
+   Luo, L
+AF Zhang, Mengxia
+   Luo, Lan
+TI Can Consumer-Posted Photos Serve as a Leading Indicator of Restaurant
+   Survival? Evidence from Yelp
+SO MANAGEMENT SCIENCE
+LA English
+DT Article
+DE user-generated content; photos; word of mouth; analytic modeling;
+   computer vision; age analysis; text mining; Yelp; business survival;
+   restaurants
+ID SMALL BUSINESS SURVIVAL; WORD-OF-MOUTH; FIRM SURVIVAL; PRODUCT; QUALITY;
+   IMPACT; MODEL; ELICITATION; PERFORMANCE; PREDICTORS
+AB Despite the substantial economic impact of the restaurant industry, large-scale empirical research on restaurant survival has been sparse. We investigate whether consumer-posted photos can serve as a leading indicator of restaurant survival above and beyond reviews, firm characteristics, competitive landscape, and macroconditions. We employ machine learning techniques to extract features from 755,758 photos and 1,121,069 reviews posted on Yelp between 2004 and 2015 for 17,719 U.S. restaurants. We also collect data on restaurant characteristics (e.g., cuisine type, price level) and competitive landscape as well as entry and exit (if applicable) time from each restaurant's Yelp/ Facebook page, own website, or Google search engine. Using a predictive XGBoost algorithm, we find that consumer-posted photos are strong predictors of restaurant survival. Interestingly, the informativeness of photos (e.g., the proportion of food photos) relates more to restaurant survival than do photographic attributes (e.g., composition, brightness). Additionally, photos carry more predictive power for independent, young or mid-aged, and medium-priced restaurants. Assuming that restaurant owners possess no knowledge about future photos and reviews, photos can predict restaurant survival for up to three years, whereas reviews are only predictive for one year. We further employ causal forests to facilitate the interpretation of our predictive results. Among photo content variables, the proportion of food photos has the largest positive association with restaurant survival, followed by proportions of outside and interior photos. Among others, the proportion of photos with helpful votes also positively relates to restaurant survival.
+C1 [Zhang, Mengxia] Western Univ, Mkt, Ivey Business Sch, London, ON N6A 3K7, Canada.
+   [Luo, Lan] Univ Southern Calif, Mkt, Los Angeles, CA 90089 USA.
+C3 Western University (University of Western Ontario); University of
+   Southern California
+RP Zhang, MX (corresponding author), Western Univ, Mkt, Ivey Business Sch, London, ON N6A 3K7, Canada.
+EM mezhang@ivey.ca; lluo@marshall.usc.edu
+RI Zhang, Mengxia/KHU-4877-2024
+OI Zhang, Mengxia/0000-0002-4901-0635; , Lan/0000-0003-1002-8237
+NR 118
+TC 80
+Z9 114
+U1 41
+U2 309
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 0025-1909
+EI 1526-5501
+J9 MANAGE SCI
+JI Manage. Sci.
+PD JAN
+PY 2023
+VL 69
+IS 1
+BP 25
+EP 50
+DI 10.1287/mnsc.2022.4359
+EA APR 2022
+PG 26
+WC Management; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Business & Economics; Operations Research & Management Science
+GA P9RQ1
+UT WOS:000827162300001
+DA 2026-03-15
+ER
+
+PT J
+AU Millet, FC
+   Lewis, S
+   Stoddart, P
+AF Millet, Fabien Curto
+   Lewis, Stephen
+   Stoddart, Paul
+TI Local Search Quality: Comment on "Product Quality and Entering Through
+   Tying: Experimental Evidence"
+SO MANAGEMENT SCIENCE
+LA English
+DT Article
+DE industrial organization; market structure; firm strategy; market
+   performance; technology; Google; Yelp
+AB Kim and Luca (2019) consider Google's grouped results for local businesses (the "OneBox"). They contend that Google made a "strategic decision" to exclude reviews from other platforms (like Yelp) in these results and claim that this led to a quality degradation for search users, based on a randomized controlled trial (RCT) experiment. The purpose of this Comment is to clarify the robustness of Kim and Luca's characterization of the situation and empirical findings, including in particular with respect to the noise and likely bias resulting from the control benchmark for the RCT experiment being based on a degraded version of Google's OneBox, rather than the actual version.
+C1 [Millet, Fabien Curto] Google LLC, Beverly Hills, CA 90210 USA.
+   [Lewis, Stephen] RBB Econ, London EC2M 3TY, England.
+   [Stoddart, Paul] Econ Insight, London EC2N 1AR, England.
+C3 Alphabet Inc.; Google Incorporated
+RP Millet, FC (corresponding author), Google LLC, Beverly Hills, CA 90210 USA.
+EM fabiencm@google.com; stephen.lewis@rbbecon.com;
+   paul.stoddart@economic-insight.com
+OI Curto Millet, Fabien/0000-0002-9952-6226
+FU Google
+FX This work was supported by Google.
+NR 6
+TC 0
+Z9 0
+U1 0
+U2 25
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 0025-1909
+EI 1526-5501
+J9 MANAGE SCI
+JI Manage. Sci.
+PD APR
+PY 2022
+VL 68
+IS 4
+BP 3169
+EP 3174
+DI 10.1287/mnsc.2021.4276
+PG 7
+WC Management; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Business & Economics; Operations Research & Management Science
+GA 1J9YS
+UT WOS:000798267700017
+DA 2026-03-15
+ER
+
+PT J
+AU Kim, H
+   Luca, M
+AF Kim, Hyunjin
+   Luca, Michael
+TI Product Quality and Entering Through Tying: Experimental Evidence
+SO MANAGEMENT SCIENCE
+LA English
+DT Article
+DE technology; industrial organization; market structure; firm strategy;
+   market performance; information system
+ID INNOVATION; ENTRY; COMPETITION; STRATEGIES
+AB Dominant platform businesses often develop products in adjacent markets to complement their core business. One common approach used to gain traction in these adjacent markets has been to pursue a tying strategy. For example, Microsoft preinstalled Internet Explorer into Windows, and Apple set Apple Maps as the iOS default. Policy-makers have raised concerns that dominant platforms may be leveraging their market power to gain traction for lower quality products when they use a tying strategy. In this paper, we empirically explore this question by examining Google's decision to tie its new reviews product to its search engine. We experimentally vary the reviews displayed above Google's organic search results to show either exclusively Google reviews (Google's current tying strategy) or reviews from multiple platforms determined to be the best-performing by Google's own organic search algorithm. We find that users prefer the version that does not exclude competitor reviews. Furthermore, looking at observational data on user traffic to Yelp from search engines, we find that Google's exclusion of downstream competitors may have been effective. The share of Yelp's traffic coming from Google has declined over this period, relative to traffic from Bing and Yahoo (which do not exclude other companies' reviews), and Google reviews has grown more quickly than Yelp and TripAdvisor during the period in which they excluded these (and other) reviews providers. Overall, these results suggest that tying has the potential to facilitate entry in complementary markets even when the tied product is of worse quality than competitors.
+C1 [Kim, Hyunjin; Luca, Michael] Harvard Sch Business, Boston, MA 02163 USA.
+C3 Harvard University
+RP Kim, H (corresponding author), Harvard Sch Business, Boston, MA 02163 USA.
+EM hkim@hbs.edu; mluca@hbs.edu
+OI Kim, Hyunjin/0000-0002-0296-8977
+FU Yelp
+FX This project received financial support from Yelp. However, funding and
+   the ability to publish were not tied to the results.
+NR 23
+TC 9
+Z9 15
+U1 5
+U2 102
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 0025-1909
+EI 1526-5501
+J9 MANAGE SCI
+JI Manage. Sci.
+PD FEB
+PY 2019
+VL 65
+IS 2
+BP 596
+EP 603
+DI 10.1287/mnsc.2018.3246
+PG 8
+WC Management; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Business & Economics; Operations Research & Management Science
+GA HM4JM
+UT WOS:000459439500009
+OA Green Submitted
+DA 2026-03-15
+ER
+
+PT J
+AU Jiang, LL
+   Ravichandran, T
+   Kuruzovich, J
+AF Jiang, Lianlian (Dorothy)
+   Ravichandran, T.
+   Kuruzovich, Jason
+TI REVIEW MODERATION TRANSPARENCY AND ONLINE REVIEWS: EVIDENCE FROM A
+   NATURAL EXPERIMENT
+SO MIS QUARTERLY
+LA English
+DT Review
+DE Review moderation transparency; online reviews; reduction in
+   contribution investment; natural experiment; difference-in-differences
+ID USER-GENERATED CONTENT; WORD-OF-MOUTH; NEGATIVITY BIAS; INFORMATION;
+   IMPACT
+AB This paper empirically investigates how review moderation transparency affects the volume, length, and negativity of reviews. A change to the Yelp platform in 2010, introducing review moderation and displaying filtered reviews, created a natural experiment. We used a panel dataset of online reviews from the same set of restaurants on both the Yelp and TripAdvisor platforms in a difference-in-differences (DID) model to test how review moderation transparency affected our outcome variables. We found that increasing review moderation transparency negatively affects review volume but positively affects review negativity. The results also indicate that providing review moderation transparency reduces review length, especially for reviews with positive sentiment. Our findings suggest that providing review moderation transparency induces users to invest less effort in review contributions, especially when they are submitting positive reviews. We discuss the theoretical and practical implications of these results as they relate to the design and use of online review platforms.
+C1 [Jiang, Lianlian (Dorothy)] Univ Houston, Bauer Coll Business, Dept Decis & Informat Sci, Houston, TX 77204 USA.
+   [Ravichandran, T.; Kuruzovich, Jason] RPI, Lally Sch Management & Technol, Troy, NY USA.
+C3 University of Houston System; University of Houston; Rensselaer
+   Polytechnic Institute
+RP Jiang, LL (corresponding author), Univ Houston, Bauer Coll Business, Dept Decis & Informat Sci, Houston, TX 77204 USA.
+EM ljiang@central.uh.edu; ravit@rpi.edu; kuruzj@rpi.edu
+RI Kuruzovich, Jason/JSL-7686-2023
+OI Kuruzovich, Jason/0000-0003-4091-9380; Jiang, Dorothy
+   Lianlian/0000-0002-0719-7761
+NR 48
+TC 4
+Z9 7
+U1 25
+U2 168
+PU SOC INFORM MANAGE-MIS RES CENT
+PI MINNEAPOLIS
+PA UNIV MINNESOTA-SCH MANAGEMENT 271 19TH AVE SOUTH, MINNEAPOLIS, MN 55455
+   USA
+SN 0276-7783
+J9 MIS QUART
+JI MIS Q.
+PD DEC
+PY 2023
+VL 47
+IS 4
+BP 1693
+EP 1708
+DI 10.25300/MISQ/2023/16216
+PG 16
+WC Computer Science, Information Systems; Information Science & Library
+   Science; Management
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Computer Science; Information Science & Library Science; Business &
+   Economics
+GA KK0P7
+UT WOS:001179740000015
+DA 2026-03-15
+ER
+
+PT J
+AU Chen, YW
+   Lee, S
+AF Chen, Yiwei
+   Lee, Stephanie
+TI User-Generated Physician Ratings and Their Effects on Patients'
+   Physician Choices: Evidence from Yelp
+SO JOURNAL OF MARKETING
+LA English
+DT Article
+DE health care; online physician ratings; online physician reviews; patient
+   flow
+ID WORD-OF-MOUTH; ONLINE REVIEWS; REPORT CARDS; COMMUNICATION; INFORMATION;
+   QUALITY; IMPACT; EXPERIENCE; MARKET; SALES
+AB Patients increasingly rely on online physician ratings to select their physicians and make health care decisions. However, it is unclear whether online physician ratings signal physician quality information and affect patients' physician choices. By combining physician rating data from Yelp with data from Medicare, which covers a large elderly patient group, the authors find that ratings are positively associated with important measures of physician quality, including physicians' credentials, adherence to clinical guidelines, and patients' health outcomes. They introduce novel instrumental variables, where reviewers' leniency in rating other businesses is employed as an instrument for physicians' ratings. They find that an increase in physicians' average rating increases physicians' patient flow. To understand the quality signals that patients respond to, the authors also use the latent Dirichlet allocation model and extract topics from review texts. Patients respond differentially to different information and respond most to information about physicians' interpersonal and clinical skills. In addition, rating credibility, accessibility, and strength of other existent signals moderate the positive effects of online ratings on patient flow. Overall, online physician rating platforms can promote efficiency by disseminating important quality information to patients and directing patients to higher-quality physicians.
+C1 [Chen, Yiwei] Stanford Univ, Dept Econ, Stanford, CA USA.
+   [Lee, Stephanie] Univ Washington, Michael G Foster Sch Business, Washington, DC 98195 USA.
+C3 Stanford University; University of Washington
+RP Lee, S (corresponding author), Univ Washington, Michael G Foster Sch Business, Washington, DC 98195 USA.
+EM yiwei312@stanford.edu; stelee@uw.edu
+OI Lee, Stephanie/0000-0001-6007-8166
+NR 91
+TC 31
+Z9 43
+U1 37
+U2 300
+PU SAGE PUBLICATIONS INC
+PI THOUSAND OAKS
+PA 2455 TELLER RD, THOUSAND OAKS, CA 91320 USA
+SN 0022-2429
+EI 1547-7185
+J9 J MARKETING
+JI J. Mark.
+PD JAN
+PY 2024
+VL 88
+IS 1
+SI SI
+BP 77
+EP 96
+DI 10.1177/00222429221146511
+EA MAR 2023
+PG 20
+WC Business
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA EI4K6
+UT WOS:000959985500001
+DA 2026-03-15
+ER
+
+PT J
+AU Sharma, S
+   Frake, J
+   Watson, J
+AF Sharma, Siddharth
+   Frake, Justin
+   Watson, Jared
+TI Symbolic vs. Substantive Support: The Impact of Black Lives Matter on
+   Black-Owned Businesses
+SO MARKETING SCIENCE
+LA English
+DT Article
+DE Black Lives Matter (BLM); social movements; product reviews; financial
+   performance; causal inference
+ID CONSUMER BOYCOTTS; RACE
+AB This study examines the impact of the Black Lives Matter (BLM) movement on consumer behavior toward Black-owned businesses, using George Floyd's murder as a shock to the salience of and support for BLM. Utilizing a difference-in-differences design with data on reviews, revenues, and foot traffic from Yelp and SafeGraph, we analyze changes in symbolic support (review frequency and valence) and substantive support (revenues and foot traffic). Our findings show a significant increase in symbolic actions for Black-owned businesses following Floyd's murder, especially among White and Democrat-leaning consumers. However, we observe no substantial evidence for a corresponding increase in substantive support. This indicates that, although the BLM movement heightened visibility and prompted short-term symbolic gestures, it did not translate into large, lasting economic benefits for Black-owned businesses. Additionally, we observe an increase in "not recommended" (i.e., suspicious) reviews on Yelp following Floyd's murder, one explanation may be that consumers were leaving inauthentic reviews without visiting the stores. These results highlight the complexities of sociopolitical consumerism and suggest that social movements like BLM may be insufficient on their own to address the economic disparities faced by minority-owned businesses.
+C1 [Sharma, Siddharth] Indian Sch Business, Strategy Area, Mohali 140306, Punjab, India.
+   [Frake, Justin] Univ Michigan, Ross Sch Business, Strategy Area, Ann Arbor, MI 48109 USA.
+   [Watson, Jared] NYU, Leonard N Stern Sch Business, Dept Mkt, New York, NY 10012 USA.
+C3 Indian School of Business (ISB); University of Michigan System;
+   University of Michigan; New York University
+RP Watson, J (corresponding author), NYU, Leonard N Stern Sch Business, Dept Mkt, New York, NY 10012 USA.
+EM siddharth_sharma@isb.edu; jfrake@umich.edu; jw5798@stern.nyu.edu
+RI Watson, Jared/AAB-9145-2021
+OI Watson, Jared/0000-0001-5371-2683; Sharma, Siddharth/0000-0003-0727-3557
+NR 44
+TC 0
+Z9 0
+U1 15
+U2 30
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 0732-2399
+EI 1526-548X
+J9 MARKET SCI
+JI Mark. Sci.
+PD JAN-FEB
+PY 2026
+VL 45
+IS 1
+DI 10.1287/mksc.2023.0243
+EA MAR 2025
+PG 19
+WC Business
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA CE4GV
+UT WOS:001450053900001
+DA 2026-03-15
+ER
+
+PT J
+AU Botelho, TL
+   Gertsberg, M
+AF Botelho, Tristan L.
+   Gertsberg, Marina
+TI The Disciplining Effect of Status: Evaluator Status Awards and Observed
+   Gender Bias in Evaluations
+SO MANAGEMENT SCIENCE
+LA English
+DT Article
+DE bias; digital platforms; evaluations; evaluators; gender; ratings;
+   status
+ID ACCOUNTABILITY; IDENTIFIABILITY; CONFORMITY; PREJUDICE; LIABILITY;
+   IMPACT; JOB
+AB We theorize that status awards will have a disciplining effect on evaluators, changing how they evaluate. Specifically, status awards will lead evaluators to place less weight on unreliable indicators of candidate quality, such as gender. We test this theory using data from restaurant evaluations on Yelp, focusing on the relationship between an evaluator's restaurant rating and their reporting of being served by a man or a woman in their review text. We use Yelp's evaluator status award ("Elite") to analyze whether observed gender bias in the star ratings given to restaurants decreases after an evaluator receives this status award. We find that evaluators rate restaurants more similarly after receiving the award, regardless of whether they report being served by a man or a woman. Status awards in our context close the gender gap in restaurant ratings by 56.5% (a 0.07 stars improvement out of an initial rating gap of -0.13 stars). This reduction in gender bias is mostly due to a decrease in the number of extremely low (1 star) ratings in reviews that reference female servers. Research on status and evaluations has mostly focused on how evaluators react to increases in candidate status. We demonstrate the importance of evaluator status as a mechanism for decreasing observed gender differences in evaluations.
+C1 [Botelho, Tristan L.] Yale Univ, Yale Sch Management, New Haven, CT 06511 USA.
+   [Gertsberg, Marina] Univ Melbourne, Dept Finance, Parkville, Vic 3010, Australia.
+C3 Yale University; University of Melbourne
+RP Botelho, TL (corresponding author), Yale Univ, Yale Sch Management, New Haven, CT 06511 USA.
+EM tristan.botelho@yale.edu; marina.gerlsberg@unimelb.edu.au
+RI ; Botelho, Tristan/N-5678-2014
+OI , Marina/0000-0003-4682-3654; Botelho, Tristan/0000-0002-8093-633X
+NR 60
+TC 25
+Z9 34
+U1 6
+U2 61
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 0025-1909
+EI 1526-5501
+J9 MANAGE SCI
+JI Manage. Sci.
+PD JUL
+PY 2022
+VL 68
+IS 7
+BP 5311
+EP 5329
+DI 10.1287/mnsc.2021.4161
+EA NOV 2021
+PG 19
+WC Management; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Business & Economics; Operations Research & Management Science
+GA 4W0CD
+UT WOS:000828389800001
+DA 2026-03-15
+ER
+
+PT J
+AU Ceylan, G
+   Diehl, K
+   Proserpio, D
+AF Ceylan, Gizem
+   Diehl, Kristin
+   Proserpio, Davide
+TI Words Meet Photos: When and Why Photos Increase Review Helpfulness
+SO JOURNAL OF MARKETING RESEARCH
+LA English
+DT Review
+DE photos; similarity; natural language processing; reviews; helpfulness;
+   visuals; user-generated content
+ID PROCESSING FLUENCY; STRUCTURAL ALIGNMENT; PERCEPTUAL FLUENCY; OF-MOUTH;
+   SIMILARITY; PICTURES; IMAGERY; SALES; MODELS
+AB Are reviews with photos more helpful? If so, do consumers find reviews more helpful when photos and text convey similar or different information? This article examines the effect of content similarity between photos and text on review helpfulness and its underlying mechanism. Using a data set of 7.4 million reviews associated with 3.5 million photos from Yelp, and applying machine learning algorithms, the authors quantify the similarity of the content between text and photos. They find that, overall, photos increase the helpfulness of a review. More importantly, though, greater similarity between photos and text heightens review helpfulness more. The authors then validate algorithm-based similarity assessments with similarity perceptions of human judges. Using real-world reviews from Yelp and carefully designed stimuli, they replicate the core findings in five laboratory experiments. Further, testing the underlying mechanism, they find that greater similarity facilitates the ease with which consumers can process the review, which, in turn, increases that review's helpfulness to consumers. Finally, they show that factors that impede the ease of processing (e.g., language difficulty or poor image quality) can reduce the effect of similarity on helpfulness. These findings provide novel insights into the value of user-generated content that includes text and photos and its underlying mechanism.
+C1 [Ceylan, Gizem] Yale Univ, Yale Sch Management, New Haven, CT 06511 USA.
+   [Diehl, Kristin] Univ Southern Calif, Marshall Sch Business, Los Angeles, CA USA.
+   [Proserpio, Davide] Univ Southern Calif, Marshall Sch Business, Mkt, Los Angeles, CA USA.
+C3 Yale University; University of Southern California; University of
+   Southern California
+RP Ceylan, G (corresponding author), Yale Univ, Yale Sch Management, New Haven, CT 06511 USA.
+EM gizem.ceylan@yale.edu; kdiehl@marshll.usc.edu; proserpi@marshall.usc.edu
+RI Ceylan, Gizem/JRZ-0950-2023; Proserpio, Davide/MSW-0672-2025
+OI Ceylan, Gizem/0000-0002-3876-9312; 
+NR 75
+TC 56
+Z9 66
+U1 48
+U2 504
+PU SAGE PUBLICATIONS INC
+PI THOUSAND OAKS
+PA 2455 TELLER RD, THOUSAND OAKS, CA 91320 USA
+SN 0022-2437
+EI 1547-7193
+J9 J MARKETING RES
+JI J. Mark. Res.
+PD FEB
+PY 2024
+VL 61
+IS 1
+BP 5
+EP 26
+DI 10.1177/00222437231169711
+EA JUN 2023
+PG 22
+WC Business
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA FD2F3
+UT WOS:001011750200001
+DA 2026-03-15
+ER
+
+PT J
+AU Shalev, E
+   Morvinski, C
+   Shoham, M
+   Kyung, EJ
+AF Shalev, Edith
+   Morvinski, Coby
+   Shoham, Meyrav
+   Kyung, Ellie J.
+TI Search or Scroll: How Credibility versus Likability Premiums Shape
+   Consumers' Following Decisions
+SO JOURNAL OF CONSUMER RESEARCH
+LA English
+DT Article; Early Access
+DE followers; social media; online reviews; credibility; search; scroll
+ID WORD-OF-MOUTH; SOCIAL MEDIA; PRODUCT; REVIEWS; PERSUASIVENESS;
+   EXPERTISE; INSTAGRAM; STRANGERS; FACEBOOK; MOTIVES
+AB Consumers' choices of whom to follow on digital platforms shape their informational landscape. In an era in which the credibility of informational sources is critical, this research examines two key questions: (1) When do consumers prioritize communicator credibility over likability in their decisions to follow? and (2) How do multiple credibility and likability cues interact to influence these decisions? Analyzing four large datasets from popular following-enabled platforms, we find that consumers' orientation toward content consumption-goal directed ("search") versus experiential ("scroll")-is key. Communicator credibility drives following on search-driven platforms (Yelp, Goodreads), whereas likability drives following on scroll-driven ones (Twitter/X, Instagram). Aggregate communicator sentiment across multiple posts serves as a cross-platform indicator of credibility and likability, and its effect on follower count differs by platform type. On scroll-driven platforms, communicators with positive aggregate sentiment benefit from a likability premium, attracting the most followers; this preference for positivity is mitigated by the presence of alternative communicator likability cues (e.g., using sociable language). On search-driven platforms, communicators with mixed aggregate sentiment benefit from a credibility premium, attracting the most followers; this preference for mixed sentiment is mitigated in the presence of alternative credibility cues (e.g., Yelp's "Elite" badge). Implications for consumer protection and platform design are discussed.
+C1 [Shalev, Edith] Open Univ Israel, Dept Management & Econ, Mkt, 1 Univ Rd, IL-4353701 Raanana, Israel.
+   [Morvinski, Coby] Ben Gurion Univ Negev, Dept Management, Mkt, POB 653, IL-8410501 Beer Sheva, Israel.
+   [Shoham, Meyrav] Tel Aviv Univ, Dan Dept Commun, Mkt, IL-6997801 Tel Aviv, Israel.
+   [Kyung, Ellie J.] Babson Coll, Mkt Div, 108 Malloy Hall, Babson Pk, MA 02457 USA.
+C3 Open University Israel; Ben-Gurion University of the Negev; Tel Aviv
+   University; Babson College
+RP Shalev, E (corresponding author), Open Univ Israel, Dept Management & Econ, Mkt, 1 Univ Rd, IL-4353701 Raanana, Israel.
+EM ediths@openu.ac.il; cobym@bgu.ac.il; meyravs@tauex.tau.ac.il;
+   ekyung@babson.edu
+RI Morvinski, Coby/AAC-1244-2021; Kyung, Ellie/GNH-3731-2022
+OI Morvinski, Coby/0000-0001-8081-7085; Kyung, Ellie/0000-0003-2385-9523
+FU Open University of Israel's Research Fund [514249]; Israel Science
+   Foundation [1413/22]; Israel Science Foundation [1421/22]; Blavatnik
+   Interdisciplinary Cyber Research Center at Tel Aviv University; Babson
+   Faculty Research Fund
+FX The first author received funding for this project from the Open
+   University of Israel's Research Fund (grant no. 514249) and from the
+   Israel Science Foundation (grant 1413/22). The second author received
+   funding for this work from the Israel Science Foundation (grant
+   1421/22). The third author received funding for this project from the
+   Blavatnik Interdisciplinary Cyber Research Center at Tel Aviv
+   University. The fourth author received funding for this project from the
+   Babson Faculty Research Fund.
+NR 86
+TC 1
+Z9 1
+U1 93
+U2 93
+PU OXFORD UNIV PRESS INC
+PI CARY
+PA JOURNALS DEPT, 2001 EVANS RD, CARY, NC 27513 USA
+SN 0093-5301
+EI 1537-5277
+J9 J CONSUM RES
+JI J. Consum. Res.
+PD 2025 SEP 24
+PY 2025
+DI 10.1093/jcr/ucaf038
+EA SEP 2025
+PG 24
+WC Business
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA 7QX1K
+UT WOS:001577525500001
+OA hybrid
+DA 2026-03-15
+ER
+
+PT J
+AU Shin, M
+   Shin, J
+   Ghili, S
+   Kim, J
+AF Shin, Minkyu
+   Shin, Jiwoong
+   Ghili, Soheil
+   Kim, Jaehwan
+TI The Impact of the Gig Economy on Product Quality Through the Labor
+   Market: Evidence from Ridesharing and Restaurant Quality
+SO MANAGEMENT SCIENCE
+LA English
+DT Article
+DE gig economy; labor market; Uber; Lyft; restaurant quality; Yelp reviews;
+   diff-in-diff; text analysis; employee turnover rate
+ID TURNOVER; DISRUPTION; BUSINESS; RISE
+AB This paper seeks to demonstrate the impact of the gig economy on product quality in seemingly unrelated local industries through the labor market. Our empirical context is the quality of service for restaurants in the city of Austin, and we examine how they were impacted by the exogenous exit and reentry of rideshare platforms, Uber and Lyft, because of regulatory changes. We leverage these exogenous shocks and combine them with sentiment-analyzed data from Yelp reviews that capture how customers assess the quality of service at each restaurant. We show that, compared with control cities, customers in Austin become more negative about service quality when Uber and Lyft are present in the city. Additionally, we use rich data on employee turnover and wages to demonstrate that service staff turnover increases in Austin when Uber and Lyft are present compared with the control cities. We also conduct several additional studies and robustness checks that are all congruent with our hypothesis that Uber and Lyft lower the quality of service in Austin restaurants by raising their staff turnover. Together, these results suggest significant ramifications of the gig economy on the broader industries through the labor market.
+C1 [Shin, Minkyu] City Univ Hong Kong, Kowloon Tong, Hong Kong, Peoples R China.
+   [Shin, Jiwoong; Ghili, Soheil] Yale Univ, New Haven, CT 06520 USA.
+   [Kim, Jaehwan] Korea Univ, Seoul, South Korea.
+C3 City University of Hong Kong; Yale University; Korea University
+RP Shin, J (corresponding author), Yale Univ, New Haven, CT 06520 USA.
+EM minkshin@city.edu.hk; jiwoong.shin@yale.edu; soheil.ghili@yale.edu;
+   jbayes@korea.ac.kr
+RI ; Shin, Jiwoong/ABH-5883-2020
+OI Ghili, Soheil/0000-0002-8358-9249; Shin, Jiwoong/0000-0001-8175-854X;
+   shin, minkyu/0000-0001-6260-4799
+NR 36
+TC 14
+Z9 25
+U1 11
+U2 123
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 0025-1909
+EI 1526-5501
+J9 MANAGE SCI
+JI Manage. Sci.
+PD JUL
+PY 2023
+VL 69
+IS 5
+BP 2620
+EP 2638
+DI 10.1287/mnsc.2022.4481
+PG 20
+WC Management; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Business & Economics; Operations Research & Management Science
+GA M9HD7
+UT WOS:001033241800005
+DA 2026-03-15
+ER
+
+PT J
+AU Jiang, DL
+   Ye, S
+   Zhao, L
+   Gu, B
+AF Jiang, Dorothy Lianlian
+   Ye, Shun
+   Zhao, Liang
+   Gu, Bin
+TI Do Reductions in Search Costs for Partial Information on Online
+   Platforms Lead to Better Consumer Decisions? Evidence of Cognitive Miser
+   Behavior from a Natural Experiment
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Article
+DE search cost reduction; online platforms; AI-powered image categorization
+   feature; decision-making deep learning techniques;
+   difference-in-differences
+ID TASK COMPLEXITY; PRODUCT RATINGS; REVIEWS; MODEL; ENGINES; SYSTEMS;
+   MATTER; SALES; PRICE
+AB Many online platforms have utilized information technology, such as artificial intelligence (AI), to reduce consumers' information search costs and facilitate their decision-making processes. Given the variety of online information, these technologies are often effective in reducing the search cost for only specific information types: a concept we refer to as search cost reduction for partial information. For rational consumers, this can lead to improved decision making. However, consumers do not always behave rationally and may exhibit behavioral biases in their decision-making process. In this study, we propose that search cost reduction for partial information can induce cognitive miser behavior in consumers, ultimately leading to worse decision-making. To explore this understudied puzzle, we leverage a natural experiment on Yelp to examine the effect of enabling search cost reduction for partial information on the quality of consumers' decisions regarding restaurants. We constructed a unique panel data set using matched pairs of restaurants across Yelp and TripAdvisor. By applying a difference-in-differences design, we aim to casually infer how consumer decision quality is affected following the introduction of Yelp's new AI-powered image categorization feature in August 2015, which was designed to reduce the search cost of review images. We find that adding the AI-powered image categorization feature has a negative effect on consumer decision quality. Delving into the text analysis of consumer complaints using deep learning techniques, we further find that the inferior decision quality of consumers postfeature introduction is primarily due to reduced awareness of restaurants' service quality-information that is readily available in review texts but not in review images. Our findings suggest that reducing search costs for partial information may hurt consumers as it may incentivize cognitive miser behavior. This occurs as consumers disproportionately pay attention to the product information of which the search cost has been reduced, whereas paying less attention to other relevant product information. We discuss the implications of these findings for online platforms.
+C1 [Jiang, Dorothy Lianlian] Univ Houston, Decis & Informat Sci, CT Bauer Coll Business, Houston, TX 77004 USA.
+   [Ye, Shun] George Mason Univ, Informat Syst & Operat Management, Costello Coll Business, Fairfax, VA 22030 USA.
+   [Zhao, Liang] Hong Kong Baptist Univ, Sch Business, Management Mkt & Informat Syst, Kowloon, Hong Kong, Peoples R China.
+   [Gu, Bin] Boston Univ, Dept Informat Syst, Questrom Sch Business, Boston, MA 02215 USA.
+C3 University of Houston System; University of Houston; George Mason
+   University; Hong Kong Baptist University; Boston University
+RP Gu, B (corresponding author), Boston Univ, Dept Informat Syst, Questrom Sch Business, Boston, MA 02215 USA.
+EM ljiang@bauer.uh.edu; sye2@gmu.edu; liang_zhao@hkbu.edu.hk; bgu@bu.edu
+RI Ye, Shun/OGP-0753-2025; Jiang, Dorothy Lianlian/NLN-7684-2025
+FU Behavioral Research Assistance Grant by the C. T. Bauer College of
+   Business, University of Houston
+FX This work was supported by the Behavioral Research Assistance Grant,
+   generously provided by the C. T. Bauer College of Business, University
+   of Houston.
+NR 78
+TC 6
+Z9 6
+U1 115
+U2 115
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD SEP
+PY 2025
+VL 36
+IS 3
+DI 10.1287/isre.2022.0432
+PG 20
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA 8NN6A
+UT WOS:001592898900025
+DA 2026-03-15
+ER
+
+PT J
+AU Paharia, N
+   Avery, J
+   Keinan, A
+AF Paharia, Neeru
+   Avery, Jill
+   Keinan, Anat
+TI Positioning Brands Against Large Competitors to Increase Sales
+SO JOURNAL OF MARKETING RESEARCH
+LA English
+DT Article
+DE branding; brand management; positioning; competition; consumer behavior
+ID CONSUMER ATTITUDES; CONSUMPTION; IDENTITY; BASKING; IMPACT
+AB The authors explore the effects of having a large dominant competitor and show conditions under which focusing on a competitive threat, rather than hiding it, can actually help a brand. Through lab and field studies, the authors demonstrate that highlighting a large competitor's size and close proximity can help smaller brands rather than harm them. The results show that support for small brands goes up when faced with a competitive threat from large brands versus when they are in competition with brands that are similar to them or when consumers view them outside a competitive context. This support translates into purchase intentions, real purchases, and more favorable online reviews in a study of more than 10,000 Yelp posts. The authors argue that this "framing-the-game effect" is mediated by consumers' motivation to express their views and have an impact in the marketplace through their purchase choices.
+C1 [Paharia, Neeru] Georgetown Univ, McDonough Sch Business, Washington, DC 20057 USA.
+   [Avery, Jill; Keinan, Anat] Harvard Univ, Harvard Business Sch, Cambridge, MA 02138 USA.
+C3 Georgetown University; Harvard University
+RP Paharia, N (corresponding author), Georgetown Univ, McDonough Sch Business, Washington, DC 20057 USA.
+EM np412@georgetown.edu; javery@hbs.edu; akeinan@hbs.edu
+NR 46
+TC 79
+Z9 95
+U1 5
+U2 118
+PU SAGE PUBLICATIONS INC
+PI THOUSAND OAKS
+PA 2455 TELLER RD, THOUSAND OAKS, CA 91320 USA
+SN 0022-2437
+EI 1547-7193
+J9 J MARKETING RES
+JI J. Mark. Res.
+PD DEC
+PY 2014
+VL 51
+IS 6
+BP 647
+EP 656
+DI 10.1509/jmr.13.0438
+PG 10
+WC Business
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA AZ6KX
+UT WOS:000348329800001
+DA 2026-03-15
+ER
+
+PT J
+AU Liu, AX
+   Steenkamp, JBEM
+   Zhang, JR
+AF Liu, Angela Xia
+   Steenkamp, Jan-Benedict E. M.
+   Zhang, Jurui
+TI Agglomeration as a Driver of the Volume of ElectronicWord of Mouth in
+   the Restaurant Industry
+SO JOURNAL OF MARKETING RESEARCH
+LA English
+DT Article
+DE electronic word of mouth; agglomeration; quality differentiation;
+   services
+ID WORD-OF-MOUTH; SOCIAL MEDIA; ONLINE; PRODUCT; SALES; MODEL;
+   METAANALYSIS; ENDOGENEITY; INFORMATION; DYNAMICS
+AB While previous research has investigated various drivers of electronic word of mouth (eWOM), the firm's offline competitive environment has not been considered. The authors explore this new horizon and examine the different effects of firms' geographic concentration, or agglomeration, on the volume of eWOM received. They distinguish three types of agglomeration-density agglomeration (number of firms in the industry in an area), product agglomeration (overlap in product types offered by the firms in the area), and temporal agglomeration (overlap in moment of consumption). The authors develop hypotheses pertaining to the main effects of the three agglomeration types on eWOM volume, which take the form of an inverted U-shape, and the moderating effect of vertical quality differentiation. The authors test the hypotheses on the volume of eWOM generated per month on Yelp for restaurants in Phoenix, generated by 23,526 users for 2,885 restaurants over an eight-year period. The empirical results broadly support the hypotheses.
+C1 [Liu, Angela Xia] Tsinghua Univ, Mkt, Beijing, Peoples R China.
+   [Steenkamp, Jan-Benedict E. M.] Univ N Carolina, Mkt, Chapel Hill, NC 27515 USA.
+   [Steenkamp, Jan-Benedict E. M.] Univ N Carolina, Mkt Area Chair, Chapel Hill, NC 27515 USA.
+   [Zhang, Jurui] Univ Massachusetts, Mkt, Boston, MA 02125 USA.
+C3 Tsinghua University; University of North Carolina; University of North
+   Carolina Chapel Hill; University of North Carolina; University of North
+   Carolina Chapel Hill; University of Massachusetts System; University of
+   Massachusetts Boston
+RP Liu, AX (corresponding author), Tsinghua Univ, Mkt, Beijing, Peoples R China.
+EM liux@sem.tsinghua.edu.cn; JBS@unc.edu; jurui.zhang@umb.edu
+FU National Natural Science Foundation of China [71472103]; Tsinghua
+   University Initiative Scientific Research Program [20151080386]
+FX Order of authorship is alphabetical; all authors contributed equally.
+   The authors thank Yelp for providing the data and gratefully acknowledge
+   the many suggestions and comments on previous versions of the paper by
+   Sriram Venkataraman, Harald van Heerde, and Katrijn Gielens. They
+   further thank the JMR review team for their constructive guidance. The
+   authors acknowledge financial support from National Natural Science
+   Foundation of China (grant no. 71472103) and Tsinghua University
+   Initiative Scientific Research Program (grant no. 20151080386). Russell
+   Winer served as associate editor for this article.
+NR 61
+TC 36
+Z9 46
+U1 3
+U2 121
+PU SAGE PUBLICATIONS INC
+PI THOUSAND OAKS
+PA 2455 TELLER RD, THOUSAND OAKS, CA 91320 USA
+SN 0022-2437
+EI 1547-7193
+J9 J MARKETING RES
+JI J. Mark. Res.
+PD AUG
+PY 2018
+VL 55
+IS 4
+BP 507
+EP 523
+DI 10.1509/jmr.16.0182
+PG 17
+WC Business
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA GN7DB
+UT WOS:000439284200004
+DA 2026-03-15
+ER
+
+PT J
+AU Chen, Z
+   Lurie, NH
+AF Chen, Zoey
+   Lurie, Nicholas H.
+TI Temporal Contiguity and Negativity Bias in the Impact of Online Word of
+   Mouth
+SO JOURNAL OF MARKETING RESEARCH
+LA English
+DT Article
+DE word of mouth; negativity bias; temporal contiguity; causal attributions
+ID KNOWLEDGE; REVIEWS; INFORMATION; PERSPECTIVE; PERCEPTION; PERSUASION;
+   CAUSALITY; DYNAMICS; JUDGMENT; BEHAVIOR
+AB Prior research shows that positive online reviews are less valued than negative reviews. The authors argue that this is due to differences in causal attributions for positive versus negative information such that positive reviews tend to be relatively more attributed to the reviewer (vs. product experience) than negative reviews. The presence of temporal contiguity cues, which indicate that review writing closely follows consumption, reduces the relative extent to which positive reviews are attributed to the reviewer and mitigates the negativity bias. An examination of 65,531 Yelp.com restaurant reviews shows that review value is negatively related to. review valence but that this negative relationship is absent for reviews that contain temporal contiguity cues. A series of lab studies replicates these findings and suggests that temporal contiguity cues enhance the value of a positive review and increase the likelihood of choosing a product with a positive review by changing reader beliefs about the cause of the review.
+C1 [Chen, Zoey] Georgia Inst Technol, Scheller Coll Business, Atlanta, GA 30332 USA.
+   [Lurie, Nicholas H.] Univ Connecticut, Sch Business, Storrs, CT 06269 USA.
+C3 University System of Georgia; Georgia Institute of Technology;
+   University of Connecticut
+RP Chen, Z (corresponding author), Georgia Inst Technol, Scheller Coll Business, Atlanta, GA 30332 USA.
+EM zoey.chen@scheller.gatech.edu; lurie@uconn.edu
+RI Lurie, Nicholas/F-6132-2017; Chen, Zoey/JCN-6363-2023
+OI Lurie, Nicholas/0000-0001-8505-9033; 
+NR 78
+TC 352
+Z9 445
+U1 14
+U2 307
+PU SAGE PUBLICATIONS INC
+PI THOUSAND OAKS
+PA 2455 TELLER RD, THOUSAND OAKS, CA 91320 USA
+SN 0022-2437
+EI 1547-7193
+J9 J MARKETING RES
+JI J. Mark. Res.
+PD AUG
+PY 2013
+VL 50
+IS 4
+BP 463
+EP 476
+DI 10.1509/jmr.12.0063
+PG 14
+WC Business
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA 184HO
+UT WOS:000321880900003
+DA 2026-03-15
+ER
+
+PT J
+AU Ke, ZH
+   Liu, D
+   Brass, DJ
+AF Ke, Zhihong
+   Liu, De
+   Brass, Daniel J.
+TI Magnify Cascades of Electronic Word-of-Mouth (eWOM) on Social Networks:
+   The Roles of User, Product, and Relationship Characteristics
+SO PRODUCTION AND OPERATIONS MANAGEMENT
+LA English
+DT Article
+DE Electronic word-of-mouth (eWOM); behavioral cascading; social media
+   operations; competitive altruism
+ID PEER INFLUENCE; ONLINE COMMUNITIES; GENERATED CONTENT; FIELD EXPERIMENT;
+   IMPURE ALTRUISM; SALES PROMOTION; BEHAVIOR; REVIEWS; TIES; INTENTIONS
+AB Firms are increasingly relying on electronic word-of-mouth (eWOM), in the form of online reviews and social media posts, to sell their products or services. A pivotal component of managing eWOM is to understand and, potentially influence, how one consumer's eWOM can lead to another's-a process called behavioral cascading. While prior eWOM research has established the importance of behavioral cascading between connected users, there is little understanding of what factors could impact the likelihood of such cascades. To address this gap, we draw on the theory of competitive altruism to identify several moderators of behavioral cascading in eWOM. Our empirical tests using an online review dataset from Yelp show that eWOM cascading between a followee and a follower is less likely when the followee is a high-status member, a female, or has a strong connection with the follower; and more likely when the product in consideration is inexpensive. These findings provide valuable insights about the behavioral cascading process in eWOM and hold implications for social media platforms and sellers to facilitate the cascades of eWOM between connected consumers.
+C1 [Ke, Zhihong] Clemson Univ, Clemson, SC USA.
+   [Liu, De] Univ Minnesota, 321 S 19th Ave, Minneapolis, MN 55455 USA.
+   [Brass, Daniel J.] Univ Kentucky, Lexington, KY USA.
+C3 Clemson University; University of Minnesota System; University of
+   Minnesota Twin Cities; University of Kentucky
+RP Liu, D (corresponding author), Univ Minnesota, 321 S 19th Ave, Minneapolis, MN 55455 USA.
+EM deliu@umn.edu
+RI Liu, De/HTL-6567-2023
+OI Liu, De/0000-0002-9430-9732; KE, ZHIHONG/0000-0003-2381-7286
+NR 80
+TC 2
+Z9 2
+U1 11
+U2 59
+PU SAGE PUBLICATIONS INC
+PI THOUSAND OAKS
+PA 2455 TELLER RD, THOUSAND OAKS, CA 91320 USA
+SN 1059-1478
+EI 1937-5956
+J9 PROD OPER MANAG
+JI Prod. Oper. Manag.
+PD DEC
+PY 2025
+VL 34
+IS 12
+BP 3998
+EP 4014
+DI 10.1177/10591478241252689
+EA MAY 2024
+PG 17
+WC Engineering, Manufacturing; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED)
+SC Engineering; Operations Research & Management Science
+GA 9TN3U
+UT WOS:001224933200001
+DA 2026-03-15
+ER
+
+PT J
+AU Sun, JJ
+   Pham, MT
+AF Sun, Jennifer J.
+   Pham, Michel Tuan
+TI What Makes Consumption Experiences Feel Special? A Multimethod
+   Integrative Analysis
+SO JOURNAL OF CONSUMER RESEARCH
+LA English
+DT Article
+DE customer experience; experiential consumption; special; extraordinary;
+   experience economy; experience engineering
+ID CONSUMER; EXTRAORDINARY; MARKET
+AB This article addresses a simple theoretical question of high substantive relevance: What makes a consumption experience special in a consumer's mind? To answer this question, the authors report an extensive multimethod investigation involving a grounded theory analysis of numerous consumer narratives and in-depth interviews, a field survey, a scale development study, a natural language processing (NLP) analysis of more than 3 million Yelp reviews, a preregistered multifactor causal experiment (and its preregistered replication), a blind comparison of hundreds of matched visual Instagram posts by third-party observers, and several small application studies. The findings converge in identifying three major psychological pillars of what makes consumption experiences feel special to consumers, each pillar involving different facets: (a) uniqueness, which arises from the rarity, novelty, irreproducibility, personalization, exclusivity, ephemerality, and surpassing of expectations of the experience; (b) meaningfulness, which pertains to the personal significance of the experience in terms of symbolism, relationships, self-affirmation, and self-transformation; and (c) authenticity, which relates to the perceived genuineness and realness of the experience in terms of its psychological proximity to some original source, iconicity, human sincerity, and connection to nature. As illustrated in the General Discussion, the findings have important substantive implications for the engineering of hedonic consumption experiences.
+C1 [Sun, Jennifer J.] Yonsei Univ, Mkt, Sch Business, 50 Yonsei ro, Seoul 03722, South Korea.
+   [Pham, Michel Tuan] Columbia Univ, Business Mkt, Grad Sch Business, Kravis Hall 922,665 West 130th St, New York, NY 10027 USA.
+C3 Yonsei University; Columbia University
+RP Sun, JJ (corresponding author), Yonsei Univ, Mkt, Sch Business, 50 Yonsei ro, Seoul 03722, South Korea.
+EM sunjennifer@yonsei.ac.kr; Michel.Pham@columbia.edu
+RI Pham, Michel Tuan/AAE-5140-2020
+OI Pham, Michel Tuan/0000-0002-0717-5191
+NR 40
+TC 2
+Z9 2
+U1 60
+U2 60
+PU OXFORD UNIV PRESS INC
+PI CARY
+PA JOURNALS DEPT, 2001 EVANS RD, CARY, NC 27513 USA
+SN 0093-5301
+EI 1537-5277
+J9 J CONSUM RES
+JI J. Consum. Res.
+PD FEB
+PY 2026
+VL 52
+IS 5
+BP 849
+EP 872
+DI 10.1093/jcr/ucaf033
+EA OCT 2025
+PG 24
+WC Business
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA CV0IH
+UT WOS:001599226000001
+DA 2026-03-15
+ER
+
+PT J
+AU Tobey, M
+   Mayorga, ME
+   Bosisto, S
+   Ozaltin, OY
+AF Tobey, Margaret
+   Mayorga, Maria E.
+   Bosisto, Sherrie
+   Ozaltin, Osman Y.
+TI Reducing Manual Labeling Effort in Imbalanced Data Sets: Active Learning
+   for Detecting Illicit Massage Business Reviews
+SO OPERATIONS RESEARCH
+LA English
+DT Review; Early Access
+DE human trafficking; active learning; reinforcement learning; natural
+   language processing; imbalanced classification
+AB Human trafficking investigators face challenges when processing the sheer volume of publicly available online data. Natural language processing (NLP) models can assist in identifying evidence of exploitation in text data, such as business reviews. However, the scarcity of large and accurately labeled training data sets hinders the potential for NLP-based detection algorithms. Labeling data sets related to human trafficking is challenging because identifying indicators of trafficking requires domain expertise, trafficking cases make up a small portion of the data, and reviewing disturbing content is emotionally demanding for individuals. Active learning optimizes model training by strategically querying the most informative data points' labels, achieving high accuracy with minimal annotations. We formulate active learning as a decision model and learn a policy through deep reinforcement learning. We evaluate this approach for the imbalanced classification task of detecting Yelp reviews of massage businesses that contain human trafficking risk factors. The active learning policy surpasses benchmark methods in the scoring metric used for classifier training. Moreover, its strong performance remains consistent even in large batch query settings. The proposed approach is compatible with any scoring metric and is particularly well-suited for imbalanced NLP tasks in which labeling demands substantial time, domain expertise, and emotional effort.
+C1 [Tobey, Margaret] Natl Ctr Missing & Exploited Children, Alexandria, VA 22314 USA.
+   [Mayorga, Maria E.; Ozaltin, Osman Y.] North Carolina State Univ, Edward P Fitts Dept Ind & Syst Engn, Raleigh, NC 27695 USA.
+   [Bosisto, Sherrie] Global Emancipat Network, Clermont, FL 34715 USA.
+C3 North Carolina State University
+RP Ozaltin, OY (corresponding author), North Carolina State Univ, Edward P Fitts Dept Ind & Syst Engn, Raleigh, NC 27695 USA.
+EM mgtobey@ncmec.org; memayorg@ncsu.edu; sherrie@globalemancipation.ngo;
+   oyozalti@ncsu.edu
+FU Criminal Investigations and Network Analysis (CINA) [17STCIN00001]
+FX This research was partly supported by the Criminal Investigations and
+   Network Analysis (CINA) [Grant Award 17STCIN00001].
+NR 46
+TC 0
+Z9 0
+U1 2
+U2 2
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 0030-364X
+J9 OPER RES
+JI Oper. Res.
+PD 2026 FEB 12
+PY 2026
+DI 10.1287/opre.2023.0625
+EA FEB 2026
+PG 20
+WC Management; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Business & Economics; Operations Research & Management Science
+GA DS2IN
+UT WOS:001690829300001
+DA 2026-03-15
+ER
+
+PT J
+AU Ananthakrishnan, UM
+   Li, BB
+   Smith, MD
+AF Ananthakrishnan, Uttara M.
+   Li, Beibei
+   Smith, Michael D.
+TI A Tangled Web: Should Online Review Portals Display Fraudulent Reviews?
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Review
+DE fraudulent reviews; randomized experiment; user trust; online platform
+ID SEARCH ENGINES; FAKE REVIEWS; E-COMMERCE; TRUST; SALES; DISCLOSURE;
+   RANKING; IMPACT
+AB The growing interest in online product reviews for legitimate promotion has been accompanied by an increase in fraudulent reviews. However, beyond algorithms for initial fraud detection, little is known about what review portals should do with fraudulent reviews after detecting them. In this paper, we address this question by studying how consumers respond to potentially fraudulent reviews and how review portals can leverage this knowledge to design better fraud management policies. To do this, we combine theoretical development from the trust literature with randomized experiments and statistical analysis using large-scale data from Yelp. We find that consumers tend to increase their trust in the information provided by review portals when the portal displays fraudulent reviews along with non-fraudulent reviews, as opposed to the common practice of censoring suspected fraudulent reviews. The impact of fraudulent reviews on consumers' decision-making process increases with the uncertainty in the initial evaluation of product quality. We also find that consumers do not effectively process the content of fraudulent reviews (negative or positive). This result furthers the case for a decision heuristic that will incorporate the motivational differences between positive fraudulent reviews and negative fraudulent reviews to effectively aid consumers' decision making.
+C1 [Ananthakrishnan, Uttara M.] Univ Washington, Foster Sch Business, Seattle, WA 98195 USA.
+   [Li, Beibei; Smith, Michael D.] Carnegie Mellon Univ, Heinz Coll Informat Syst & Publ Policy, Pittsburgh, PA 15213 USA.
+C3 University of Washington; University of Washington Seattle; Carnegie
+   Mellon University
+RP Ananthakrishnan, UM (corresponding author), Univ Washington, Foster Sch Business, Seattle, WA 98195 USA.
+EM uttara@uw.edu; beibeili@andrew.cmu.edu; mds@cmu.edu
+RI Smith, Michael/B-7307-2008; Ananthakrishnan, Uttara M/GQZ-7954-2022
+OI Smith, Michael/0000-0001-6844-7923; Ananthakrishnan, Uttara
+   M/0000-0002-9341-1807
+NR 87
+TC 49
+Z9 68
+U1 16
+U2 203
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD SEP
+PY 2020
+VL 31
+IS 3
+BP 950
+EP 971
+DI 10.1287/isre.2020.0925
+PG 22
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA NV5UN
+UT WOS:000574386400014
+DA 2026-03-15
+ER
+
+PT J
+AU Bauman, K
+   Tuzhilin, A
+AF Bauman, Konstantin
+   Tuzhilin, Alexander
+TI Know Thy Context: Parsing Contextual Information from User Reviews for
+   Recommendation Purposes
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Review
+DE recommender systems; contextual information; online reviews; context
+   parsing
+ID WORD-OF-MOUTH; SOCIAL MEDIA; SYSTEMS; PERSONALIZATION; IMPACT; SALES;
+   CUSTOMERS; ACCURACY
+AB In this paper, we study an important problem of parsing contextual information from user reviews for recommendation purposes. First, we study the ways contextual information is expressed in user reviews and obtain novel insights about it. Among other things, we demonstrate that such type of information tends to appear at the beginning of the review, in longer sentences, in the sentences written in the past tense or using gerund form, and in the sentences referring to some points in time. Second, we propose a novel context parsing method for systematically extracting contextual information from user generated reviews that relies on the insights obtained in our study. We apply the proposed method to three different Yelp applications (restaurants, hotels, and beauty & spas) and demonstrate that it works well and leads to better recommendation performance than the baseline approaches. Our method systematically extracts more comprehensive sets of relevant contextual variables and corresponding phrases than the baselines. Our analysis also shows the importance of the newly discovered contextual information for recommendation purposes. The obtained results and the proposed method can help to get more comprehensive knowledge about contextual variables in a given application that leads to better recommendations.
+C1 [Bauman, Konstantin] Temple Univ, Fox Sch Business, Philadelphia, PA 19122 USA.
+   [Tuzhilin, Alexander] NYU, Stern Sch Business, New York, NY 10012 USA.
+C3 Pennsylvania Commonwealth System of Higher Education (PCSHE); Temple
+   University; New York University
+RP Bauman, K (corresponding author), Temple Univ, Fox Sch Business, Philadelphia, PA 19122 USA.
+EM kbauman@temple.edu
+RI Bauman, Konstantin/AAQ-7472-2020; Tuzhilin, Alexander/MYS-5683-2025
+OI Bauman, Konstantin/0000-0003-4964-9882; Tuzhilin,
+   Alexander/0000-0003-3354-8462
+NR 94
+TC 22
+Z9 29
+U1 10
+U2 128
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD MAR
+PY 2022
+VL 33
+IS 1
+BP 179
+EP 202
+DI 10.1287/isre.2021.1036
+EA DEC 2021
+PG 25
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA 1W5SQ
+UT WOS:000731906200001
+DA 2026-03-15
+ER
+
+PT J
+AU Ke, ZH
+   Liu, D
+   Brass, DJ
+AF Ke, Zhihong
+   Liu, De
+   Brass, Daniel J.
+TI Do Online Friends Bring Out the Best in Us? The Effect of Friend
+   Contributions on Online Review Provision
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Review
+DE online reviews; online friends; public goods; competitive altruism;
+   contribution quality
+ID CONTENT GENERATION EVIDENCE; WORD-OF-MOUTH; COMPETITIVE ALTRUISM; FIELD
+   EXPERIMENT; SOCIAL-INFLUENCE; IMPURE ALTRUISM; PEER INFLUENCE;
+   PUBLIC-GOODS; NETWORK; IMPACT
+AB User-generated online reviews are crucial for consumer decision making but suffer from underprovision, quality degradation, and imbalances across products. This research investigates whether friend contributions cues, in the form of highlighted reviews written by online friends, can motivate users to write more and higher-quality reviews. Noting the public-good nature of online reviews, we draw on theories of pure altruism and competitive altruism to understand the effects of friend-contribution cues on review provision. We test our hypotheses using data from Yelp and find positive effects of friend-contribution cues. Users are three times more likely to provide a review after a recent friend review than after a recent stranger review, and this effect cannot be solely explained by homophily. Furthermore, reviews written after a friend's review tend to be of higher quality, longer, and more novel. In addition, friend reviews tend to have a stronger effect on less-experienced users and less-reviewed products/services, suggesting friend-contribution cues can help mitigate the scarcity of contributions on long tail products and from infrequent contributors. Our findings hold important implications for research and practice in the private provision of online reviews.
+C1 [Ke, Zhihong] Clemson Univ, Coll Business, Clemson, SC 29634 USA.
+   [Liu, De] Univ Minnesota, Carlson Sch Management, Minneapolis, MN 55455 USA.
+   [Brass, Daniel J.] Univ Kentucky, Gatton Coll Business & Econ, Lexington, KY 40506 USA.
+C3 Clemson University; University of Minnesota System; University of
+   Minnesota Twin Cities; University of Kentucky
+RP Ke, ZH (corresponding author), Clemson Univ, Coll Business, Clemson, SC 29634 USA.
+EM zke@clemson.edu; deliu@umn.edu; daniel.brass@uky.edu
+RI Liu, De/HTL-6567-2023
+OI Liu, De/0000-0002-9430-9732; KE, ZHIHONG/0000-0003-2381-7286
+NR 82
+TC 48
+Z9 55
+U1 11
+U2 213
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD DEC
+PY 2020
+VL 31
+IS 4
+BP 1322
+EP 1336
+DI 10.1287/isre.2020.0947
+PG 15
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA PF9DQ
+UT WOS:000599346400015
+DA 2026-03-15
+ER
+
+PT J
+AU Nguyen, P
+   Wang, X
+   Li, X
+   Cotte, J
+AF Nguyen, Peter
+   Wang, Xin (Shane)
+   Li, Xi
+   Cotte, June
+TI Reviewing Experts' Restraint from Extremes and Its Impact on Service
+   Providers
+SO JOURNAL OF CONSUMER RESEARCH
+LA English
+DT Article
+DE online word-of-mouth; expertise; user rating average; platform strategy;
+   text analysis; sentiment analysis
+ID WORD-OF-MOUTH; PRODUCT; PERCEPTIONS; NOVICE; SALES; INFORMATION;
+   KNOWLEDGE; OPINION; RATINGS
+AB This research investigates reviewing experts on online review platforms. The main hypothesis is that greater expertise in generating reviews leads to greater restraint from extreme summary evaluations. The authors argue that greater experience generating reviews facilitates processing and elaboration and enhances the number of attributes implicitly considered in evaluations, which reduces the likelihood of assigning extreme summary ratings. This restraint-of-expertise hypothesis is tested across different review platforms (TripAdvisor, Qunar, and Yelp), shown for both assigned ratings and review text sentiment, and demonstrated both between (experts vs. novices) and within reviewers (expert vs. pre-expert). Two experiments replicate the main effect and provide support for the attribute-based explanation. Field studies demonstrate two major consequences of the restraint-ofexpertise effect. (i) Reviewing experts (vs. novices), as a whole, have less impact on the aggregate valence metric, which is known to affect page-rank and consumer consideration. (ii) Experts systematically benefit and harm service providers with their ratings. For service providers that generally provide mediocre (excellent) experiences, reviewing experts assign significantly higher (lower) ratings than novices. This research provides important caveats to the existing marketing practice of service providers incentivizing reviewing experts and provides strategic implications for how platforms should adopt rating scales and aggregate ratings.
+C1 [Nguyen, Peter] Miami Univ, Mkt, Oxford, OH 45056 USA.
+   [Wang, Xin (Shane)] Western Univ, Ivey Business Sch, Mkt & Stat, London, ON N6G 0N1, Canada.
+   [Wang, Xin (Shane)] Western Univ, Ivey Business Sch, London, ON N6G 0N1, Canada.
+   [Li, Xi] City Univ Hong Kong, Mkt, Kowloon Tong, Hong Kong, Peoples R China.
+   [Cotte, June] Western Univ, Ivey Business Sch, Scott & Melissa Beattie Professorship Mkt, Mkt, London, ON N6G 0N1, Canada.
+C3 University System of Ohio; Miami University; Western University
+   (University of Western Ontario); Western University (University of
+   Western Ontario); City University of Hong Kong; Western University
+   (University of Western Ontario)
+RP Nguyen, P (corresponding author), Miami Univ, Mkt, Oxford, OH 45056 USA.
+EM pnguyen@miamioh.edu; xwang@ivey.ca; xili44@cityu.edu.hk; jcotte@ivey.ca
+RI Cotte, June/HKW-4643-2023
+OI Cotte, June/0000-0003-0770-8338; Nguyen, Peter/0000-0002-8690-0223; Li,
+   Xi/0000-0002-7081-0880
+FU Social Sciences and Humanities Research Council [435-2019-0597]
+FX This work was supported by the Social Sciences and Humanities Research
+   Council (435-2019-0597). Supplementary materials are included in the web
+   appendix accompanying the online version of this article.
+NR 63
+TC 28
+Z9 30
+U1 13
+U2 197
+PU OXFORD UNIV PRESS INC
+PI CARY
+PA JOURNALS DEPT, 2001 EVANS RD, CARY, NC 27513 USA
+SN 0093-5301
+EI 1537-5277
+J9 J CONSUM RES
+JI J. Consum. Res.
+PD FEB
+PY 2021
+VL 47
+IS 5
+BP 654
+EP 674
+DI 10.1093/jcr/ucaa037
+PG 21
+WC Business
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA RJ0JA
+UT WOS:000637288400003
+OA Green Submitted, Bronze
+DA 2026-03-15
+ER
+
+PT J
+AU Lakhani, T
+   Ouyang, C
+AF Lakhani, Tashlin
+   Ouyang, Can
+TI Chain Affiliation and Human Resource Investments: Evidence from the
+   Restaurant Industry
+SO ORGANIZATION SCIENCE
+LA English
+DT Article
+DE organizational routines; strategic human resource management; strategy
+   and firm performance; surveys
+ID FIRM PERFORMANCE; QUIT RATES; COMPETITIVE ADVANTAGE; ORGANIZATIONAL
+   FORM; EMPLOYMENT SYSTEMS; LABOR STANDARDS; MANAGEMENT; OWNERSHIP;
+   TURNOVER; GROWTH
+AB Drawing on organizational theory, agency theory, and research in strategic human resource management, this study explores how chain affiliation influences human resource (HR) investments using data from a nationally random survey of restaurant establishments. We propose that chain-affiliated units will make different investments in those areas of the HR system where chains establish superior organizational routines compared with nonaffiliated units. By contrast, we argue that in the absence of chain routines, ownership incentives will drive differences in human resource investments. Specifically, we find that franchisee-owned units focus more on cost reduction by underinvesting in human resource practices compared with company-owned units and independently owned units when organizational routines are not provided by the chain. We provide further support for our theoretical arguments using additional data on multiunit ownership and franchisor influence. Finally, we conduct supplemental analyses to explore the relationship between different human resource investments and two important organizational outcomes: employee turnover and customer satisfaction ratings from Yelp. Our results highlight the types of human resource practices that are important for service work and suggest that the provision of organizational routines can have important implications for the long-run success of chains and their units.
+C1 [Lakhani, Tashlin] Cornell Univ, SC Johnson Coll Business, Nolan Sch Hotel Adm, Ithaca, NY 14853 USA.
+   [Ouyang, Can] Shanghai Jiao Tong Univ, Antai Coll Econ & Management, Shanghai 200030, Peoples R China.
+C3 Cornell University; Shanghai Jiao Tong University
+RP Lakhani, T (corresponding author), Cornell Univ, SC Johnson Coll Business, Nolan Sch Hotel Adm, Ithaca, NY 14853 USA.
+EM lakhani@cornell.edu; ouyangcan@sjtu.edu.cn
+OI Ouyang, Can/0000-0002-4739-054X
+FU Center for Advanced Human Resource Studies, Cornell University;
+   Rockefeller Foundation
+FX Financial support from the Center for Advanced Human Resource Studies,
+   Cornell University; and the Rockefeller Foundation is gratefully
+   acknowledged.
+NR 100
+TC 8
+Z9 12
+U1 11
+U2 87
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7039
+J9 ORGAN SCI
+JI Organ Sci.
+PD NOV-DEC
+PY 2022
+VL 33
+IS 6
+BP 2209
+EP 2225
+DI 10.1287/orsc.2021.1539
+EA JAN 2022
+PG 17
+WC Management
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA G0SU7
+UT WOS:000744657500001
+DA 2026-03-15
+ER
+
+PT J
+AU Gutt, D
+   Herrmann, P
+   Rahman, MS
+AF Gutt, Dominik
+   Herrmann, Philipp
+   Rahman, Mohammad S.
+TI Crowd-Driven Competitive Intelligence: Understanding the Relationship
+   Between Local Market Competition and Online Rating Distributions
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Article
+DE local market competition; online ratings; online offline interplay;
+   geographic heterogeneity; competitive market intelligence
+ID WORD-OF-MOUTH; DIFFERENTIATION; IDENTITY; REVIEWS; QUALITY
+AB Crowdsourced online mean ratings of local businesses are increasingly being used to infer the market power of a business. An important consideration in making this inference is whether two identically rated businesses (e.g., 4 stars) encounter the same local competitive dynamics if they face contrasting local market competition. Stated differently, this requires investigating if the key distributional properties of mean ratings in a market change with competition. To this end, we combine demographic, socioeconomic, and Yelp restaurant review data for 372 isolated markets in the United States. Our empirical estimates demonstrate that an increase in overall competition-measured as total number of businesses in a market-leads to a broader range and to a decrease in the average of a market's mean rating distribution. The implication is that a larger market has proportionately more lower-rated restaurants, whereas higher-rated restaurants have relatively fewer comparable substitutes and face less competition in such a market. These effects are particularly pronounced when the analysis is limited to specific cuisine types where vertical differentiation is more natural or when we control for city-specific unobserved heterogeneity. Our findings highlight that practitioners and scholars using online mean ratings of businesses from disparate markets should account for the local market structure to judiciously analyze the relative market power of a business.
+C1 [Gutt, Dominik] Paderborn Univ, D-33098 Paderborn, Germany.
+   [Herrmann, Philipp] Horn & Co, D-40221 Dusseldorf, Germany.
+   [Rahman, Mohammad S.] Purdue Univ, W Lafayette, IN 47907 USA.
+C3 University of Paderborn; Purdue University System; Purdue University
+RP Gutt, D (corresponding author), Paderborn Univ, D-33098 Paderborn, Germany.
+EM dominik.gutt@uni-paderborn.de; philipp_herrmann@hotmail.de;
+   mrahman@purdue.edu
+RI Gutt, Dominik/AAE-1075-2020; Rahman, Mohammad/JXY-5745-2024
+FU German Research Foundation [160364472-SFB901]
+FX This work was partially supported by the German Research Foundation
+   [Collaborative Research Center 901 "On-The-Fly Computing" Project
+   160364472-SFB901].
+NR 35
+TC 15
+Z9 20
+U1 2
+U2 99
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD SEP
+PY 2019
+VL 30
+IS 3
+BP 980
+EP 994
+DI 10.1287/isre.2019.0845
+PG 15
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA JB0VU
+UT WOS:000488276800016
+OA Green Published
+DA 2026-03-15
+ER
+
+PT J
+AU Kim, S
+   Lee, S
+   McCulloch, R
+AF Kim, Sunghoon
+   Lee, Sanghak
+   McCulloch, Robert
+TI A Topic-Based Segmentation Model for Identifying Segment-Level Drivers
+   of Star Ratings from Unstructured Text Reviews
+SO JOURNAL OF MARKETING RESEARCH
+LA English
+DT Article
+DE model-based segmentation; group variable selection; unstructured text
+   reviews; latent class regression; Bayesian analysis; topic-based model
+ID BAYESIAN VARIABLE SELECTION; MIXTURE; METHODOLOGY; LIKELIHOOD
+AB Online reviews provide rich information on customer satisfaction, displaying various numeric ratings as well as detailed explanations presented in written form. However, analyzing such data is challenging due to the unstructured nature of text. This article introduces a novel machine-learning method for identifying interpretable key drivers of star ratings from text reviews, which might vary across segments. By adopting the Ising model prior to account for dependence between words, the model simultaneously achieves segmentation, identifies segment-level key topics (i.e., groups of frequently co-occurring words), and estimates the impacts of the selected words on the ratings. The authors first demonstrate that the proposed model successfully identifies segment-specific key drivers of customer satisfaction using illustrative simulated review data. Then, the authors utilize real-world reviews from Yelp for empirical applications. When applied to online reviews of 5,241 Arizona-based restaurants, the model identifies three distinct restaurant segments, each characterized by three to five important topics. The model's performance is evaluated against six benchmark models, encompassing various topic models and latent class regression with variable selection. The comparison results emphasize the proposed model's unique advantages in prediction, interpretability, and handling heterogeneity. Additionally, the authors demonstrate the applicability of the model in examining customer segmentation for individual restaurants.
+C1 [Kim, Sunghoon] Rutgers State Univ, Rutgers Business Sch, Mkt, Newark, NJ 07102 USA.
+   [Lee, Sanghak] Arizona State Univ, Mkt, Tempe, AZ USA.
+   [McCulloch, Robert] ArizonaState Univ, Stat, Tempe, AZ USA.
+C3 Rutgers University System; Rutgers University Newark; Rutgers University
+   New Brunswick; Arizona State University; Arizona State University-Tempe
+RP Kim, S (corresponding author), Rutgers State Univ, Rutgers Business Sch, Mkt, Newark, NJ 07102 USA.
+EM Sunghoon.Kim@rutgers.edu; sanghak.lee@asu.edu; Robert.McCulloch@asu.edu
+RI Lee, Sanghak/AHD-1087-2022
+OI Lee, Sanghak/0000-0002-5883-5065
+NR 69
+TC 4
+Z9 4
+U1 21
+U2 135
+PU SAGE PUBLICATIONS INC
+PI THOUSAND OAKS
+PA 2455 TELLER RD, THOUSAND OAKS, CA 91320 USA
+SN 0022-2437
+EI 1547-7193
+J9 J MARKETING RES
+JI J. Mark. Res.
+PD DEC
+PY 2024
+VL 61
+IS 6
+BP 1132
+EP 1151
+DI 10.1177/00222437241246752
+EA JUN 2024
+PG 20
+WC Business
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA L0J2H
+UT WOS:001242361100001
+DA 2026-03-15
+ER
+
+PT J
+AU Chakraborty, I
+   Kim, M
+   Sudhir, K
+AF Chakraborty, Ishita
+   Kim, Minkyung
+   Sudhir, K.
+TI Attribute Sentiment Scoring with Online Text Reviews: Accounting for
+   Language Structure and Missing Attributes
+SO JOURNAL OF MARKETING RESEARCH
+LA English
+DT Article
+DE text mining; convolutional neural networks; long-short term memory
+   (LSTM); deep learning; endogeneity; missing data; online reviews;
+   customer satisfaction
+ID WORD-OF-MOUTH; PRODUCT; PERFORMANCE; REPUTATION; WISDOM; IMPACT; MATTER;
+   SALES
+AB The authors address two significant challenges in using online text reviews to obtain fine-grained, attribute-level sentiment ratings. First, in contrast to methods that rely on word frequency, they develop a deep learning convolutional-long short-term memory hybrid model to account for language structure. The convolutional layer accounts for spatial structure (adjacent word groups or phrases), and long short-term memory accounts for the sequential structure of language (sentiment distributed and modified across nonadjacent phrases). Second, they address the problem of missing attributes in text when constructing attribute sentiment scores, as reviewers write about only a subset of attributes and remain silent on others. They develop a model-based imputation strategy using a structural model of heterogeneous rating behavior. Using Yelp restaurant review data, they show superior attribute sentiment scoring accuracy with their model. They identify three reviewer segments with different motivations: status seeking, altruism/want voice, and need to vent/praise. Surprisingly, attribute mentions in reviews are driven by the need to inform and vent/praise rather than by attribute importance. The heterogeneous model-based imputation performs better than other common imputations and, importantly, leads to managerially significant corrections in restaurant attribute ratings. More broadly, the results suggest that social science research should pay more attention to reducing measurement error in variables constructed from text.
+C1 [Chakraborty, Ishita] Univ Wisconsin Madison, Thomas & Charlene Landsberg Smith Fac Fellow, Wisconsin Sch Business, Mkt, Madison, WI 53706 USA.
+   [Kim, Minkyung] Univ North Carolina, Kenan Flagler Business Sch, Mkt, Chapel Hill, NC USA.
+   [Sudhir, K.] Yale Univ, Yale Sch Management, Mkt & Director China India Insights Program, New Haven, CT 06520 USA.
+C3 University of Wisconsin System; University of Wisconsin Madison;
+   University of North Carolina; University of North Carolina Chapel Hill;
+   Yale University
+RP Chakraborty, I (corresponding author), Univ Wisconsin Madison, Thomas & Charlene Landsberg Smith Fac Fellow, Wisconsin Sch Business, Mkt, Madison, WI 53706 USA.
+EM ishita.chakraborty@wisc.edu; ishita.chakraborty@wisc.edu;
+   k.sudhir@yale.edu
+RI ; Chakraborty, Ishita/GLS-0712-2022; Sudhir, K./A-1616-2012
+OI Kim, Minkyung/0000-0002-4852-6808; 
+NR 65
+TC 48
+Z9 73
+U1 30
+U2 252
+PU SAGE PUBLICATIONS INC
+PI THOUSAND OAKS
+PA 2455 TELLER RD, THOUSAND OAKS, CA 91320 USA
+SN 0022-2437
+EI 1547-7193
+J9 J MARKETING RES
+JI J. Mark. Res.
+PD JUN
+PY 2022
+VL 59
+IS 3
+BP 600
+EP 622
+AR 00222437211052500
+DI 10.1177/00222437211052500
+EA JAN 2022
+PG 23
+WC Business
+WE Social Science Citation Index (SSCI)
+SC Business & Economics
+GA 0X7ME
+UT WOS:000739431700001
+DA 2026-03-15
+ER
+
+PT J
+AU Tang, C
+   Li, SB
+   Ding, Y
+   Gopal, RD
+   Zhang, GL
+AF Tang, Chuang
+   Li, Shaobo (Kevin)
+   Ding, Yi
+   Gopal, Ram D.
+   Zhang, Guanglei
+TI Racial Discrimination and Anti-discrimination: The COVID-19 Pandemic's
+   Impact on Chinese Restaurants in North America
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Article
+DE COVID-19 pandemic; racial discrimination; anti-discrimination; Chinese
+   restaurant
+ID INTEGRATED THREAT THEORY; INTERGROUP CONTACT; COLLECTIVE ACTION; SOCIAL
+   IDENTITY; ONLINE REVIEWS; ATTITUDES; SALES; BLACK; ANTIRACISM; RACE
+AB The coronavirus disease 2019 (COVID-19) pandemic has led to an increase in cases of racial discrimination against Asians, especially Chinese people. Despite an emerging stream of studies investigating various aspects of the COVID-19 pandemic, research on the behavioral consequences of racial discrimination during the pandemic remains scarce. In this work, we examined how racial discrimination stemming from the COVID-19 pandemic and subsequent anti-discrimination were manifested on online platforms. By combining difference-in-differences analyses on two large-scale panel data sets from Yelp.com and SafeGraph and two controlled experiments, we explored the impact of COVID-19 on Chinese restaurants relative to non-Chinese restaurants at different phases of the COVID19 pandemic. We found that the COVID-19 pandemic led to an immediate increase in racial discrimination, which was reflected in a significant drop in the customer patronage frequency of Chinese restaurants as compared with that of non-Chinese restaurants. Furthermore, analyses using multiple behavioral indicators generated by text mining and machine learning techniques consistently suggested that increased discrimination triggered anti-discrimination actions of customers on online platforms after the COVID-19 outbreak. This study contributes to the literature on racial discrimination by investigating a subtle but more factual form of racial discrimination evidenced by the customer patronage of Chinese restaurants as well as user-generated content by demonstrating that consumers can fight discrimination on online platforms.
+C1 [Tang, Chuang] Peking Univ, HSBC Business Sch, Shenzhen 518055, Peoples R China.
+   [Li, Shaobo (Kevin)] Southern Univ Sci & Technol, SUSTech Business Sch, Div Informat Syst & Management Engn, Shenzhen 518055, Peoples R China.
+   [Ding, Yi; Gopal, Ram D.] Univ Warwick, Warwick Business Sch, Coventry CV4 7AL, England.
+   [Zhang, Guanglei] Wuhan Univ Technol, Sch Management, Wuhan 430070, Peoples R China.
+C3 Peking University Shenzhen Graduate School (PKU Shenzhen); Peking
+   University; Southern University of Science & Technology; University of
+   Warwick; Wuhan University of Technology
+RP Li, SB (corresponding author), Southern Univ Sci & Technol, SUSTech Business Sch, Div Informat Syst & Management Engn, Shenzhen 518055, Peoples R China.; Zhang, GL (corresponding author), Wuhan Univ Technol, Sch Management, Wuhan 430070, Peoples R China.
+EM chuang.tang@phbs.pku.edu.cn; lisb3@sustech.edu.cn; Y.Ding.1@wbs.ac.uk;
+   Ram.Gopal@wbs.ac.uk; zhangguanglei@whut.edu.cn
+RI Li, Shaobo/GWH-1645-2022; ZHANG, GUANGLEI/JFJ-3175-2023; Gopal,
+   Ram/M-9077-2019
+OI Li, Shaobo/0000-0001-5676-0429; Tang, Chuang/0000-0001-7905-3081; 
+FU Basic and Applied Basic Research Foundation of Guangdong Province
+   [2023A1515010823]; National Natural Science Foun-dation of China
+   [72102099, 71832010]
+FX Funding: The authors are grateful for the financial support of the Basic
+   and Applied Basic Research Foundation of Guangdong Province [Grant
+   2023A1515010823] ; the National Natural Science Foun-dation of China
+   [Grants 72102099 and 71832010] .
+NR 91
+TC 4
+Z9 5
+U1 19
+U2 113
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD SEP
+PY 2024
+VL 35
+IS 3
+BP 1274
+EP 1295
+DI 10.1287/isre.2021.0568
+EA OCT 2023
+PG 23
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA I1U9V
+UT WOS:001099257200001
+DA 2026-03-15
+ER
+
+PT J
+AU Kitchens, B
+   Kumar, A
+   Pathak, P
+AF Kitchens, Brent
+   Kumar, Anuj
+   Pathak, Praveen
+TI Electronic Markets and Geographic Competition Among Small, Local Firms
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Article
+DE geographic competition; electronic markets; dynamic panel model;
+   horizontal and vertical differentiation
+ID PRICE-COMPETITION; SEARCH COSTS; INTERNET; IMPACT
+AB We study the impact of electronic markets on small, boutique firms selling presence goods or services-goods or services that must be consumed at the selling firm's location. These firms have recently begun to compete on electronic markets by selling goods and services through local daily deal sites, such as Groupon and LivingSocial. We extract publicly available activity and spatial information from Groupon, LivingSocial, Google Maps, and Flickr to construct a unique panel data set to study daily deals offered by restaurants and spa vendors in geographical clusters of concentration in 167 distinct cities. This data set allows us to examine the effect of location on the competition vendors face in electronic markets. We find that as vendors in a particular geographical cluster participate in electronic markets, local competition increases and other vendors in that cluster join the electronic market and deepen discounts in response. However, vendors in other clusters in the same city remain relatively unaffected. We further analyze vendor ratings from Yelp and other infomediaries, to show that lesser known and low-quality vendors utilize the advertising effect of electronic markets to increase their awareness among customers. We further test the moderating effect of horizontal and vertical differentiation among firms in geographical clusters on competition in electronic markets, using measures extracted from UrbanSpoon.com. We find that clusters having lower differentiation experience higher competitive effects of firms joining the electronic market. Our findings provide empirical validation of the analytical results in existing literature in an important and understudied context: competition among small businesses selling presence goods and services. Our results have implications for firms and electronic market platforms.
+C1 [Kitchens, Brent] Univ Virginia, McIntire Sch Commerce, Charlottesville, VA 22904 USA.
+   [Kumar, Anuj; Pathak, Praveen] Univ Florida, Warrington Coll Business, Gainesville, FL 32611 USA.
+C3 University of Virginia; State University System of Florida; University
+   of Florida
+RP Kitchens, B (corresponding author), Univ Virginia, McIntire Sch Commerce, Charlottesville, VA 22904 USA.
+EM brent.kitchens@comm.virginia.edu; anuj.kumar@warrington.ufl.edu;
+   praveen.pathak@warrington.ufl.edu
+NR 42
+TC 22
+Z9 27
+U1 4
+U2 78
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD DEC
+PY 2018
+VL 29
+IS 4
+BP 928
+EP 946
+DI 10.1287/isre.2017.0754
+PG 19
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA HL2FZ
+UT WOS:000458521100009
+DA 2026-03-15
+ER
+
+PT J
+AU Mejia, J
+   Mankad, S
+   Gopal, A
+AF Mejia, Jorge
+   Mankad, Shawn
+   Gopal, Anandasivam
+TI A for Effort? Using the Crowd to Identify Moral Hazard in New York City
+   Restaurant Hygiene Inspections
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Article
+DE hygiene inspections; moral hazard; online reviews; machine learning;
+   restaurants; information systems; public health
+ID WORD-OF-MOUTH; ONLINE REVIEWS; FOOD SAFETY; FOODBORNE ILLNESS; BIG DATA;
+   INFORMATION; SENTIMENT; BUSINESS; QUALITY; MARKET
+AB From an upset stomach to a life-threatening foodborne illness, getting sick is all too common after eating in restaurants. Although health inspection programs are designed to protect consumers, such inspections typically occur at wide intervals of time, allowing restaurant hygiene to remain unmonitored in the interim periods. Information provided in online reviews may be effectively used in these interim periods to gauge restaurant hygiene. In this paper, we use textual information from online reviews of restaurants to effectively identify cases of hygiene violations in restaurants, even after the restaurants have been inspected and certified, thereby identifying moral hazard. Using a data set of restaurant hygiene inspections in New York City from 2010 through 2016 and the associated set of online reviews for the same set of restaurants from Yelp, we use supervised machine learning techniques to develop a hygiene dictionary specifically crafted to identify hygiene-related concerns. The use of this dictionary and the related word counts in online reviews allows us to identify systematic instances of moral hazard, wherein restaurants with positive hygiene inspection scores are seen to regress in their hygiene maintenance within 90 days of receiving the inspection scores. To the extent that social media provide some visibility into the hygiene practices of restaurants, we argue that the effects of information asymmetry that lead to moral hazard may be partially mitigated in this context. Based on our work, we also provide strategies for how cities and policymakers may design effective restaurant inspection programs, through a combination of traditional inspections and the appropriate use of social media.
+C1 [Mejia, Jorge] Indiana Univ, Kelley Sch Business, Bloomington, IN 47405 USA.
+   [Mankad, Shawn] Cornell Univ, Samuel Curtis Johnson Grad Sch Management, Ithaca, NY 14853 USA.
+   [Gopal, Anandasivam] Univ Maryland, Robert H Smith Sch Business, College Pk, MD 20742 USA.
+C3 Indiana University System; IU Kelley School of Business; Indiana
+   University Bloomington; Cornell University; University System of
+   Maryland; University of Maryland College Park
+RP Mejia, J (corresponding author), Indiana Univ, Kelley Sch Business, Bloomington, IN 47405 USA.
+EM jmmejia@iu.edu; spm263@cornell.edu; agopal@rhsmith.umd.edu
+RI Gopal, Anandasivam/KHD-1654-2024; Mankad, Shawn/OUI-9351-2025; Mejia,
+   Jorge/Y-9183-2019
+OI Gopal, Anandasivam/0000-0001-9270-5961; Mankad,
+   Shawn/0000-0001-7945-8556; Mejia, Jorge/0000-0002-4479-1209
+NR 115
+TC 22
+Z9 33
+U1 10
+U2 108
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD DEC
+PY 2019
+VL 30
+IS 4
+BP 1363
+EP 1386
+DI 10.1287/isre.2019.0866
+PG 24
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA JX6HZ
+UT WOS:000503834900013
+OA Green Submitted
+DA 2026-03-15
+ER
+
+PT J
+AU Huang, N
+   Hong, YL
+   Burtch, G
+AF Huang, Ni
+   Hong, Yili
+   Burtch, Gordon
+TI SOCIAL NETWORK INTEGRATION AND USER CONTENT GENERATION: EVIDENCE FROM
+   NATURAL EXPERIMENTS
+SO MIS QUARTERLY
+LA English
+DT Article
+DE Social network integration; online reviews; natural experiment;
+   difference-in-differences; text analytics
+ID COMPUTER-MEDIATED COMMUNICATION; WORD-OF-MOUTH; ONLINE PRODUCT REVIEWS;
+   DECISION-MAKING; INFORMATION PRIVACY; NEGATIVITY BIAS; ANONYMITY;
+   BEHAVIOR; EXPRESSION; IMPACT
+AB This study examines how social network integration (i.e., integration of online platforms with other social media services, for example, with Facebook or Twitter) can affect the characteristics of user-generated content (volume and linguistic features) in the context of online reviews. Building on the social presence theory, we propose a number of hypotheses on how social network integration affects review volume and linguistic features of review text. We consider two natural experiments at leading online review platforms (Yelp.com and TripAdvisor.com), wherein each implemented a social network integration with Facebook. Constructing a unique panel dataset of online reviews for a matched set of restaurants across the two review sites, we estimate a difference-in-differences (DID) model to assess the impact of social network integration. We find that integration with Facebook increased the production of user-generated content and positive emotion in review text, while simultaneously decreasing cognitive language, negative emotion, and expressions of disagreement (negations) in review text. Our findings demonstrate that social network integration works as a double-edged sword. On the one hand, integration provides benefits in terms of increased review quantity. On the other hand, these benefits appear to come at the cost of reduced review quality, given past research which has found that positive, emotional reviews are perceived by users to be less helpful. We discuss the implications of these results as they relate to the creation of sustainable online social platforms for user content generation.
+C1 [Huang, Ni; Hong, Yili] Arizona State Univ, WP Carey Sch Business, 300 E Lemon St, Tempe, AZ 85287 USA.
+   [Burtch, Gordon] Univ Minnesota, Carlson Sch Management, 321 19th Ave South, Minneapolis, MN 55455 USA.
+C3 Arizona State University; Arizona State University-Tempe; University of
+   Minnesota System; University of Minnesota Twin Cities
+RP Huang, N (corresponding author), Arizona State Univ, WP Carey Sch Business, 300 E Lemon St, Tempe, AZ 85287 USA.
+EM ni.huang@asu.edu; hong@asu.edu; gburtch@umn.edu
+RI Burtch, Gordon/HGC-4042-2022; Hong, Yili/M-6093-2016
+OI Huang, Ni/0000-0003-3416-513X; Hong, Yili/0000-0002-0577-7877
+FU NET Institute [15-04]; Fox School of Business, Temple University
+FX The authors thank the senior editor, Sulin Ba, and the review team for a
+   most constructive and developmental review process. The authors also
+   thank Paul Pavlou, Susan Mudambi, and participants at the NET Institute
+   Conference and International Conference on Information Systems for
+   valuable feedback. The authors acknowledge financial support from the
+   NET Institute (# 15-04) and the Young Scholar's Forum of Fox School of
+   Business, Temple University.
+NR 136
+TC 147
+Z9 200
+U1 19
+U2 457
+PU SOC INFORM MANAGE-MIS RES CENT
+PI MINNEAPOLIS
+PA UNIV MINNESOTA-SCH MANAGEMENT 271 19TH AVE SOUTH, MINNEAPOLIS, MN 55455
+   USA
+SN 0276-7783
+J9 MIS QUART
+JI MIS Q.
+PD DEC
+PY 2017
+VL 41
+IS 4
+BP 1035
+EP +
+PG 33
+WC Computer Science, Information Systems; Information Science & Library
+   Science; Management
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Computer Science; Information Science & Library Science; Business &
+   Economics
+GA FL5GD
+UT WOS:000414259900002
+DA 2026-03-15
+ER
+
+PT J
+AU Alyakoob, M
+   Rahman, MS
+AF Alyakoob, Mohammed
+   Rahman, Mohammad S.
+TI Shared Prosperity (or Lack Thereof) in the Sharing Economy
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Article
+DE sharing economy; spillover effects; employment growth; racial disparity
+ID BUSINESS; DISCRIMINATION; MINORITY; ACCESS
+AB This paper examines the potential economic spillover effects of a home-sharing platform-Airbnb-on the growth of a complimentary local service-restaurants. By circumventing traditional land-use regulations and providing access to underutilized inventory, Airbnb attracts visitors to locales that are not traditional tourist destinations. Although visitors generally bring significant spending power, it is unclear whether visitors use Airbnb primarily for lodging and thus do not contribute to the adjacent economy. To evaluate this, we focus on the impact of Airbnb on the restaurant employment growth across locales in New York City (NYC). Specifically, we focus on areas in NYC that did not attract a significant tourist volume prior to the emergence of a home-sharing service. Our results indicate a salient and economically significant positive spillover effect on restaurant job growth in an average NYC locality. A one-percentage-point increase in the intensity of Airbnb activity (Airbnb reviews per household) leads to approximately 1.7% restaurant employment growth. Since home-sharing visitors are lodging in areas that are not accustomed to tourists, we also investigate the demographic and market-structure-related heterogeneity of our results. Notably, restaurants in areas with a relatively high number of White residents disproportionately benefit from the economic spillover of Airbnb activity, whereas the impact in majority Black areas is not statistically significant. We validate the underlying mechanism behind the results by evaluating the impact of Airbnb on Yelp visitor reviews, revealing that areas with increased Airbnb activity experience a surge in their share of NYC visitor reviews. This result is further validated by evaluating the impact of a unique Airbnb neighborhood-level exogenous policy recently implemented in New Orleans.
+C1 [Alyakoob, Mohammed] Univ Southern Calif, Marshall Sch Business, Los Angeles, CA 90089 USA.
+   [Rahman, Mohammad S.] Purdue Univ, Krannert Sch Management, W Lafayette, IN 47907 USA.
+C3 University of Southern California; Purdue University System; Purdue
+   University
+RP Alyakoob, M (corresponding author), Univ Southern Calif, Marshall Sch Business, Los Angeles, CA 90089 USA.
+EM alyakoob@marshall.usc.edu; mrahman@purdue.edu
+RI Rahman, Mohammad/JXY-5745-2024
+NR 38
+TC 37
+Z9 49
+U1 9
+U2 107
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD JUN
+PY 2022
+VL 33
+IS 2
+BP 638
+EP 658
+DI 10.1287/isre.2021.1076
+EA JAN 2022
+PG 22
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA 3G0UK
+UT WOS:000754428700001
+DA 2026-03-15
+ER
+
+PT J
+AU Chen, PY
+   Hong, YL
+   Liu, Y
+AF Chen, Pei-Yu
+   Hong, Yili
+   Liu, Ying
+TI The Value of Multidimensional Rating Systems: Evidence from a Natural
+   Experiment and Randomized Experiments
+SO MANAGEMENT SCIENCE
+LA English
+DT Article
+DE multidimensional rating systems; natural experiment;
+   difference-in-differences; multimethod research; product quality;
+   consumer preference; rating informativeness; priming effect
+ID WORD-OF-MOUTH; ONLINE PRODUCT REVIEWS; EXPECTATION-CONFIRMATION;
+   SATISFACTION; MODELS; SALES; CONSEQUENCES; ANTECEDENTS; UNCERTAINTY;
+   CONTINUANCE
+AB Online product ratings offer information on product quality. Scholars have recently proposed the potential of designing multidimensional rating systems to better convey information on multiple dimensions of products. This study investigates whether and how multidimensional rating systems affect consumer satisfaction (measured by product ratings), based on both observational data and two randomized experiments. Our identification strategy of the observational study hinges on a natural experiment on TripAdvisor when the website started to allow consumers to rate multiple dimensions of the restaurants, as opposed to only providing an overall rating, in January 2009. We further obtain rating data on the same set of restaurants from Yelp, which controls for the unobserved restaurant quality over time and allows us to identify the causal effect using a difference-in-differences approach. Results from the econometric analyses show that ratings in a single-dimensional rating system have a downward trend and a higher dispersion, whereas ratings in a multidimensional rating system are significantly higher and convergent. Findings from two randomized experiments suggest that the multidimensional rating system helps consumers find products that better fit their preferences and increases the confidence of their choices. We also show that the observed results cannot be explained by the priming effect due to rating system interface or a list of other alternative explanations. The combined evidence from the natural experiment and randomized experiments support the view that the multidimensional rating system enhances rating informativeness and provide implications for designing online rating systems that help consumers match their preferences with product attributes.
+C1 [Chen, Pei-Yu; Hong, Yili; Liu, Ying] Arizona State Univ, WP Carey Sch Business, Dept Informat Syst, Tempe, AZ 85287 USA.
+C3 Arizona State University; Arizona State University-Tempe
+RP Chen, PY (corresponding author), Arizona State Univ, WP Carey Sch Business, Dept Informat Syst, Tempe, AZ 85287 USA.
+EM peiyu.chen@asu.edu; hong@asu.edu; yingliu_is@asu.edu
+RI Hong, Yili/M-6093-2016
+OI Hong, Yili/0000-0002-0577-7877; Chen, Pei-yu/0000-0002-1937-9159
+NR 56
+TC 115
+Z9 156
+U1 17
+U2 181
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 0025-1909
+EI 1526-5501
+J9 MANAGE SCI
+JI Manage. Sci.
+PD OCT
+PY 2018
+VL 64
+IS 10
+BP 4629
+EP 4647
+DI 10.1287/mnsc.2017.2852
+PG 19
+WC Management; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Business & Economics; Operations Research & Management Science
+GA GW0UB
+UT WOS:000446583800011
+DA 2026-03-15
+ER
+
+PT J
+AU Wang, L
+   Gopal, R
+   Shankar, R
+   Pancras, J
+AF Wang, Lei
+   Gopal, Ram
+   Shankar, Ramesh
+   Pancras, Joseph
+TI Forecasting venue popularity on location-based services using
+   interpretable machine learning
+SO PRODUCTION AND OPERATIONS MANAGEMENT
+LA English
+DT Article
+DE interpretable machine learning; location-based services; SHAP (Shapley
+   Additive exPlanations) value; user engagement; venue popularity
+   prediction
+ID REVIEWS; NETWORK; IMPACT
+AB Customers are increasingly utilizing location-based services via mobile devices to engage with retail establishments. The focus of this paper is to identify factors that help to drive venue popularity revealed by location-based services, which then better facilitate companies' operational decisions, such as procurement and staff scheduling. Using data collected from Foursquare and Yelp, we build, evaluate, and compare a wide variety of machine learning methods including deep learning models with varying characteristics and degrees of sophistication. First, we find that support vector regression is the best performing model compared to other complex predictive algorithms. Second, we apply SHAP (Shapley Additive exPlanations) to quantify the contribution from each business feature at both the global and local levels. The global interpretability results show that customer loyalty, the agglomeration effect, and the word-of-mouth effect are the top three drivers of venue popularity. Furthermore, the local interpretability analysis reveals that the contributions of business features vary, both quantitatively and directionally. Our findings are robust with respect to different popularity measures, training and testing periods, and prediction horizons. These findings extend our knowledge of location-based services by demonstrating their potential to play a prominent role in attracting consumer engagement and boosting venue popularity. Managers can make better operational decisions such as procurement and staff scheduling based on these more accurate venue popularity prediction methods. Furthermore, this study also highlights the importance of model interpretability which enhances the ability of managers to more effectively utilize machine learning models for effective decision-making.
+C1 [Wang, Lei] Penn State Univ, Smeal Coll Business, 426 Business Bldg, University Pk, PA 16802 USA.
+   [Gopal, Ram] Univ Warwick, Warwick Business Sch, Coventry, W Midlands, England.
+   [Gopal, Ram] Univ Warwick, Alan Turing Inst, Coventry, W Midlands, England.
+   [Shankar, Ramesh; Pancras, Joseph] Univ Connecticut, Sch Business, Storrs, CT USA.
+C3 Pennsylvania Commonwealth System of Higher Education (PCSHE);
+   Pennsylvania State University; Pennsylvania State University -
+   University Park; University of Warwick; Alan Turing Institute;
+   University of Warwick; University of Connecticut
+RP Wang, L (corresponding author), Penn State Univ, Smeal Coll Business, 426 Business Bldg, University Pk, PA 16802 USA.
+EM luw21@smeal.psu.edu
+OI Wang, Lei/0000-0001-5531-9340; Shankar, Ramesh/0000-0002-3941-9779
+FU Gillmore Centre for Financial Technology at the Warwick Business School
+FX The authors thank Professor Subodha Kumar, the senior editor, and
+   anonymous reviewers for their valuable and constructive suggestions
+   which have significantly improved this research. Ram Gopal gratefully
+   acknowledges support from the Gillmore Centre for Financial Technology
+   at the Warwick Business School.
+NR 54
+TC 21
+Z9 24
+U1 8
+U2 139
+PU SAGE PUBLICATIONS INC
+PI THOUSAND OAKS
+PA 2455 TELLER RD, THOUSAND OAKS, CA 91320 USA
+SN 1059-1478
+EI 1937-5956
+J9 PROD OPER MANAG
+JI Prod. Oper. Manag.
+PD JUL
+PY 2022
+VL 31
+IS 7
+BP 2773
+EP 2788
+DI 10.1111/poms.13727
+EA APR 2022
+PG 16
+WC Engineering, Manufacturing; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED)
+SC Engineering; Operations Research & Management Science
+GA 2W3BH
+UT WOS:000788455300001
+DA 2026-03-15
+ER
+
+PT J
+AU Chen, L
+   Mankad, S
+AF Chen, Li
+   Mankad, Shawn
+TI A Structural Topic and Sentiment-Discourse Model for Text Analysis
+SO MANAGEMENT SCIENCE
+LA English
+DT Article
+DE topic prevalence; topic sentiment; topic discourse; text analysis;
+   Laplace approximation; Poisson regression; nonnegative matrix
+   factorization; machine learning
+ID VARIATIONAL INFERENCE; SEARCH
+AB We consider the common setting where one observes a large number of opinionated text documents and related covariates, such as the text of online reviews along with the date of the review and the author demographic information. In this setting it can be of interest to understand how the covariates determine the text composition, as well as the prevalence, sentiment, and/or discourse of various discussion themes. Yet, most topic modeling methods in the machine learning literature are designed to summarize the text for the purpose of exploratory analysis and not to perform this type of formal statistical inference. Further, topic modeling methods generally do not try to estimate the sentiment or discourse of discussion along separate topics that can be critical in business applications (e.g., for summarizing service or product quality). We develop a topic model called the structural topic and sentiment-discourse (STS) model that introduces a new document-level latent variable that captures the sentiment and/or discourse (termed as "sentiment-discourse") for each topic, which modulates the word frequency within a topic. These latent topic sentiment-discourse variables are controlled by document-level covariates to allow for experimental control and regression analysis. We also introduce new computational methods to resolve scalability issues that have forced previous models to restrict to a small number of categorical covariates. We benchmark the STS model on three real-world data sets from surveys, blogs, and Yelp restaurant reviews around the COVID-19 pandemic. Our model recovers meaningful results including rich insights about how COVID-19 affects online reviews, demonstrating that the STS model can be useful for regression analysis with text data in addition to topic modeling's traditional use of descriptive analysis.
+C1 [Chen, Li] Cornell Univ, Samuel Curtis Johnson Grad Sch Management, Ithaca, NY 14853 USA.
+   [Mankad, Shawn] North Carolina State Univ, Poole Coll Management, Raleigh, NC 27695 USA.
+C3 Cornell University; North Carolina State University
+RP Mankad, S (corresponding author), North Carolina State Univ, Poole Coll Management, Raleigh, NC 27695 USA.
+EM li.chen@cornell.edu; smankad@ncsu.edu
+RI ; Mankad, Shawn/OUI-9351-2025
+OI Mankad, Shawn/0000-0001-7945-8556; Chen, Li/0000-0002-2878-5351
+FX for their helpful feedback. Both authors contributed equally to this
+   research.
+NR 71
+TC 4
+Z9 4
+U1 53
+U2 76
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 0025-1909
+EI 1526-5501
+J9 MANAGE SCI
+JI Manage. Sci.
+PD JUL
+PY 2025
+VL 71
+IS 7
+BP 5767
+EP 5787
+DI 10.1287/mnsc.2022.00261
+EA OCT 2024
+PG 21
+WC Management; Operations Research & Management Science
+WE Science Citation Index Expanded (SCI-EXPANDED); Social Science Citation Index (SSCI)
+SC Business & Economics; Operations Research & Management Science
+GA 5TA5F
+UT WOS:001494840800001
+DA 2026-03-15
+ER
+
+PT J
+AU Bai, X
+   Marsden, JR
+   Ross, WT 
+   Wang, G
+AF Bai, Xue
+   Marsden, James R.
+   Ross, William T., Jr.
+   Wang, Gang
+TI A Note on the Impact of Daily Deals on Local Retailers' Online
+   Reputation: Mediation Effects of the Consumer Experience
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Article
+DE daily deal; electronic word of mouth; mediation; negative externality;
+   mismatch; service; Groupon; text mining
+ID WORD-OF-MOUTH; CUSTOMER SATISFACTION; PHYSICAL-ENVIRONMENT; MODERATING
+   ROLE; PRICE; QUALITY; PROMOTION; REVIEWS; SERVICE; MODEL
+AB This study investigates the impact of daily deals on local retailers' (restaurants') online ratings. We collected and utilized a comprehensive panel data set that combines information on restaurants' deal offerings (Groupon or LivingSocial) with their Yelp review details. Although demonstrating a negative main effect of daily deals on a restaurant's monthly average ratings, we worked to uncover the underlying mechanisms by focusing on the mediating role of consumers' postconsumption perception. Our mediation analyses show that daily deals are associated with the reduction of both consumers' perceived food quality and perceived service quality as revealed in review texts, which leads to subsequent declines in a restaurant's online ratings. We further noted and studied two types of reviews that existed during the deal-redemption period: (1) reviews that mentioned daily deals (DD Reviews) and (2) reviews that did not mention daily deals (NDD Reviews). NDD Reviews are usually from regular customers, whereas DD Reviews are likely from a different base of customers, deal users. Our separate analyses demonstrate differential mediation processes between DD Reviews and NDD Reviews. For DD Reviews, both perceived food and service quality had mediation roles, suggesting a mismatch effect. That is, daily deals attract discount-focused consumers, including new customers, who are less likely to appreciate the food or service and, therefore, leave a negative review. In contrast, for NDD Reviews, only perceived service quality had a mediation role, suggesting a negative externality effect. That is, the large volume of deal redemptions by deal users may induce a longer waiting time (to be seated and/or served) and, thus, reduced perceived service quality for regular customers. These results deepen our understanding of the impact of daily deals on business online reputation and provide important practical guidance to both local retailers and daily deal platforms.
+C1 [Bai, Xue] Temple Univ, Fox Sch Business, Dept Mkt & Supply Chain Management, Dept Management Informat Syst, Philadelphia, PA 19122 USA.
+   [Marsden, James R.] Univ Connecticut, Sch Business, Operat & Informat Management, Storrs, CT 06269 USA.
+   [Ross, William T., Jr.] Univ Connecticut, Sch Business, Mkt Dept, Storrs, CT 06269 USA.
+   [Wang, Gang] Univ Delaware, Alfred Lerner Coll Business & Econ, Accounting & Management Informat Syst, Newark, DE 19716 USA.
+C3 Pennsylvania Commonwealth System of Higher Education (PCSHE); Temple
+   University; University of Connecticut; University of Connecticut;
+   University of Delaware
+RP Marsden, JR (corresponding author), Univ Connecticut, Sch Business, Operat & Informat Management, Storrs, CT 06269 USA.
+EM xue@temple.edu; james.marsden@business.uconn.edu; gangw@udel.edu
+RI Ross, William/KXR-8430-2024
+NR 51
+TC 40
+Z9 47
+U1 10
+U2 164
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD DEC
+PY 2020
+VL 31
+IS 4
+BP 1132
+EP 1143
+DI 10.1287/isre.2020.0935
+PG 12
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA PF9DQ
+UT WOS:000599346400005
+DA 2026-03-15
+ER
+
+PT J
+AU Yang, MW
+   Zheng, ZQ
+   Mookerjee, V
+AF Yang, Mingwen
+   Zheng, Zhiqiang (Eric)
+   Mookerjee, Vijay
+TI The Race for Online Reputation: Implications for Platforms, Firms, and
+   Consumers
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Article
+DE online reputation; competition; equilibrium; controlled diffusion
+   process
+ID WORD-OF-MOUTH; ADVERTISING STRATEGIES; RATIONAL-EXPECTATIONS; PRODUCT
+   REVIEWS; INFORMATION; COMPETITION; BEHAVIOR; SYSTEMS; IMPACT; SALES
+AB Online reputation (as reflected in customer ratings) has become a key marketing mix variable in the digital economy. This paper models how firms compete by managing their online reputations. We consider a market consisting of competing firms that participate in a platform such as Expedia or Yelp. Each firm exerts effort to improve its rating but, in doing so, also influences the mean market rating. The sales of a firm are influenced by its own rating and the mean rating of the firms in the market. We formulate each firm's decision as a stochastic control problem in which the objective is to maximize the discounted profit over a planning horizon. These control problems are connected through a common market belief that represents the mean rating of the firms in the market. The joint actions of the firms generate a mean market rating in equilibrium. We prove that such an equilibrium exists and is unique, and we use a simple algorithm to compute its value. An equilibrium analysis of the mean market rating reveals several insights. A more heterogeneous market (one in which the parameters of the firms are very different) leads to a lower mean market rating and higher total profit of the firms in the market. Our results can inform platforms to target certain firms to join: growing the middle of the market (firms with average ratings) is the best option considering the goals of the platform (increase the total profit of the firms) and other stakeholders, namely the incumbents and the consumers. For firms, we find that a firm's profit can increase from an adverse event (such as a reduction in sales margin or an increase in the cost of control) depending on how other firms in the market are affected by the event. Our findings are particularly significant for platform owners to employ a strategic growth model for the platform.
+C1 [Yang, Mingwen] Univ Washington, Michael G Foster Sch Business, Seattle, WA 98195 USA.
+   [Zheng, Zhiqiang (Eric); Mookerjee, Vijay] Univ Texas Dallas, Jindal Sch Management, Richardson, TX 75080 USA.
+C3 University of Washington; University of Washington Seattle; University
+   of Texas System; University of Texas Dallas
+RP Yang, MW (corresponding author), Univ Washington, Michael G Foster Sch Business, Seattle, WA 98195 USA.
+EM mingweny@uw.edu; ericz@utdallas.edu; vijaym@utdallas.edu
+RI mookerjee, vijay/Q-5020-2018; Zheng, Eric/KFQ-8270-2024
+OI Yang, Mingwen/0000-0002-4620-6149
+FU National Natural Science Foundation of China (NSFC) [71831006]
+FX E. (Z) . Zheng acknowledges his grant support from National Natural
+   Science Foundation of China (NSFC) [Grant 71831006] .
+NR 72
+TC 17
+Z9 23
+U1 15
+U2 153
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD DEC
+PY 2021
+VL 32
+IS 4
+BP 1262
+EP 1280
+DI 10.1287/isre.2021.1005
+EA SEP 2021
+PG 20
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA YJ0BT
+UT WOS:000708986000001
+DA 2026-03-15
+ER
+
+PT J
+AU Zhao, KR
+   Hong, YL
+   Ma, TT
+   Lu, YD
+   Hu, YH
+AF Zhao, Keran
+   Hong, Yili
+   Ma, Tengteng
+   Lu, Yingda
+   Hu, Yuheng
+TI Lost in the Crowd: How Group Size and Content Moderation Shape User
+   Engagement in Live Streaming
+SO INFORMATION SYSTEMS RESEARCH
+LA English
+DT Article
+DE live streaming; group size; content moderator; bot; topic incoherence;
+   comment polarity; platform congestion; engagement
+ID INFORMATION OVERLOAD; MEDIATION ANALYSIS; SENTIMENT ANALYSIS; SOCIAL
+   MEDIA; COMPETITION; INCENTIVES; CONTRIBUTE; COHERENCE; DECISION
+AB Despite the focus of the digital content literature on asynchronous platforms (e.g., Reddit, Wikipedia, Yelp), synchronous content platforms like live streaming (e.g., Twitch, Youtube Live) have become increasingly popular for enabling real-time user engagement at scale. These platforms involve engaging a sizable user base, facilitating their interactions within a contemporaneous environment. As group size increases, real-time interactivity scales rapidly, making the engagement interface fast-paced and erratic. Consequently, livestreaming channels often use moderators to address the challenge. Although the existing literature finds that the audience's group size has a positive effect on user engagement on asynchronous platforms, how group size affects synchronous interactions, particularly with the presence of bot and human moderators, is unclear. In this work, we leverage exogenous increases in live streaming viewers (from the Raid function in Twitch) to empirically examine the impact of group size on commenters' engagement in real time. Furthermore, we delve into the role of moderators and their influence on this nuanced dynamic. Leveraging difference-indifferences as the econometric identification strategy, we analyze panel data constructed with chat histories of 7,074 playbacks on Twitch. The results suggest that (a) existing commenters tend to engage less after the increases in group size; (b) the negative engagement effect is the product of mediation effects by way of the increased topic incoherence and emotional polarity of comment (herein referred to as "comment polarity") that decreases engagement; and (c) live streaming channels adopting bot or human moderators can better curb the negative effect, such that bot moderators are effective in decreasing the escalation of incoherence, particularly when the incoming Raider group is large, although human moderators better limit surges in comment polarity, particularly when the incoming Raider group is small. The findings in this paper indicate a congestion effect, a negative externality of increasing group size on commenter engagement in synchronous content platforms, further revealing a nuanced relationship among group size, topic incoherence, comment polarity, and user engagement. Our research further suggests the beneficial role of content moderators, which provides implications for online platform operators and policymakers.
+C1 [Zhao, Keran] Penn State Univ, Smeal Coll Business, Dept Supply Chain & Informat Syst, State Coll, PA 16802 USA.
+   [Hong, Yili] Univ Miami, Miami Herbert Business Sch, Dept Business Technol, Coral Gables, FL 33146 USA.
+   [Ma, Tengteng] Univ S Florida, Sch Informat Syst & Management, Tampa, FL 33620 USA.
+   [Lu, Yingda] Univ Illinois, Coll Business, Dept Informat & Decis Sci, Chicago, IL 60607 USA.
+   [Hu, Yuheng] Ohio State Univ, Fisher Coll Business, Dept Accounting & Management, Informat Syst, Columbus, OH 43210 USA.
+C3 Pennsylvania Commonwealth System of Higher Education (PCSHE);
+   Pennsylvania State University; Pennsylvania State University -
+   University Park; University of Miami; State University System of
+   Florida; University of South Florida; University of Illinois System;
+   University of Illinois Chicago; University of Illinois Chicago Hospital;
+   University System of Ohio; Ohio State University
+RP Hong, YL (corresponding author), Univ Miami, Miami Herbert Business Sch, Dept Business Technol, Coral Gables, FL 33146 USA.
+EM krzhao@psu.edu; khong@miami.edu; tengtengma@usf.edu; yingdalu@uic.edu;
+   hu.3331@osu.edu
+RI Hong, Yili/M-6093-2016
+NR 81
+TC 2
+Z9 2
+U1 14
+U2 14
+PU INFORMS
+PI CATONSVILLE
+PA 5521 RESEARCH PARK DR, SUITE 200, CATONSVILLE, MD 21228 USA
+SN 1047-7047
+EI 1526-5536
+J9 INFORM SYST RES
+JI Inf. Syst. Res.
+PD DEC
+PY 2025
+VL 36
+IS 4
+DI 10.1287/isre.2022.0086
+PG 21
+WC Information Science & Library Science; Management
+WE Social Science Citation Index (SSCI)
+SC Information Science & Library Science; Business & Economics
+GA Y9239
+UT WOS:001642096900007
+DA 2026-03-15
+ER
+
+EF

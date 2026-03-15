@@ -1,0 +1,7 @@
+TS=(yelp OR "yelp dataset" OR "Yelp data") AND SO=("Information Systems Research" OR "Journal on Computing" OR "MIS 
+       Quarterly" OR "Journal of Consumer Research" OR "Journal of Marketing" OR "Journal of Marketing Research" OR 
+       "Marketing Science" OR "Management Science" OR "Operations Research" OR "Journal of Operations Management" OR 
+       "Manufacturing and Service Operations Management" OR "Production and Operations Management" OR "Academy of 
+       Management Journal" OR "Academy of Management Review" OR "Administrative Science Quarterly" OR "Organization 
+       Science" OR "Strategic Management Journal" OR "Journal of International Business Studies")
+

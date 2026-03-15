@@ -8,3 +8,16 @@ Desktop/
 Documents/
 ../
 ../../
+*.py
+*.R
+*.pdf
+*.docx
+*.doc
+*.txt
+*.csv
+*.json
+!assets/
+!css/
+!js/
+!index.html
+!README.md

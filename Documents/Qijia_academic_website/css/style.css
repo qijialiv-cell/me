@@ -86,7 +86,7 @@ html {
 body {
     font-family: var(--font-primary);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.2;
     background-color: var(--bg-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -812,7 +812,7 @@ a:hover {
 
 .research-intro {
     font-size: 1.125rem;
-    line-height: 1.6;
+    line-height: 1.2;
     margin-bottom: var(--space-lg);
     color: var(--text-secondary);
 }
@@ -837,7 +837,7 @@ a:hover {
 
 .research-stream-item p {
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.2;
     margin-bottom: 0;
 }
 
@@ -882,7 +882,7 @@ a:hover {
 
 .teaching-intro {
     font-size: 1.125rem;
-    line-height: 1.6;
+    line-height: 1.2;
     margin-bottom: var(--space-lg);
     color: var(--text-secondary);
 }
@@ -898,7 +898,7 @@ a:hover {
 }
 
 .teaching-philosophy p {
-    line-height: 1.6;
+    line-height: 1.2;
     color: var(--text-secondary);
     margin-bottom: 0;
 }
@@ -1179,7 +1179,7 @@ a:hover {
 .cv-item p {
     margin-bottom: 0;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.2;
 }
 
 .cv-item ul {
@@ -1190,7 +1190,7 @@ a:hover {
 .cv-item li {
     margin-bottom: 0;
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.2;
 }
 
 /* Skills Section */

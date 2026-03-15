@@ -1192,11 +1192,8 @@ a:hover {
 }
 
 .cv-item-time {
-    background: var(--bg-tertiary);
-    padding: var(--space-sm) var(--space-md);
-    border-radius: var(--radius-full);
     font-size: 0.95rem;
-    color: var(--text-secondary);
+    color: var(--text-muted);
     font-weight: 500;
 }
 

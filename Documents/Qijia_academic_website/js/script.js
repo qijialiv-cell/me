@@ -5,8 +5,8 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initNavigation();
     initPageNavigation();
+    initNavigation();
     initAnimations();
     initSkillBars();
     initSmoothScroll();
@@ -42,9 +42,35 @@ function initNavigation() {
         });
     }
 
-    // Close mobile menu when clicking links
+    // Handle navigation link clicks
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Get target page from href
+            const targetId = link.getAttribute('href').substring(1); // Remove '#'
+            
+            // Find the page index
+            const pageIndex = Array.from(pages).findIndex(page => 
+                page.id === targetId
+            );
+            
+            if (pageIndex !== -1 && !isMobile) {
+                goToPage(pageIndex);
+            } else if (isMobile) {
+                // On mobile, scroll to section
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const navbarHeight = navbar.offsetHeight;
+                    const targetPosition = targetElement.offsetTop - navbarHeight - 20;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            
+            // Close mobile menu
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.style.overflow = '';
@@ -221,11 +247,16 @@ function initKeyboardNavigation() {
 }
 
 // ============================================
-// Smooth Scroll (for mobile and anchor links)
+// Smooth Scroll (for internal anchor links)
 // ============================================
 
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Skip navigation links (they're handled by initNavigation)
+        if (anchor.classList.contains('nav-link') || anchor.classList.contains('nav-logo')) {
+            return;
+        }
+
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
             
@@ -241,17 +272,20 @@ function initSmoothScroll() {
                     page.contains(targetElement)
                 );
                 
-                if (targetPage !== -1 && !isMobile) {
-                    goToPage(targetPage);
-                } else if (isMobile) {
-                    // On mobile, use regular smooth scroll
-                    const navbarHeight = document.getElementById('navbar').offsetHeight;
-                    const targetPosition = targetElement.offsetTop - navbarHeight - 20;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
+                if (targetPage !== -1) {
+                    if (!isMobile) {
+                        // On desktop, go to the page
+                        goToPage(targetPage);
+                    } else {
+                        // On mobile, use regular smooth scroll
+                        const navbarHeight = document.getElementById('navbar').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - navbarHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             }
         });

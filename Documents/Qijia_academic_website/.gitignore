@@ -1,0 +1,10 @@
+# Ignore files not needed for the website
+.DS_Store
+AGENTS.md
+HKSY.pdf
+Qijia_PhD_CV (2).pdf
+Screenshot*
+Desktop/
+Documents/
+../
+../../

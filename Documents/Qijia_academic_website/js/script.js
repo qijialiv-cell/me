@@ -22,6 +22,8 @@ let currentPage = 0;
 let totalPages = 0;
 let pages = [];
 let isMobile = window.innerWidth <= 768;
+let pageIndexById = new Map();
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ============================================
 // Navigation System
@@ -50,18 +52,16 @@ function initNavigation() {
             // Get target page from href
             const targetId = link.getAttribute('href').substring(1); // Remove '#'
             
-            // Find the page index
-            const pageIndex = Array.from(pages).findIndex(page => 
-                page.id === targetId
-            );
+            // Find the page index in O(1)
+            const pageIndex = pageIndexById.get(targetId);
             
-            if (pageIndex !== -1 && !isMobile) {
+            if (Number.isInteger(pageIndex) && !isMobile) {
                 goToPage(pageIndex);
             } else if (isMobile) {
                 // On mobile, scroll to section
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                    const navbarHeight = navbar.offsetHeight;
+                    const navbarHeight = navbar ? navbar.offsetHeight : 0;
                     const targetPosition = targetElement.offsetTop - navbarHeight - 20;
                     window.scrollTo({
                         top: targetPosition,
@@ -71,8 +71,8 @@ function initNavigation() {
             }
             
             // Close mobile menu
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+            if (navToggle) navToggle.classList.remove('active');
+            if (navMenu) navMenu.classList.remove('active');
             document.body.style.overflow = '';
         });
     });
@@ -80,8 +80,8 @@ function initNavigation() {
     // Close mobile menu on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+            if (navToggle) navToggle.classList.remove('active');
+            if (navMenu) navMenu.classList.remove('active');
             document.body.style.overflow = '';
         }
     });
@@ -95,7 +95,7 @@ function updateActiveNavLink() {
     
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (parseInt(link.dataset.page) === currentPage) {
+        if (parseInt(link.dataset.page, 10) === currentPage) {
             link.classList.add('active');
         }
     });
@@ -111,11 +111,10 @@ function initPageNavigation() {
 
     pages = document.querySelectorAll('.page');
     totalPages = pages.length;
+    pageIndexById = new Map(Array.from(pages, (page, index) => [page.id, index]));
 
     // Add data-page attributes to navigation links
     const navLinks = document.querySelectorAll('.nav-link');
-    const pageIds = ['about', 'research', 'teaching', 'cv', 'skills', 'contact'];
-    
     navLinks.forEach((link, index) => {
         link.dataset.page = index;
     });
@@ -278,7 +277,8 @@ function initSmoothScroll() {
                         goToPage(targetPage);
                     } else {
                         // On mobile, use regular smooth scroll
-                        const navbarHeight = document.getElementById('navbar').offsetHeight;
+                        const navbarElement = document.getElementById('navbar');
+                        const navbarHeight = navbarElement ? navbarElement.offsetHeight : 0;
                         const targetPosition = targetElement.offsetTop - navbarHeight - 20;
                         
                         window.scrollTo({
@@ -297,6 +297,8 @@ function initSmoothScroll() {
 // ============================================
 
 function initAnimations() {
+    if (prefersReducedMotion) return;
+
     // Animate elements when they become visible
     const animatedElements = document.querySelectorAll('.paper-card, .course-card, .contact-card, .stat-card');
     
@@ -341,6 +343,8 @@ function initAnimations() {
 // ============================================
 
 function initSkillBars() {
+    if (prefersReducedMotion) return;
+
     const skillBars = document.querySelectorAll('.skill-progress');
     
     const skillObserver = new IntersectionObserver((entries) => {
@@ -368,6 +372,8 @@ function initSkillBars() {
 // ============================================
 
 function initIntersectionObserver() {
+    if (prefersReducedMotion) return;
+
     const sections = document.querySelectorAll('.section');
     
     const sectionObserver = new IntersectionObserver((entries) => {
@@ -384,6 +390,8 @@ function initIntersectionObserver() {
                         child.style.transform = 'translateY(0)';
                     }, index * 100);
                 });
+
+                sectionObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
@@ -416,35 +424,45 @@ function animateCounter(element, target, duration = 2000) {
 }
 
 // Initialize counter animations
-const statNumbers = document.querySelectorAll('.stat-number');
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const text = entry.target.textContent;
-            const number = parseInt(text.replace(/\D/g, ''));
-            
-            if (!isNaN(number)) {
-                animateCounter(entry.target, number);
-            }
-            
-            counterObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
+function initCounters() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    if (!statNumbers.length || prefersReducedMotion) return;
 
-statNumbers.forEach(stat => {
-    counterObserver.observe(stat);
-});
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const text = entry.target.textContent;
+                const number = parseInt(text.replace(/\D/g, ''), 10);
+
+                if (!Number.isNaN(number)) {
+                    animateCounter(entry.target, number);
+                }
+
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(stat => {
+        counterObserver.observe(stat);
+    });
+}
 
 // ============================================
 // Card Tilt Effect
 // ============================================
 
 function initCardTilt() {
+    if (isMobile || prefersReducedMotion) return;
+
     const cards = document.querySelectorAll('.paper-card, .course-card');
     
     cards.forEach(card => {
+        let rafId;
+
         card.addEventListener('mousemove', (e) => {
+            if (rafId) return;
+
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -455,17 +473,25 @@ function initCardTilt() {
             const rotateX = (y - centerY) / 10;
             const rotateY = (centerX - x) / 10;
             
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            rafId = requestAnimationFrame(() => {
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+                rafId = null;
+            });
         });
         
         card.addEventListener('mouseleave', () => {
+            if (rafId) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+            }
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
         });
     });
 }
 
 // Initialize card tilt effect
-initCardTilt();
+document.addEventListener('DOMContentLoaded', initCardTilt);
+document.addEventListener('DOMContentLoaded', initCounters);
 
 // ============================================
 // Performance Optimization

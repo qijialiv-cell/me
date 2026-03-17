@@ -16,7 +16,7 @@ This file gives concise, actionable guidance for future Copilot CLI sessions wor
 
 2) High-level architecture (big picture)
 
-- Single-page static site. All site content lives in index.html. Styling and interactivity are isolated in `css/style.css` and `js/script.js`.
+- Single-page static site. In this repository the site files live under Documents/Qijia_academic_website/ (index.html, css/, js/, assets/). Styling and interactivity are isolated in `css/style.css` and `js/script.js`.
 - Layout: Editorial Luxury Theme — horizontal full-screen panels on desktop (six pages: About, Research, Teaching, CV, Skills, Contact) and vertical stacking on mobile.
 - Navigation & behaviour:
   - JavaScript manages page navigation and animations. Look for functions named like `goToPage`, `nextPage`, `prevPage`, `initNavigation` and observer setup functions in `js/script.js`.

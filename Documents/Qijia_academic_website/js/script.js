@@ -61,7 +61,7 @@ function initNavigation() {
                 // On mobile, scroll to section
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
-                    const navbarHeight = navbar.offsetHeight;
+                    const navbarHeight = navbar ? navbar.offsetHeight : 0;
                     const targetPosition = targetElement.offsetTop - navbarHeight - 20;
                     window.scrollTo({
                         top: targetPosition,
@@ -95,7 +95,7 @@ function updateActiveNavLink() {
     
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (parseInt(link.dataset.page) === currentPage) {
+        if (parseInt(link.dataset.page, 10) === currentPage) {
             link.classList.add('active');
         }
     });
@@ -277,7 +277,8 @@ function initSmoothScroll() {
                         goToPage(targetPage);
                     } else {
                         // On mobile, use regular smooth scroll
-                        const navbarHeight = document.getElementById('navbar').offsetHeight;
+                        const navbarElement = document.getElementById('navbar');
+                        const navbarHeight = navbarElement ? navbarElement.offsetHeight : 0;
                         const targetPosition = targetElement.offsetTop - navbarHeight - 20;
                         
                         window.scrollTo({

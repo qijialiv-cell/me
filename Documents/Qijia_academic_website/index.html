@@ -6,26 +6,16 @@
     <title>Qijia Liao | PhD in Marketing · University of Liverpool</title>
     <meta name="description" content="Academic website of Qijia Liao, PhD candidate in Marketing at University of Liverpool. Research in digital marketing, brand activism, AI in marketing, and influencer marketing.">
     <meta name="keywords" content="Qijia Liao, Marketing PhD, Digital Marketing, Brand Activism, AI in Marketing, Marketing Analytics">
-
-    <!-- Google Fonts — DM Serif Display + Outfit + DM Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Paper texture + gold top bar are pure CSS (body::before / body::after) -->
     <div class="gradient-bg"></div>
 
-    <!-- ═══════════════════════════════════════
-         NAVIGATION
-    ═══════════════════════════════════════ -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#about" class="nav-logo">
@@ -38,6 +28,7 @@
                 <li><a href="#teaching" class="nav-link">Teaching</a></li>
                 <li><a href="#cv"       class="nav-link">CV</a></li>
                 <li><a href="#skills"   class="nav-link">Skills</a></li>
+                <li><a href="#blog"     class="nav-link">Blog</a></li>
                 <li><a href="#contact"  class="nav-link">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -46,483 +37,95 @@
         </div>
     </nav>
 
-    <!-- ═══════════════════════════════════════
-         PAGES CONTAINER (horizontal scroll)
-    ═══════════════════════════════════════ -->
     <div class="pages-container" id="pagesContainer">
 
-        <!-- ── PAGE 1 · ABOUT ── -->
+        <!-- PAGE 1 · ABOUT -->
         <section id="about" class="page section hero-section">
             <div class="container">
                 <div class="hero-content">
-
                     <div class="profile-container">
-                        <img src="Screenshot 2026-03-02 at 17.26.00.png"
-                             alt="Portrait of Qijia Liao"
-                             class="profile-photo">
+                        <img src="assets/images/photo.png" alt="Portrait of Qijia Liao" class="profile-photo">
                     </div>
-
-                    <div class="hero-text">
-                        <div class="hero-badge">
-                            PhD Candidate &nbsp;·&nbsp; Marketing
-                        </div>
-
-                        <h1 class="hero-title">
-                            <span class="title-line">Qijia Liao</span>
-                        </h1>
-
-                        <p class="hero-subtitle">
-                            University of Liverpool Management School
-                            <span class="sep"></span>
-                            Liverpool, UK
-                        </p>
-
-                        <p class="hero-description">
-                            I am a quantitative marketing scholar employing experimental design,
-                            causal inference, and machine learning to examine strategic marketing
-                            phenomena in digital environments. My research integrates marketing
-                            strategy, consumer behavior, and artificial intelligence.
-                        </p>
-
-                        <div class="hero-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-award"></i>
-                                <span>PhD Viva Passed · Feb 2026</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                                <span>300+ Hours Teaching Assistant</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-brain"></i>
-                                <span>AI &amp; Machine Learning</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-actions">
-                            <a href="#contact" class="btn btn-primary btn-lg">
-                                <i class="fas fa-envelope"></i>
-                                Get in Touch
-                            </a>
-                            <a href="#cv" class="btn btn-secondary btn-lg">
-                                <i class="fas fa-file-alt"></i>
-                                View CV
-                            </a>
-                        </div>
-
-                        <div class="hero-social">
-                            <a href="https://scholar.google.com/citations?user=s2lwLxMAAAAJ&hl=en"
-                               target="_blank" rel="noopener" class="social-link" title="Google Scholar">
-                                <i class="fas fa-graduation-cap"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/liaoqijia"
-                               target="_blank" rel="noopener" class="social-link" title="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/qijialiv-cell/"
-                               target="_blank" rel="noopener" class="social-link" title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div><!-- /hero-text -->
-
-                </div><!-- /hero-content -->
+                    <div class="hero-text" id="heroText"></div>
+                </div>
             </div>
         </section>
 
-        <!-- ── PAGE 2 · RESEARCH ── -->
+        <!-- PAGE 2 · RESEARCH -->
         <section id="research" class="page section research-section">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Research</h2>
-                    <span class="section-number">02 / 06</span>
+                    <span class="section-number">02 / 07</span>
                 </div>
-
-                <div class="research-content">
-                    <p class="research-intro">
-                        My research lies at the intersection of marketing strategy and consumer behavior,
-                        with a focus on digital marketing, brand activism, and artificial intelligence in marketing.
-                        I employ quantitative methods—experimental design, causal inference, and machine
-                        learning—to investigate strategic phenomena in digital environments.
-                    </p>
-
-                    <h3 class="research-stream-title">Research Streams</h3>
-
-                    <div class="research-stream-item">
-                        <h4>Brand Activism</h4>
-                        <p>Investigating brand activism in non-Western institutional contexts and its impact on
-                        consumer and investor behavior. My work introduces the concept of
-                        <em>System-Threat Activism (STA)</em> and examines its effects on consumer responses
-                        through identity-threat mechanisms.</p>
-                    </div>
-
-                    <div class="research-stream-item">
-                        <h4>AI, Digital Platforms &amp; Marketing Analytics</h4>
-                        <p>Examining artificial intelligence and algorithmic systems in digital marketing
-                        environments using large-scale data and deep learning. This stream explores influencer
-                        marketing effectiveness and algorithmic valuation anomalies in digital platforms.</p>
-                    </div>
-
-                    <h3 class="research-stream-title">Publications</h3>
-
-                    <div class="publication-list">
-                        <div class="publication-item">
-                            <h4>Liao, Q., Yang, L., &amp; Lim, E. J. (2023)</h4>
-                            <p>"A bibliometric and content analysis of marketing-finance interface research
-                            from 1986–2021,"
-                            <em>Journal of Business &amp; Finance Librarianship</em>, 28(4), 278–301.</p>
-                        </div>
-
-                        <div class="publication-item">
-                            <h4>Liao, Q., Byrom, J., Guenther, M., &amp; Song, F.</h4>
-                            <p>"When Brand Activism Threatens Consumers' Identity: An Investigation of
-                            System-Threat Activism." <em>AMA Winter Conference 2025</em>, Phoenix, AZ.</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="research-content" id="researchContent"></div>
             </div>
         </section>
 
-        <!-- ── PAGE 3 · TEACHING ── -->
+        <!-- PAGE 3 · TEACHING -->
         <section id="teaching" class="page section teaching-section">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Teaching</h2>
-                    <span class="section-number">03 / 06</span>
+                    <span class="section-number">03 / 07</span>
                 </div>
-
-                <div class="teaching-content">
-                    <p class="teaching-intro">
-                        I have accumulated 300 working hours as a Teaching Assistant across undergraduate and
-                        postgraduate courses at the University of Liverpool. Approximately 80% of my TA work
-                        involves seminar and online support for statistics, text analysis, and sentiment analysis
-                        using RStudio. I also handle marking of assignments, proposals, infographics, and
-                        presentations.
-                    </p>
-
-                    <div class="teaching-philosophy">
-                        <h3>Teaching Philosophy</h3>
-                        <p>
-                            I focus on hands-on support, helping students develop analytical skills through
-                            practical engagement with real-world marketing problems and industry datasets.
-                            My approach emphasises active learning and problem-solving, enabling students to
-                            generate actionable managerial insights from data.
-                        </p>
-                    </div>
-
-                    <h3 class="teaching-subsection">Teaching Assistant Experience</h3>
-                    <div class="courses-list">
-                        <div class="course-item">
-                            <h4>MKIB340 · Marketing &amp; Digital Analytics <span style="font-weight:400;color:var(--text-muted)">(UG &amp; PG)</span></h4>
-                            <p>100–150 students · Seminar support and online tutoring of RStudio: debugging, code interpretation, text analysis, and sentiment analysis.</p>
-                            <div class="course-skills">RStudio &nbsp;·&nbsp; Sentiment Analysis &nbsp;·&nbsp; LDA Topic Modeling</div>
-                        </div>
-
-                        <div class="course-item">
-                            <h4>MKIB256 · Market Research <span style="font-weight:400;color:var(--text-muted)">(UG)</span></h4>
-                            <p>~100 students · Supporting seminars on applied statistics; one-hour sessions on experimental methods. Marking market research proposals.</p>
-                            <div class="course-skills">Statistics &nbsp;·&nbsp; Experimental Design &nbsp;·&nbsp; SPSS</div>
-                        </div>
-
-                        <div class="course-item">
-                            <h4>MKIB153 · Fundamentals of Marketing <span style="font-weight:400;color:var(--text-muted)">(UG)</span></h4>
-                            <p>Marking assignments covering core marketing concepts and principles.</p>
-                            <div class="course-skills">Marketing Fundamentals &nbsp;·&nbsp; Assessment</div>
-                        </div>
-
-                        <div class="course-item">
-                            <h4>MKIB372 · Corporate Communications <span style="font-weight:400;color:var(--text-muted)">(UG)</span></h4>
-                            <p>Marking assignments and presentations on corporate communication strategies.</p>
-                            <div class="course-skills">Corporate Communications &nbsp;·&nbsp; Presentations</div>
-                        </div>
-                    </div>
-
-                    <h3 class="teaching-subsection">Teaching Interests</h3>
-                    <div class="teaching-interests">
-                        <div class="interest-item">Digital Marketing &amp; Social Media Strategy</div>
-                        <div class="interest-item">Marketing Analytics / Research Methods</div>
-                        <div class="interest-item">Consumer Behavior</div>
-                        <div class="interest-item">Business Statistics &amp; Data Analysis</div>
-                        <div class="interest-item">AI in Marketing / ML for Business</div>
-                        <div class="interest-item">Marketing Strategy</div>
-                    </div>
-                </div>
+                <div class="teaching-content" id="teachingContent"></div>
             </div>
         </section>
 
-        <!-- ── PAGE 4 · CV ── -->
+        <!-- PAGE 4 · CV -->
         <section id="cv" class="page section cv-section">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Curriculum Vitae</h2>
-                    <span class="section-number">04 / 06</span>
+                    <span class="section-number">04 / 07</span>
                 </div>
-
-                <div class="cv-content">
-
-                    <!-- Education -->
-                    <div class="cv-category">
-                        <h3>Education</h3>
-
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>PhD in Marketing</h4>
-                                <span class="cv-item-time">Oct 2021 – Present</span>
-                            </div>
-                            <p>University of Liverpool Management School, Liverpool, UK<br>
-                            <em>PhD Viva Passed (February 2026)</em></p>
-                        </div>
-
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>MBA, Marketing Concentration</h4>
-                                <span class="cv-item-time">Jul 2017 – Jan 2020</span>
-                            </div>
-                            <p>University of Macau, Macau</p>
-                        </div>
-
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Erasmus Exchange Program</h4>
-                                <span class="cv-item-time">Feb – Jul 2019</span>
-                            </div>
-                            <p>ISEG, University of Lisbon, Portugal</p>
-                        </div>
-
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>B.A. in English</h4>
-                                <span class="cv-item-time">Sep 2010 – Jun 2014</span>
-                            </div>
-                            <p>Chengdu Institute, Sichuan International Studies University, China</p>
-                        </div>
-                    </div>
-
-                    <!-- Academic Experience -->
-                    <div class="cv-category">
-                        <h3>Academic Experience</h3>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Teaching Assistant &amp; Tutor</h4>
-                                <span class="cv-item-time">2021 – Present</span>
-                            </div>
-                            <p>University of Liverpool Management School, Liverpool, UK</p>
-                            <p>Marketing &amp; Digital Analytics · Market Research · Fundamentals of Marketing · Corporate Communications</p>
-                        </div>
-                    </div>
-
-                    <!-- Work Experience -->
-                    <div class="cv-category">
-                        <h3>Work Experience</h3>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Subject Specialist, Library</h4>
-                                <span class="cv-item-time">Dec 2020 – Sep 2021</span>
-                            </div>
-                            <p>Wenzhou-Kean University, Wenzhou, China</p>
-                        </div>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Sales Representative</h4>
-                                <span class="cv-item-time">Dec 2016 – Jun 2017</span>
-                            </div>
-                            <p>PT. Konstruksi Indo Machinery, Jakarta, Indonesia</p>
-                        </div>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Sales Representative</h4>
-                                <span class="cv-item-time">Sep 2015 – Nov 2016</span>
-                            </div>
-                            <p>Sany Heavy Industries Co., Ltd, Jakarta, Indonesia</p>
-                        </div>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>English–Chinese Translator</h4>
-                                <span class="cv-item-time">Apr 2014 – Jul 2015</span>
-                            </div>
-                            <p>Sinohydro Corporation, Tbilisi, Georgia</p>
-                        </div>
-                    </div>
-
-                    <!-- Publications -->
-                    <div class="cv-category">
-                        <h3>Publications</h3>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Liao, Q., Yang, L., &amp; Lim, E. J. (2023)</h4>
-                            </div>
-                            <p>"A bibliometric and content analysis of marketing-finance interface research from 1986–2021,"
-                            <em>Journal of Business &amp; Finance Librarianship</em>, 28(4), 278–301.</p>
-                        </div>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Liao, Q., Byrom, J., Guenther, M., &amp; Song, F.</h4>
-                                <span class="cv-item-time">AMA 2025</span>
-                            </div>
-                            <p>"When Brand Activism Threatens Consumers' Identity: An Investigation of System-Threat Activism."</p>
-                        </div>
-                    </div>
-
-                    <!-- Awards -->
-                    <div class="cv-category">
-                        <h3>Awards &amp; Grants</h3>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Conference Grant</h4>
-                                <span class="cv-item-time">2025</span>
-                            </div>
-                            <p>AMA Winter Conference, Phoenix, AZ — funded by University of Liverpool</p>
-                        </div>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Graduate Teaching Fellowship</h4>
-                                <span class="cv-item-time">4 Years</span>
-                            </div>
-                            <p>University of Liverpool</p>
-                        </div>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Outgoing Exchange Scholarship</h4>
-                            </div>
-                            <p>University of Macau</p>
-                        </div>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Luso International Bank Scholarship</h4>
-                            </div>
-                            <p>University of Macau</p>
-                        </div>
-                        <div class="cv-item">
-                            <div class="cv-item-header">
-                                <h4>Merit Student Scholarship (2-tier)</h4>
-                            </div>
-                            <p>Chengdu Institute, Sichuan International Studies University</p>
-                        </div>
-                    </div>
-
-                    <!-- Teaching -->
-                    <div class="cv-category">
-                        <h3>Teaching &amp; Training</h3>
-                        <div class="cv-item">
-                            <p>300 working hours as Teaching Assistant across UG and PG courses</p>
-                            <p><em>FLTHE Stage 1 — Introduction to Supporting Student Learning</em>
-                            (compulsory UK PhD teacher training, completed)</p>
-                        </div>
-                    </div>
-
-                </div><!-- /cv-content -->
+                <div class="cv-content" id="cvContent"></div>
             </div>
         </section>
 
-        <!-- ── PAGE 5 · SKILLS ── -->
+        <!-- PAGE 5 · SKILLS -->
         <section id="skills" class="page section skills-section">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Skills</h2>
-                    <span class="section-number">05 / 06</span>
+                    <span class="section-number">05 / 07</span>
                 </div>
-
-                <div class="skills-content">
-                    <div class="skill-category">
-                        <h3>Programming &amp; Machine Learning</h3>
-                        <div class="skill-list">
-                            <span class="skill-item">R (Tidyverse, tidymodels)</span>
-                            <span class="skill-item">Python (Scikit-learn, XGBoost)</span>
-                            <span class="skill-item">Deep Learning (fastai, PyTorch)</span>
-                            <span class="skill-item">NLP (Hugging Face, BERT)</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Statistical Methods</h3>
-                        <div class="skill-list">
-                            <span class="skill-item">Structural Equation Modeling</span>
-                            <span class="skill-item">Mediation Analysis</span>
-                            <span class="skill-item">Event Studies</span>
-                            <span class="skill-item">Propensity Score Weighting</span>
-                            <span class="skill-item">Causal Inference</span>
-                            <span class="skill-item">Experimental Design</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Tools &amp; Platforms</h3>
-                        <div class="skill-list">
-                            <span class="skill-item">RStudio</span>
-                            <span class="skill-item">SPSS</span>
-                            <span class="skill-item">Stata</span>
-                            <span class="skill-item">Qualtrics</span>
-                            <span class="skill-item">Prolific</span>
-                            <span class="skill-item">GitHub</span>
-                            <span class="skill-item">Shiny</span>
-                            <span class="skill-item">WRDS</span>
-                            <span class="skill-item">DataStream</span>
-                            <span class="skill-item">Eikon</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-category">
-                        <h3>Languages</h3>
-                        <div class="skill-list">
-                            <span class="skill-item">Chinese (Native)</span>
-                            <span class="skill-item">English (Proficient)</span>
-                        </div>
-                    </div>
-                </div>
+                <div class="skills-content" id="skillsContent"></div>
             </div>
         </section>
 
-        <!-- ── PAGE 6 · CONTACT ── -->
+        <!-- PAGE 6 · BLOG -->
+        <section id="blog" class="page section blog-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Blog</h2>
+                    <span class="section-number">06 / 07</span>
+                </div>
+                <div class="blog-controls">
+                    <div class="blog-filter-tabs" id="filterContainer"></div>
+                    <div class="blog-search-wrap">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="blogSearch" placeholder="Search&hellip;" aria-label="Search articles">
+                    </div>
+                </div>
+                <div class="blog-list" id="blogGrid"></div>
+            </div>
+        </section>
+
+        <!-- PAGE 7 · CONTACT -->
         <section id="contact" class="page section contact-section">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Contact</h2>
-                    <span class="section-number">06 / 06</span>
+                    <span class="section-number">07 / 07</span>
                 </div>
-
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <p><strong>Email</strong> &nbsp;
-                            <a href="mailto:qijia.liv@gmail.com">qijia.liv@gmail.com</a>
-                        </p>
-                        <p><strong>Institution</strong> &nbsp;
-                            University of Liverpool Management School
-                        </p>
-                        <p><strong>Address</strong> &nbsp;
-                            Chatham Street, Liverpool, L69 7ZH, UK
-                        </p>
-                    </div>
-
-                    <div class="job-market-notice">
-                        <h3>Academic Job Market</h3>
-                        <p>
-                            Available for Assistant Professor or Postdoctoral positions in Marketing
-                            (August 2026 or earlier). Please feel free to reach out — I welcome
-                            inquiries about my research, teaching, and availability.
-                        </p>
-                        <a href="mailto:qijia.liv@gmail.com" class="btn btn-primary">
-                            <i class="fas fa-envelope"></i>
-                            Send Email
-                        </a>
-                    </div>
-                </div>
+                <div class="contact-content" id="contactContent"></div>
             </div>
         </section>
 
     </div><!-- /pages-container -->
 
-    <!-- Page Navigation Arrows -->
-    <button class="page-nav page-nav-prev" id="prevBtn" aria-label="Previous page" disabled>
-        <i class="fas fa-chevron-left"></i>
-    </button>
-    <button class="page-nav page-nav-next" id="nextBtn" aria-label="Next page">
-        <i class="fas fa-chevron-right"></i>
-    </button>
-
-    <!-- Page Dot Indicators -->
-    <div class="page-indicators" id="pageIndicators"></div>
-
-    <!-- Footer (inside pages-container so it scrolls with page 6) -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -530,23 +133,7 @@
                     <h3>Qijia Liao</h3>
                     <p>PhD in Marketing &nbsp;·&nbsp; University of Liverpool</p>
                 </div>
-                <div class="footer-right">
-                    <div class="footer-social">
-                        <a href="https://scholar.google.com/citations?user=s2lwLxMAAAAJ&hl=en"
-                           target="_blank" rel="noopener" title="Google Scholar">
-                            <i class="fas fa-graduation-cap"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/liaoqijia"
-                           target="_blank" rel="noopener" title="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/qijialiv-cell/"
-                           target="_blank" rel="noopener" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <p class="footer-copyright">&copy; 2026 Qijia Liao. All rights reserved.</p>
-                </div>
+                <div class="footer-right" id="footerRight"></div>
             </div>
         </div>
     </footer>

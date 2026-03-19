@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的 Claude Code 工作流配置 — 中文版</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-light: #4a4a4a;
+    --ink-faint: #888;
+    --bg: #fafaf7;
+    --bg-warm: #f4f2ec;
+    --accent: #c0392b;
+    --accent-light: #e74c3c;
+    --accent-pale: #fdf0ef;
+    --blue: #2471a3;
+    --blue-pale: #eaf3fb;
+    --green: #1a7a4a;
+    --green-pale: #eafaf1;
+    --gold: #b7770d;
+    --gold-pale: #fef9e7;
+    --border: #ddd8cc;
+    --code-bg: #f0ede6;
+    --sidebar-width: 280px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Serif SC', serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.9;
+    font-size: 16px;
+  }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--ink);
+    color: #eee;
+    overflow-y: auto;
+    z-index: 100;
+    padding: 0 0 40px 0;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+
+  #sidebar-header {
+    padding: 28px 20px 20px;
+    border-bottom: 1px solid #333;
+  }
+
+  #sidebar-header .logo {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 8px;
+  }
+
+  #sidebar-header h2 {
+    font-size: 13px;
+    font-weight: 500;
+    color: #ddd;
+    line-height: 1.5;
+  }
+
+  #toc { padding: 16px 0; }
+
+  .toc-section {
+    padding: 4px 0;
+  }
+
+  .toc-section > a {
+    display: block;
+    padding: 7px 20px;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+  }
+
+  .toc-section > a:hover,
+  .toc-section > a.active {
+    color: #fff;
+    background: #2a2a2a;
+    border-left-color: var(--accent-light);
+  }
+
+  .toc-sub { padding-left: 0; }
+
+  .toc-sub a {
+    display: block;
+    padding: 5px 20px 5px 32px;
+    color: #888;
+    text-decoration: none;
+    font-size: 11.5px;
+    transition: all 0.15s;
+  }
+
+  .toc-sub a:hover {
+    color: #ccc;
+    background: #222;
+  }
+
+  /* ── MAIN CONTENT ── */
+  #main {
+    margin-left: var(--sidebar-width);
+    max-width: 900px;
+    padding: 60px 64px 100px;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    padding-bottom: 48px;
+    margin-bottom: 48px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  #hero .label {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  #hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  #hero .subtitle {
+    font-size: 17px;
+    color: var(--ink-light);
+    line-height: 1.7;
+    max-width: 680px;
+    margin-bottom: 24px;
+  }
+
+  .meta {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+
+  /* ── HEADINGS ── */
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 56px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2 .num {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 36px 0 14px;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 28px 0 10px;
+  }
+
+  h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-light);
+    margin: 20px 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: var(--ink-light);
+  }
+
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── CODE ── */
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    background: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--accent);
+  }
+
+  pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    border-radius: 8px;
+    padding: 20px 24px;
+    overflow-x: auto;
+    margin: 20px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    border-left: 4px solid var(--accent);
+  }
+
+  pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+  }
+
+  /* ── TABLES ── */
+  .table-wrap { overflow-x: auto; margin: 20px 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+  }
+
+  th {
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+  }
+
+  td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink-light);
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td { background: var(--bg-warm); }
+  tr:hover td { background: #f0ede4; }
+
+  td code { font-size: 12px; }
+
+  /* ── CALLOUT BOXES ── */
+  .callout {
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .callout-title {
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .callout p { margin-bottom: 8px; color: inherit; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .callout.tip {
+    background: var(--green-pale);
+    border-left: 4px solid var(--green);
+    color: #1a4a2e;
+  }
+  .callout.tip .callout-title { color: var(--green); }
+
+  .callout.note {
+    background: var(--blue-pale);
+    border-left: 4px solid var(--blue);
+    color: #1a3a5c;
+  }
+  .callout.note .callout-title { color: var(--blue); }
+
+  .callout.warning {
+    background: #fff4e5;
+    border-left: 4px solid #d68910;
+    color: #5a3a00;
+  }
+  .callout.warning .callout-title { color: #b7770d; }
+
+  .callout.important {
+    background: var(--accent-pale);
+    border-left: 4px solid var(--accent);
+    color: #5a0a0a;
+  }
+  .callout.important .callout-title { color: var(--accent); }
+
+  /* ── LISTS ── */
+  ul, ol {
+    margin: 12px 0 16px 24px;
+    color: var(--ink-light);
+  }
+
+  li { margin-bottom: 6px; line-height: 1.8; }
+
+  li > ul, li > ol { margin-top: 6px; margin-bottom: 4px; }
+
+  /* ── SECTION ANCHOR ── */
+  .section { margin-bottom: 16px; }
+
+  /* ── DIAGRAM ── */
+  .diagram {
+    background: #1e1e1e;
+    color: #a8d8a8;
+    border-radius: 8px;
+    padding: 20px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 20px 0;
+    overflow-x: auto;
+    border-left: 4px solid #4caf50;
+  }
+
+  /* ── SCORE BADGES ── */
+  .score-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 600;
+  }
+  .score-80 { background: #d4efdf; color: #1a7a4a; }
+  .score-90 { background: #d6eaf8; color: #1a5276; }
+  .score-95 { background: #fef9e7; color: #b7770d; }
+  .score-fail { background: #fadbd8; color: #922b21; }
+
+  /* ── BACK TO TOP ── */
+  #back-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px; height: 44px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    z-index: 200;
+  }
+  #back-top:hover { opacity: 1; }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; padding: 32px 24px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">中文翻译版</div>
+    <h2>我的 Claude Code 工作流配置</h2>
+  </div>
+  <div id="toc">
+    <div class="toc-section"><a href="#s1">1. 为何创建此工作流</a>
+      <div class="toc-sub">
+        <a href="#s1-1">1.1 问题所在</a>
+        <a href="#s1-2">1.2 Claude Code 的独特之处</a>
+        <a href="#s1-3">1.3 整体运作原理</a>
+      </div>
+    </div>
+    <div class="toc-section"><a href="#s2">2. 快速上手</a>
+      <div class="toc-sub">
+        <a href="#s2-1">2.1 Fork 与 Clone</a>
+        <a href="#s2-2">2.2 启动并粘贴启动 Prompt</a>
+        <a href="#s2-3">2.3 可选：手动配置</a>
+        <a href="#s2-4">2.4 需求规格说明</a>
+      </div>
+    </div>
+    <div class="toc-section"><a href="#s3">3. 系统实战演示</a>
+      <div class="toc-sub">
+        <a href="#s3-1">3.1 专业化 Agent 的优势</a>
+        <a href="#s3-2">3.2 对抗性模式</a>
+        <a href="#s3-3">3.3 编排器</a>
+        <a href="#s3-4">3.4 质量评分系统</a>
+        <a href="#s3-5">3.5 创建领域审阅器</a>
+      </div>
+    </div>
+    <div class="toc-section"><a href="#s4">4. 核心构建模块</a>
+      <div class="toc-sub">
+        <a href="#s4-1">4.1 CLAUDE.md</a>
+        <a href="#s4-2">4.2 Rules（规则）</a>
+        <a href="#s4-3">4.3 宪法治理</a>
+        <a href="#s4-4">4.4 Skills（技能）</a>
+        <a href="#s4-5">4.5 Agents（智能体）</a>
+        <a href="#s4-6">4.6 Settings（权限与钩子）</a>
+        <a href="#s4-7">4.7 Memory（跨会话记忆）</a>
+      </div>
+    </div>
+    <div class="toc-section"><a href="#s5">5. 工作流模式</a>
+      <div class="toc-sub">
+        <a href="#s5-1">模式1：计划优先</a>
+        <a href="#s5-2">模式2：承包商模式</a>
+        <a href="#s5-3">模式3：新建讲座</a>
+        <a href="#s5-4">模式4：Beamer→Quarto 转换</a>
+        <a href="#s5-5">模式5：复现优先编码</a>
+        <a href="#s5-6">模式6：多 Agent 审阅</a>
+        <a href="#s5-7">模式7：自我提升循环</a>
+        <a href="#s5-8">模式8：魔鬼代言人</a>
+        <a href="#s5-9">模式9-12：研究工作流</a>
+        <a href="#s5-10">模式13-14：高级模式</a>
+      </div>
+    </div>
+    <div class="toc-section"><a href="#s6">6. 生态系统</a></div>
+    <div class="toc-section"><a href="#s7">7. 领域定制化</a></div>
+    <div class="toc-section"><a href="#s8">8. 附录：文件参考</a></div>
+    <div class="toc-section"><a href="#s9">9. 致谢</a></div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main id="main">
+
+  <!-- HERO -->
+  <div id="hero">
+    <div class="label">学术 AI 工作流完全指南</div>
+    <h1>我的 Claude Code 工作流配置</h1>
+    <p class="subtitle">AI 辅助学术工作完全指南：课件、论文、数据分析，一应俱全</p>
+    <div class="meta">作者：Pedro H. C. Sant'Anna &nbsp;·&nbsp; 发布：2026年2月27日 &nbsp;·&nbsp; 更新：2026年2月28日 &nbsp;·&nbsp; 中文翻译版</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="s1">
+    <h2><span class="num">第一章</span>为何创建此工作流</h2>
+
+    <section id="s1-1">
+      <h3>1.1 问题所在</h3>
+      <p>如果你曾做过严肃的学术工作——制作讲座幻灯片、起草研究论文、跑数据分析流水线——你一定深有体会：</p>
+      <ul>
+        <li><strong>会话间记忆丢失。</strong>你继续上次的工作，但 Claude 不记得你当时为什么选择那个符号、指导老师批准了什么、上次修了哪些 bug。</li>
+        <li><strong>质量参差不齐。</strong>这张幻灯片间距完美；下一张内容溢出。这张回归表格格式标准；下一张缺少标准误。引用在 Overleaf 能编译，本地却报错。</li>
+        <li><strong>审阅全靠手动，精疲力竭。</strong>你亲手校对 140 张幻灯片；你第五遍重读论文，还是在找同样的错误；你漏掉了一个公式里的错别字，结果被学生或审稿人发现。</li>
+        <li><strong>没有人检查数学推导。</strong>语法检查器能找到"the"，但发现不了分解定理里符号写反了、回归模型设定错误、复现代码跑出了错误结果。</li>
+      </ul>
+      <p>本工作流解决了上述所有问题。你描述自己想要什么——"把第5讲翻译成 Quarto"、"投稿前帮我审一遍论文"、"分析这个数据集并生成发表级表格"——Claude 负责其余一切：制定方案、实施方案、运行专业审阅器、修复问题、验证质量、汇报结果。就像一个管理整个项目的总承包商。</p>
+    </section>
+
+    <section id="s1-2">
+      <h3>1.2 Claude Code 的独特之处</h3>
+      <p>Claude Code 在你的电脑上运行，可完整访问你的文件系统、终端和 Git。它可作为 <strong>CLI 工具</strong>、<strong>VS Code 插件</strong>或通过 <strong>Claude Desktop</strong> 使用——能力相同，配置相同，界面不同。这使以下功能成为可能：</p>
+      <div class="table-wrap"><table>
+        <tr><th>能力</th><th>对你意味着什么</th></tr>
+        <tr><td>读写你的文件</td><td>直接对 <code>.tex</code>、<code>.qmd</code>、<code>.R</code> 文件进行精准编辑</td></tr>
+        <tr><td>执行 shell 命令</td><td>直接编译 LaTeX、运行 R 脚本、渲染 Quarto</td></tr>
+        <tr><td>访问 Git 历史</td><td>在对话中完成 commit、PR、分支管理</td></tr>
+        <tr><td>持久记忆</td><td>CLAUDE.md + MEMORY.md 跨会话保存</td></tr>
+        <tr><td>编排器模式</td><td>Claude 自主计划、实施、审阅、修复、验证</td></tr>
+        <tr><td>多 Agent 工作流</td><td>10 个专业 Agent，负责校对、布局、教学法、代码审阅等</td></tr>
+        <tr><td>质量门控</td><td>自动评分——低于 80/100 不允许提交</td></tr>
+      </table></div>
+
+      <div class="callout tip">
+        <div class="callout-title">💡 案例：Emory 大学 Econ 730</div>
+        <p>本工作流是在构建一门"因果面板数据"博士课程的 6 次以上会话中开发出来的。成果：6 套完整讲座（每套 140+ 张幻灯片），含 Beamer + Quarto 双版本、交互式 Plotly 图表、TikZ 图示和 R 复现脚本——全部由编排器管理，并经 5 个质量维度上的 10 个专业 Agent 审阅。</p>
+        <p>虽然案例以幻灯片为主，但所有组件——Agent、编排器、质量门控——对研究论文、数据分析和课题申请同样适用。</p>
+      </div>
+    </section>
+
+    <section id="s1-3">
+      <h3>1.3 整体运作原理</h3>
+      <p>在深入配置之前，有一个关键认知：<strong>本工作流大部分是自动运行的</strong>。你用自然语言描述想要什么，Claude 自行决定使用哪些工具。</p>
+
+      <h4>1.3.1 你做什么 vs. 自动发生什么</h4>
+      <div class="table-wrap"><table>
+        <tr><th>你做的事</th><th>自动发生的事</th></tr>
+        <tr><td>描述你想要什么</td><td>Claude 选择并运行合适的 Skill</td></tr>
+        <tr><td>批准方案</td><td>编排器协调各 Agent</td></tr>
+        <tr><td>查看最终产出</td><td>钩子在特定事件（编辑/保存/压缩）时自动触发</td></tr>
+        <tr><td>准备好时说"commit"</td><td>规则根据你操作的文件自动加载</td></tr>
+      </table></div>
+
+      <h4>1.3.2 示例："明天上课前帮我修好幻灯片"</h4>
+      <div class="diagram">你："审查我的讲座幻灯片，在明天上课前修好所有问题"
+     ↓
+Claude 自动：
+  → 运行 /proofread（语法、错别字、一致性）
+  → 运行 /visual-audit（溢出、布局、间距）
+  → 运行 /pedagogy-review（叙事流、符号清晰度）
+  → 综合发现，生成优先级修复清单
+  → 应用修复（关键 → 重要 → 次要）
+  → 重新验证所有内容能正常编译
+  → 对照质量门控评分
+     ↓
+你看到："完成。修复了 12 处问题。得分：88/100。可以 commit 了吗？"
+你："可以"
+     ↓
+Claude 执行 /commit（仅在你明确批准后）</div>
+
+      <h4>1.3.3 你永远不需要直接操作的内容</h4>
+      <ul>
+        <li><strong>Agents</strong> — 由 Skill 调用的专业审阅器，不是你直接调用的</li>
+        <li><strong>Hooks</strong> — 在特定事件自动触发，你不需要手动运行</li>
+        <li><strong>Rules</strong> — 根据文件路径自动加载，无需手动干预</li>
+      </ul>
+
+      <h4>1.3.4 Skills：你可能会用到的唯一命令</h4>
+      <p><code>/proofread</code>、<code>/compile-latex</code> 这类 Skill 有两种调用方式：</p>
+      <ol>
+        <li><strong>主动调用</strong> — 你输入 <code>/proofread MySlides.tex</code></li>
+        <li><strong>自动调用</strong> — Claude 在判断相关时自动调用</li>
+      </ol>
+      <p>大多数时候，你只需描述目标，Claude 处理其余。主动调用 Skill 是在你想要精准控制时使用的。</p>
+
+      <div class="callout important">
+        <div class="callout-title">⚡ 核心结论</div>
+        <p><strong>你说话，Claude 编排。</strong>10 个 Agent、22 个 Skill、18 条 Rule 存在的意义，就是让你不用去想它们。描述目标，批准方案，让系统运转。</p>
+      </div>
+
+      <div class="callout note">
+        <div class="callout-title">📌 第一天不需要掌握全部</div>
+        <p>本指南描述的是完整系统——10 个 Agent、22 个 Skill、18 条 Rule。那是上限，不是门槛。<strong>只需从 CLAUDE.md 和 2–3 个 Skill 开始</strong>（<code>/compile-latex</code>、<code>/proofread</code>、<code>/commit</code>）。随着使用深入，再按需添加 Rule 和 Agent。模板设计为渐进式采纳：Fork 后填写占位符，然后开始工作。其余的在你准备好时随时可用。</p>
+      </div>
+    </section>
+  </section>
+
+  <hr>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="s2">
+    <h2><span class="num">第二章</span>快速上手</h2>
+    <p>你只需要两件事：Fork 仓库，粘贴一段 Prompt。其余的 Claude 来处理。</p>
+
+    <div class="callout tip">
+      <div class="callout-title">✅ 第一天清单</div>
+      <ul>
+        <li>Fork 仓库并克隆到本地</li>
+        <li>在项目目录中运行 <code>claude</code></li>
+        <li>粘贴启动 Prompt（填写你的项目信息）</li>
+        <li>等 Claude 为你的项目定制 <code>CLAUDE.md</code></li>
+        <li>批准配置方案</li>
+        <li>请 Claude 做些事：<em>"审阅我的幻灯片"</em> 或 <em>"创建一个关于[主题]的讲座"</em></li>
+        <li>批准任务方案，观察其运行，审查产出</li>
+      </ul>
+      <p>就这些。Agent、Hook、Rule 都在后台自动运行。</p>
+    </div>
+
+    <section id="s2-1">
+      <h3>2.1 第一步：Fork 与 Clone</h3>
+      <pre><code># 在 GitHub 上 Fork 此仓库（点击仓库页面的"Fork"按钮），然后：
+git clone https://github.com/YOUR_USERNAME/claude-code-my-workflow.git my-project
+cd my-project</code></pre>
+      <p>将 <code>YOUR_USERNAME</code> 替换为你的 GitHub 用户名。</p>
+    </section>
+
+    <section id="s2-2">
+      <h3>2.2 第二步：启动 Claude Code 并粘贴启动 Prompt</h3>
+      <p>在项目目录打开终端，运行 <code>claude</code>，然后粘贴以下内容。将<strong>加粗的占位符</strong>替换为你的项目详情：</p>
+
+      <div class="callout note">
+        <div class="callout-title">💬 VS Code 或 Claude Desktop 用户</div>
+        <p>本指南中的一切在任何 Claude Code 界面均可正常使用。在 <strong>VS Code</strong> 中，打开 Claude Code 面板（点击侧边栏的 Claude 图标，或按 Cmd+Shift+P → "Claude Code: Open"）。在 <strong>Claude Desktop</strong> 中，打开项目文件夹并启动本地会话。然后粘贴以下启动 Prompt。</p>
+      </div>
+
+      <div class="callout tip">
+        <div class="callout-title">📋 启动 Prompt 模板</div>
+        <p>我正在此仓库开始处理 <strong>[项目名称]</strong>。<strong>[用 2–3 句话描述你的项目——你在构建什么、面向谁、使用什么工具（如 LaTeX/Beamer、R、Quarto）。]</strong></p>
+        <p>我希望我们的协作是结构化的、精确的、严谨的——即便这需要更多时间。创建视觉内容时，所有东西必须精致且达到发表水准。我不想重复自己，所以我们的工作流应该善于记住决策并从纠错中学习。</p>
+        <p>我已经配置好了 Claude Code 学术工作流（从 <code>pedrohcgs/claude-code-my-workflow</code> Fork 而来）。配置文件已在此仓库中（<code>.claude/</code>、<code>CLAUDE.md</code>、模板、脚本）。请阅读它们，理解工作流，然后<strong>更新所有配置文件以适配我的项目</strong>——填写 CLAUDE.md 中的占位符，按需调整规则，并提出针对我的用例的定制化建议。</p>
+        <p>之后，对所有非简单任务使用"计划优先"工作流。一旦我批准了方案，切换到承包商模式——自主协调一切，只在出现歧义或需要决策时来找我。前几次会话中多与我确认一些，让我能熟悉工作流的运作方式。</p>
+        <p>进入计划模式，从为此项目适配工作流配置开始。</p>
+      </div>
+      <p><strong>这段 Prompt 会做什么：</strong>Claude 会读取 <code>CLAUDE.md</code> 和所有规则，填写你的项目名称、机构、Beamer 环境、CSS 类、项目状态表，然后提出针对你的用例的规则调整建议。你批准方案，Claude 处理其余。之后，你只需描述想构建什么。</p>
+    </section>
+
+    <section id="s2-3">
+      <h3>2.3 可选：手动配置</h3>
+      <p>如果你更倾向于自己配置而非让 Claude 处理：</p>
+      <div class="callout note">
+        <div class="callout-title">📝 手动配置步骤</div>
+        <p><strong>定制 CLAUDE.md</strong> — 打开 <code>CLAUDE.md</code>，替换所有 <code>[括号内的占位符]</code>：</p>
+        <ol>
+          <li>项目名称和所在机构</li>
+          <li>文件夹结构（按你的实际布局调整）</li>
+          <li>当前项目状态（你的讲座/论文情况）</li>
+          <li>Beamer 环境（你的自定义 LaTeX 环境）</li>
+          <li>CSS 类（你的 Quarto 主题类）</li>
+        </ol>
+        <p><strong>创建你的知识库</strong> — 打开 <code>.claude/rules/knowledge-base-template.md</code>，填写：</p>
+        <ol>
+          <li><strong>符号注册表</strong> — 每个符号、在哪里引入、反例</li>
+          <li><strong>应用数据库</strong> — 引用的数据集、论文、R 包</li>
+          <li><strong>已验证的设计原则</strong> — 你批准的和推翻的</li>
+        </ol>
+        <p><strong>配置权限</strong> — 审阅 <code>.claude/settings.json</code>。模板已包含 git、LaTeX、Quarto、R 和工具脚本的权限。添加你使用的其他工具。</p>
+        <p><strong>测试：</strong></p>
+        <pre><code>/compile-latex MyFirstLecture
+/proofread Slides/MyFirstLecture.tex
+python scripts/quality_score.py Slides/MyFirstLecture.tex</code></pre>
+      </div>
+    </section>
+
+    <section id="s2-4">
+      <h3>2.4 需求规格说明（复杂任务适用）</h3>
+      <p>对于复杂或模糊的任务，Claude 可能会先提出 3–5 个澄清问题，创建一份需求规格说明，然后再进入规划阶段。这能尽早发现歧义，减少返工。</p>
+
+      <h4>示例：幻灯片改进</h4>
+      <pre><code>你："改进我关于假设检验的讲座"
+
+Claude："让我澄清几点：
+1. 需要改进哪方面（清晰度、示例、节奏）？
+2. 有学生反馈需要解决吗？
+3. 有什么限制（时间、符号修改）？
+4. 需要更新哪些产出（幻灯片、网页版，还是两者都要）？"
+
+[创建含 MUST/SHOULD/MAY 优先级的规格说明]
+[你批准]
+[然后进入规划模式]</code></pre>
+
+      <p>提出 3–5 个问题后，Claude 会在 <code>quality_reports/specs/</code> 中创建一份规格说明文档，包含：</p>
+      <ul>
+        <li><strong>必须有（MUST）</strong>：不可或缺的需求</li>
+        <li><strong>应该有（SHOULD）</strong>：首选特性</li>
+        <li><strong>可以有（MAY）</strong>：可选增强</li>
+        <li><strong>清晰状态</strong>：每个方面标注 CLEAR/ASSUMED/BLOCKED</li>
+      </ul>
+      <p>你批准规格说明后，Claude 再规划实施。这能将方案中途调整减少 30–50%。</p>
+    </section>
+  </section>
+
+  <hr>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="s3">
+    <h2><span class="num">第三章</span>系统实战演示</h2>
+    <p>配置完成后，系统实际能做什么？本章介绍让工作流强大的三个核心机制：专业化 Agent、对抗性质量保证、以及自动质量评分。</p>
+
+    <section id="s3-1">
+      <h3>3.1 为何专业化 Agent 优于通用做法</h3>
+      <p>假设你要校对一套 140 张幻灯片的讲座。你可以问 Claude：</p>
+      <blockquote style="border-left:3px solid var(--accent);padding-left:16px;margin:16px 0;color:var(--ink-faint);font-style:italic">"帮我审阅这些幻灯片的语法、布局、数学正确性、代码质量和教学流。"</blockquote>
+      <p>Claude 会大致浏览并抓到一些问题。但它会漏掉：</p>
+      <ul>
+        <li>第 42 张幻灯片中下标从 \(m_t^{d=0}\) 变成了 \(m_t^0\)</li>
+        <li>TikZ 图中两个标签在演示分辨率下重叠</li>
+        <li>R 脚本使用 <code>k=10</code> 个协变量，但幻灯片写的是 <code>k=5</code></li>
+      </ul>
+      <p>现在对比专业化 Agent：</p>
+      <div class="table-wrap"><table>
+        <tr><th>Agent</th><th>专注领域</th><th>能发现什么</th></tr>
+        <tr><td><code>proofreader</code></td><td>仅语法</td><td>"principle" 写成了 "principal"</td></tr>
+        <tr><td><code>slide-auditor</code></td><td>仅布局</td><td>第 37 张文字溢出</td></tr>
+        <tr><td><code>pedagogy-reviewer</code></td><td>仅教学流</td><td>定理 3.1 之前缺少铺垫句</td></tr>
+        <tr><td><code>r-reviewer</code></td><td>仅代码</td><td>缺少 <code>set.seed()</code></td></tr>
+        <tr><td><code>domain-reviewer</code></td><td>实质内容</td><td>幻灯片说 10,000 次 MC 模拟，代码只跑了 1,000 次</td></tr>
+      </table></div>
+      <p>每个 Agent 读取同一文件，但以全部注意力检查不同维度。<code>/slide-excellence</code> 技能并行运行所有这些 Agent。</p>
+    </section>
+
+    <section id="s3-2">
+      <h3>3.2 对抗性模式：评审者 + 修复者</h3>
+      <p>系统中最强大的单一模式是<strong>对抗性质量保证循环</strong>：</p>
+      <div class="diagram">+------------------+
+|  quarto-critic   |  "我发现 12 处问题。3 处严重。"
+|  （只读）        |
++--------+---------+
+         |
+    +----v----+
+    |  裁决   |
+    +----+----+
+     /       \
+  批准      需要改进
+    |          |
+  完成    +----v---------+
+          | quarto-fixer |  "已修复 12/12 处问题。"
+          | （只写）     |
+          +----+---------+
+               |
+          +----v----------+
+          | quarto-critic |  "重审：仍有 2 处问题。"
+          | （第 2 轮）   |
+          +----+----------+
+               |
+          ... （最多 5 轮）</div>
+      <p><strong>为什么有效：</strong>评审者不能修改文件（只读），所以它没有动机淡化问题。修复者不能给自己打分（评审者会重新审核）。这防止了 Claude 对自己的作品说"看起来不错"这种常见失效模式。</p>
+
+      <div class="callout tip">
+        <div class="callout-title">💡 真实案例</div>
+        <p>在 Econ 730 第 6 讲中，评审者发现 Quarto 版本在 Beamer 版本有完整 Hajek 权重公式的地方使用了 <code>\cdots</code>（占位符）。修复者替换了它。重审时，评审者又发现了 8 处结果模型中缺少 <code>(X)</code> 参数的实例。经过 4 轮后，Quarto 幻灯片与 Beamer 源文件完全一致。</p>
+      </div>
+    </section>
+
+    <section id="s3-3">
+      <h3>3.3 编排器：自动协调 Agent</h3>
+      <p>单个 Agent 是专家。<code>/slide-excellence</code>、<code>/qa-quarto</code> 等 Skill 为特定任务协调几个 Agent。但在日常工作中，你不应该需要考虑运行哪些 Agent——这是编排器的工作。</p>
+      <p><strong>编排器协议</strong>（<code>.claude/rules/orchestrator-protocol.md</code>）是一条在任何方案获批后自动激活的规则。它实施方案、运行验证器、根据文件类型选择审阅 Agent、应用修复、重新验证，并对照质量门控评分。它循环运行，直到得分达到阈值或达到最大轮数。</p>
+      <p>你永远不需要手动调用编排器——它是任何非简单任务的默认运行模式。Skill 仍可用于单独使用（如用 <code>/proofread</code> 快速检查语法），但编排器处理完整的生命周期。详见<a href="#s5-2">模式 2</a>。</p>
+    </section>
+
+    <section id="s3-4">
+      <h3>3.4 质量评分系统：80/90/95</h3>
+      <p>每个文件都会得到一个 0 到 100 的质量评分：</p>
+      <div class="table-wrap"><table>
+        <tr><th>分数</th><th>门控阈值</th><th>含义</th><th>操作</th></tr>
+        <tr><td><span class="score-badge score-80">80+</span></td><td>Commit</td><td>可以安全保存进度</td><td>允许 <code>git commit</code></td></tr>
+        <tr><td><span class="score-badge score-90">90+</span></td><td>PR</td><td>准备好部署</td><td>鼓励 <code>gh pr create</code></td></tr>
+        <tr><td><span class="score-badge score-95">95+</span></td><td>卓越</td><td>出色质量</td><td>追求的目标</td></tr>
+        <tr><td><span class="score-badge score-fail">&lt; 80</span></td><td>阻止</td><td>存在严重问题</td><td>提交前必须修复</td></tr>
+      </table></div>
+
+      <h4>3.4.1 分数计算方式</h4>
+      <p>每发现一个问题就扣分：</p>
+      <div class="table-wrap"><table>
+        <tr><th>问题类型</th><th>扣分</th><th>为何严重</th></tr>
+        <tr><td>公式溢出</td><td>-20</td><td>数学被截断 = 无法使用</td></tr>
+        <tr><td>引用失效</td><td>-15</td><td>学术诚信问题</td></tr>
+        <tr><td>公式错别字</td><td>-10</td><td>教了错误内容</td></tr>
+        <tr><td>文字溢出</td><td>-5</td><td>内容被截断</td></tr>
+        <tr><td>标签重叠</td><td>-5</td><td>图示无法辨读</td></tr>
+        <tr><td>符号不一致</td><td>-3</td><td>让学生困惑</td></tr>
+      </table></div>
+
+      <h4>3.4.2 强制验证</h4>
+      <p>验证协议（<code>.claude/rules/verification-protocol.md</code>）要求 Claude 在报告任务完成前，必须编译、渲染或以其他方式验证每个产出。编排器将此作为其循环中的一个明确步骤（第 2 步：验证）强制执行。这意味着 Claude<strong>不能</strong>在没有实际检查产出的情况下说"完成"。</p>
+
+      <div class="callout warning">
+        <div class="callout-title">⚠️ 不要跳过验证</div>
+        <p>在 Econ 730 中，验证发现了：部署后标签重叠的未验证 TikZ 图示、Quarto 幻灯片中无法显示的损坏 SVG，以及因缺少截距项而产生静默错误估计的 R 脚本。</p>
+      </div>
+    </section>
+
+    <section id="s3-5">
+      <h3>3.5 创建你自己的领域审阅器</h3>
+      <p>模板包含 <code>domain-reviewer.md</code>——一个用于构建针对你所在领域的实质性审阅器的骨架。</p>
+
+      <h4>3.5.1 五视角框架</h4>
+      <p>任何领域都可以从以下五个审阅视角受益：</p>
+      <div class="table-wrap"><table>
+        <tr><th>视角</th><th>检查什么</th><th>经济学示例</th><th>物理学示例</th></tr>
+        <tr><td><strong>假设审计</strong></td><td>所述假设是否充分？</td><td>ATT 是否需要重叠条件？</td><td>绝热近似在此是否有效？</td></tr>
+        <tr><td><strong>推导检查</strong></td><td>数学是否正确？</td><td>分解项之和是否等于总量？</td><td>量纲是否平衡？</td></tr>
+        <tr><td><strong>引用忠实度</strong></td><td>幻灯片与引用论文是否一致？</td><td>定理来自正确的论文吗？</td><td>实验设置描述是否准确？</td></tr>
+        <tr><td><strong>代码-理论一致性</strong></td><td>代码是否实现了公式？</td><td>R 脚本与幻灯片公式是否匹配？</td><td>模拟参数是否与理论一致？</td></tr>
+        <tr><td><strong>逻辑链</strong></td><td>推理流程是否顺畅？</td><td>博士生能倒推吗？</td><td>先决条件是否已建立？</td></tr>
+      </table></div>
+    </section>
+  </section>
+
+  <hr>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="s4">
+    <h2><span class="num">第四章</span>核心构建模块</h2>
+    <p>理解配置层级有助于你定制工作流，也能在出问题时快速调试。Claude Code 的强大来自五个协同工作的配置层——可以将它们视为学术项目的操作系统。</p>
+
+    <section id="s4-1">
+      <h3>4.1 CLAUDE.md — 项目"宪法"</h3>
+      <p><code>CLAUDE.md</code> 是最重要的文件。Claude 在每次会话开始时读取它。但有一个关键认知：<strong>Claude 可靠地遵守约 100–150 条自定义指令。</strong>你的系统提示已使用约 50 条，留给你的项目约 100–150 条。CLAUDE.md 和始终加载的规则共用这个预算。</p>
+      <p>这意味着 CLAUDE.md 应该是一部<strong>精简的宪法</strong>——简短的指令和指针，而非全面的文档。目标约 120 行：</p>
+      <ul>
+        <li><strong>核心原则</strong> — 4–5 条（计划优先、验证在后、质量门控、LEARN 标签）</li>
+        <li><strong>文件夹结构</strong> — 所有内容放在哪里</li>
+        <li><strong>命令</strong> — 编译、部署、关键工具</li>
+        <li><strong>定制化表格</strong> — Beamer 环境、CSS 类</li>
+        <li><strong>当前状态</strong> — 已完成什么、进行中什么</li>
+        <li><strong>Skill 快速参考</strong> — 可用斜杠命令的表格</li>
+      </ul>
+      <pre><code># CLAUDE.MD --- 我的课程开发
+
+**项目：** Econ 730 --- 因果面板数据
+**机构：** Emory University
+
+## 核心原则
+1. **计划优先** — 非简单任务前进入规划模式
+2. **验证在后** — 报告完成前先编译/渲染并检查
+3. **质量门控** — 80 才能 commit，90 才能 PR，95 才算卓越
+4. **LEARN 标签** — 在 MEMORY.md 中持久化纠错
+5. **单一事实来源** — Beamer 是权威；推导，不要重复
+
+## 快速参考
+| 命令                     | 功能                     |
+|--------------------------|--------------------------|
+| `/compile-latex [file]`  | 三遍 XeLaTeX 编译        |
+| `/proofread [file]`      | 语法/错别字审阅          |
+| `/deploy [Lecture]`      | 渲染并部署到 GitHub Pages |</code></pre>
+
+      <div class="callout important">
+        <div class="callout-title">⚠️ 保持精简</div>
+        <p>CLAUDE.md 在每次会话加载。如果超过约 150 行，Claude 会开始静默忽略规则。将详细标准放入路径限定规则（<code>.claude/rules/</code>）——它们只在 Claude 操作匹配文件时才加载，所以不会争夺指令预算。</p>
+      </div>
+    </section>
+
+    <section id="s4-2">
+      <h3>4.2 Rules（规则）— 按需自动加载的领域知识</h3>
+      <p>Rules 是 <code>.claude/rules/</code> 中的 Markdown 文件，Claude 自动加载它们。它们编码了你的项目标准。关键设计原则是<strong>路径限定</strong>：带有 <code>paths:</code> YAML 前置信息的规则只在 Claude 操作匹配文件时才加载。</p>
+
+      <p><strong>始终加载的规则</strong>（无 <code>paths:</code> 前置信息）在每次会话加载。保持少量且重点突出：</p>
+      <pre><code>.claude/rules/
+├── plan-first-workflow.md       # ~83 行 — 构建前先规划
+├── orchestrator-protocol.md     # ~42 行 — 承包商模式循环
+├── session-logging.md           # ~23 行 — 三种日志触发器
+└── meta-governance.md           # ~251 行 — 模板 vs 工作项目</code></pre>
+
+      <p><strong>路径限定规则</strong>只在相关时加载：</p>
+      <pre><code>.claude/rules/
+├── r-code-conventions.md        # paths: ["**/*.R"] — R 标准
+├── quality-gates.md             # paths: ["*.tex", "*.qmd", "*.R"] — 评分
+├── verification-protocol.md     # paths: ["*.tex", "*.qmd", "docs/"] — 验证
+├── replication-protocol.md      # paths: ["scripts/**/*.R"] — 复现优先
+├── exploration-folder-protocol.md  # paths: ["explorations/**"] — 沙盒规则
+├── orchestrator-research.md     # paths: ["scripts/**/*.R", "explorations/**"]
+└── ...共 14 条路径限定规则</code></pre>
+
+      <h4>4.2.1 示例：路径限定的 R 代码规范规则</h4>
+      <pre><code>---
+paths:
+  - "**/*.R"
+  - "Figures/**/*.R"
+  - "scripts/**/*.R"
+---
+
+# R 代码标准
+
+## 可复现性
+- set.seed() 在顶部调用一次（YYYYMMDD 格式）
+- 所有包通过 library() 在顶部加载
+- 所有路径相对于仓库根目录
+
+## 视觉标识
+primary_blue  <- "#012169"
+primary_gold  <- "#f2a900"</code></pre>
+    </section>
+
+    <section id="s4-3">
+      <h3>4.3 宪法治理（可选）</h3>
+      <p>随着项目增长，有些决策变得不容商量（为了维护质量、可复现性或协作标准）。其他的则保持灵活。</p>
+      <p><code>templates/constitutional-governance.md</code> 模板帮助你区分：</p>
+      <ul>
+        <li><strong>不可变原则</strong>（第 I–V 条）：确保一致性的不可谈判规则</li>
+        <li><strong>用户偏好</strong>：可根据情境变化的灵活模式</li>
+      </ul>
+
+      <h4>4.3.1 你可能定义的示例条款</h4>
+      <ul>
+        <li><strong>第 I 条：主要产物</strong> — 哪个文件具有权威性</li>
+        <li><strong>第 II 条：计划优先阈值</strong> — 何时进入规划模式</li>
+        <li><strong>第 III 条：质量门控</strong> — 允许 commit 的最低得分</li>
+        <li><strong>第 IV 条：验证标准</strong> — commit 前必须通过什么</li>
+        <li><strong>第 V 条：文件组织</strong> — 不同类型文件放在哪里</li>
+      </ul>
+      <p>在你建立了 3–7 个想要持续执行的重复模式<strong>之后</strong>再使用宪法治理。不要在第一天就创建它——先让模式浮现，再加以规范化。</p>
+    </section>
+
+    <section id="s4-4">
+      <h3>4.4 Skills（技能）— 可复用的斜杠命令</h3>
+      <p>Skills 是用 <code>/命令</code> 调用的多步骤工作流。每个 Skill 存放在 <code>.claude/skills/[名称]/SKILL.md</code>：</p>
+      <pre><code>---
+name: compile-latex
+description: 使用三遍 XeLaTeX + bibtex 编译 LaTeX
+argument-hint: "[不含 .tex 扩展名的文件名]"
+---
+
+# 步骤：
+1. cd 到 Slides/
+2. 运行 xelatex 第 1 遍
+3. 运行 bibtex
+4. 运行 xelatex 第 2 遍
+5. 运行 xelatex 第 3 遍
+6. 检查错误
+7. 报告结果</code></pre>
+
+      <p><strong>模板中包含的 Skills：</strong></p>
+      <div class="table-wrap"><table>
+        <tr><th>Skill</th><th>用途</th><th>何时使用</th></tr>
+        <tr><td><code>/compile-latex</code></td><td>从 .tex 构建 PDF</td><td>任何 Beamer 编辑后</td></tr>
+        <tr><td><code>/deploy</code></td><td>渲染 Quarto + 同步到 docs/</td><td>推送到 GitHub Pages 前</td></tr>
+        <tr><td><code>/proofread</code></td><td>语法和一致性检查</td><td>每次 commit 前</td></tr>
+        <tr><td><code>/qa-quarto</code></td><td>对抗性 Quarto QA</td><td>将 Beamer 转换为 Quarto 后</td></tr>
+        <tr><td><code>/slide-excellence</code></td><td>完整多 Agent 审阅</td><td>重要里程碑前</td></tr>
+        <tr><td><code>/create-lecture</code></td><td>从零创建新讲座</td><td>开始新主题时</td></tr>
+        <tr><td><code>/commit</code></td><td>暂存、commit、PR、合并</td><td>任何已完成任务后</td></tr>
+      </table></div>
+    </section>
+
+    <section id="s4-5">
+      <h3>4.5 Agents（智能体）— 专业审阅器</h3>
+      <p>Agent 是系统真正的力量所在。每个 Agent 是某一质量维度的专家：</p>
+      <pre><code>.claude/agents/
++-- proofreader.md        # 语法、错别字、一致性
++-- slide-auditor.md      # 视觉布局、溢出、间距
++-- pedagogy-reviewer.md  # 叙事弧、符号清晰度、节奏
++-- r-reviewer.md         # R 代码质量和可复现性
++-- tikz-reviewer.md      # TikZ 图示视觉质量
++-- quarto-critic.md      # 对抗性 Quarto vs Beamer 比较
++-- quarto-fixer.md       # 应用评审者的修复
++-- beamer-translator.md  # Beamer → Quarto 转换
++-- verifier.md           # 任务完成验证
++-- domain-reviewer.md    # 你的领域专属实质性审阅</code></pre>
+
+      <h4>4.5.1 Agent 解剖</h4>
+      <pre><code>---
+name: proofreader
+description: 审阅幻灯片的语法、错别字和一致性
+---
+
+# 校对 Agent
+
+## 角色
+你是一位审阅讲座幻灯片的专业学术校对员。
+
+## 检查内容
+1. 语法和拼写错误
+2. 不一致的符号
+3. 缺失或失效的引用
+4. 内容溢出（文字超出幻灯片边界）
+
+## 报告格式
+将发现保存到：quality_reports/[文件名]_report.md
+
+## 严重程度级别
+- **严重：** 数学错误、引用失效
+- **重要：** 语法错误、溢出
+- **次要：** 风格不一致</code></pre>
+
+      <h4>4.5.2 多模型策略：成本 vs. 质量</h4>
+      <p>并非所有 Agent 都需要相同的模型。每个 Agent 文件在 YAML 前置信息中有一个 <code>model:</code> 字段：</p>
+      <div class="table-wrap"><table>
+        <tr><th>任务类型</th><th>推荐模型</th><th>原因</th><th>示例</th></tr>
+        <tr><td>复杂翻译</td><td><code>model: opus</code></td><td>需要深入理解两种格式</td><td>beamer-translator, quarto-critic</td></tr>
+        <tr><td>快速有限工作</td><td><code>model: sonnet</code></td><td>速度比深度更重要</td><td>r-reviewer, quarto-fixer</td></tr>
+        <tr><td>默认</td><td><code>model: inherit</code></td><td>使用主会话运行的模型</td><td>proofreader, slide-auditor</td></tr>
+      </table></div>
+      <p><strong>原则：</strong>对需要同时在脑中持有两个大文档的任务使用 Opus（翻译、对抗性比较）。对有清晰、有限范围的任务使用 Sonnet（修复这 12 处问题、检查这个 R 脚本）。让其他的继承主会话模型。</p>
+
+      <div class="callout tip">
+        <div class="callout-title">💰 节省成本</div>
+        <p>如果你按 Agent 配置模型，一次典型的 Beamer 转 Quarto 任务会用 Opus 运行评审者（2–4 轮），用 Sonnet 运行修复者（相同轮数）。与全部使用 Opus 相比，这能节省约 40–60% 的费用，而修复步骤的质量不会有任何损失。</p>
+      </div>
+    </section>
+
+    <section id="s4-6">
+      <h3>4.6 Settings — 权限与钩子</h3>
+      <p><code>.claude/settings.json</code> 控制 Claude 被允许做什么。以下是简化摘录：</p>
+      <pre><code>{
+  "permissions": {
+    "allow": [
+      "Bash(git status *)",
+      "Bash(xelatex *)",
+      "Bash(Rscript *)",
+      "Bash(quarto render *)",
+      "Bash(./scripts/sync_to_docs.sh *)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [{
+          "type": "command",
+          "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/log-reminder.py",
+          "timeout": 10
+        }]
+      }
+    ]
+  }
+}</code></pre>
+      <p><strong>Stop 钩子</strong>在每次响应后运行一个快速 Python 脚本。无 LLM 调用，无延迟。它检查会话日志是否是最新的，如果不是则提醒 Claude 更新。</p>
+    </section>
+
+    <section id="s4-7">
+      <h3>4.7 Memory（记忆）— 跨会话持久化</h3>
+      <p>Claude Code 有一个自动记忆系统，位于 <code>~/.claude/projects/[项目]/memory/MEMORY.md</code>。此文件跨会话持久化，加载到每次对话中。</p>
+      <p>使用场景：永不改变的关键项目事实 · 你不希望重复的纠错（<code>[LEARN:标签]</code> 格式） · 当前方案状态</p>
+      <pre><code># 自动记忆
+
+## 关键事实
+- 项目使用 XeLaTeX，不是 pdflatex
+- 参考文献文件：Bibliography_base.bib
+
+## 纠错日志
+- [LEARN:r-code] 包 X 在协变量缺失时静默丢弃观测
+- [LEARN:citation] Post-LASSO 是 Belloni (2013)，不是 Belloni (2014)
+- [LEARN:workflow] 每次 Beamer 编辑必须自动同步到 Quarto</code></pre>
+
+      <h4>4.7.1 Plans（方案）— 抗压缩的任务记忆</h4>
+      <p>MEMORY.md 存储长期项目事实，而<strong>方案</strong>存储任务特定策略。每个非简单任务的方案都以时间戳保存到 <code>quality_reports/plans/</code>。这意味着：</p>
+      <ul>
+        <li>方案在自动压缩中存活（它们在磁盘上，不只在上下文中）</li>
+        <li>方案在会话边界间存活（在未来任何会话中可读）</li>
+        <li>方案创建了设计决策的审计轨迹</li>
+      </ul>
+
+      <h4>4.7.2 会话日志 — 记录"为什么"而非"做了什么"</h4>
+      <p>Git commit 记录什么改变了，但不记录<em>为什么</em>。会话日志填补了这一空白。Claude 在三个时间点写入 <code>quality_reports/session_logs/</code>：方案批准后、实施过程中（随着决策发生），以及会话结束时。</p>
+      <p>由于单靠指令是脆弱的（Claude 在长会话中会遗忘），<strong>Stop 钩子</strong>（<code>.claude/hooks/log-reminder.py</code>）在每次响应后触发。它跟踪自上次更新会话日志以来经过了多少次响应。超过阈值后，它会阻止 Claude 停止，直到日志是最新的。</p>
+
+      <div class="callout note">
+        <div class="callout-title">📝 为什么会话日志很重要</div>
+        <p><strong>Git 记录做了什么；会话日志记录为什么。</strong>一条 commit 信息说"更新第 5 讲 TikZ 图示"。一条会话日志说"重新设计了 TWFE 分解图，因为 DA 挑战揭示学生无法追踪从权重到偏差的路径。考虑过表格格式，但选择了流程图因为它显示了方向性。"</p>
+        <p><strong>增量记录是关键。</strong>一个 4 小时的会话如果只在开始和结束时记录，会丢失中间的所有内容。随着决策发生立即追加，意味着自动压缩永远无法清除它们——它们已经在磁盘上了。</p>
+      </div>
+
+      <h4>4.7.3 所有层级如何协同工作</h4>
+      <div class="table-wrap"><table>
+        <tr><th>层级</th><th>文件</th><th>能否在压缩中存活？</th><th>何时更新</th><th>用途</th></tr>
+        <tr><td>项目上下文</td><td><code>CLAUDE.md</code></td><td>✅ 是（在磁盘上）</td><td>很少</td><td>项目规则、文件夹结构、命令</td></tr>
+        <tr><td>纠错</td><td><code>MEMORY.md</code></td><td>✅ 是（在磁盘上）</td><td>在 [LEARN] 标签时</td><td>防止重复过去的错误</td></tr>
+        <tr><td>任务策略</td><td><code>quality_reports/plans/</code></td><td>✅ 是（在磁盘上）</td><td>每个任务一次</td><td>方案在规划-实施交接中存活</td></tr>
+        <tr><td>决策推理</td><td><code>quality_reports/session_logs/</code></td><td>✅ 是（在磁盘上）</td><td>增量式</td><td>记录决策的<em>为什么</em></td></tr>
+        <tr><td>对话</td><td>Claude 的上下文窗口</td><td>❌ 否（被压缩）</td><td>每次响应</td><td>当前工作记忆</td></tr>
+      </table></div>
+
+      <h4>4.7.4 钩子 — 自动化执行</h4>
+      <div class="table-wrap"><table>
+        <tr><th>钩子</th><th>事件</th><th>功能</th></tr>
+        <tr><td>会话日志提醒</td><td>Stop</td><td>每次响应后提醒会话日志</td></tr>
+        <tr><td>桌面通知</td><td>Notification</td><td>Claude 需要关注时的桌面提醒</td></tr>
+        <tr><td>文件保护</td><td>PreToolUse[Edit|Write]</td><td>阻止对参考文献和设置文件的意外编辑</td></tr>
+        <tr><td>上下文状态捕获</td><td>PreCompact</td><td>在自动压缩前保存方案状态</td></tr>
+        <tr><td>上下文恢复</td><td>SessionStart[compact|resume]</td><td>压缩或恢复后重建上下文</td></tr>
+        <tr><td>上下文监控</td><td>PostToolUse[Bash|Task]</td><td>在 40%/55%/65%/80%/90% 上下文时逐步发出警告</td></tr>
+        <tr><td>验证提醒</td><td>PostToolUse[Write|Edit]</td><td>提醒在标记完成前编译/渲染</td></tr>
+      </table></div>
+
+      <h4>4.7.5 上下文存续系统（高级）</h4>
+      <p>当上下文压缩发生时，Claude 会丢失工作记忆。<strong>上下文存续系统</strong>确保你能无缝恢复。</p>
+      <div class="diagram">会话运行 → 上下文填满 → PreCompact 触发
+                                        ↓
+                                pre-compact.py 保存：
+                                • 活跃方案路径
+                                • 当前任务
+                                • 近期决策
+                                        ↓
+                                自动压缩发生
+                                        ↓
+                                SessionStart(compact|resume) 触发
+                                        ↓
+                                post-compact-restore.py：
+                                • 读取保存的状态
+                                • 打印上下文摘要
+                                • Claude 知道它停在哪里了</div>
+      <p>如果中途发生压缩，可以手动指引 Claude 找到正确的上下文：</p>
+      <blockquote style="border-left:3px solid var(--accent);padding-left:16px;margin:16px 0;color:var(--ink-faint);font-style:italic">"我们刚发生了压缩。读取 <code>quality_reports/plans/2026-02-06_translate-lecture5.md</code> 并从我们停下的地方继续。"</blockquote>
+    </section>
+  </section>
+
+  <hr>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="s5">
+    <h2><span class="num">第五章</span>工作流模式</h2>
+    <p>前两个模式是<strong>元模式</strong>——它们控制每个任务的流程。先掌握这两个，其他具体工作流就更容易理解了。</p>
+
+    <section id="s5-1">
+      <h3>模式 1：计划优先开发</h3>
+      <p>计划优先模式确保非简单任务以思考开始，而非直接动手。</p>
+
+      <h4>为什么规划很重要</h4>
+      <p>AI 辅助开发中最常见的失败模式不是糟糕的代码——而是解决了错误的问题，或以脆弱的顺序解决了正确的问题。计划优先开发在触碰任何文件之前强制执行一个明确的设计步骤。</p>
+
+      <h4>协议流程</h4>
+      <pre><code>非简单任务到来
+  |
+  +-- 第 1 步：Claude 进入规划模式（自动，或说"先规划一下"）
+  +-- 第 2 步：起草方案（方法、文件、验证）
+  +-- 第 3 步：保存到 quality_reports/plans/YYYY-MM-DD_描述.md
+  +-- 第 4 步：向用户呈现方案
+  +-- 第 5 步：用户批准（或修改）
+  +-- 第 6 步：保存初始会话日志（趁上下文新鲜时捕获）
+  +-- 第 7 步：编排器接管（见模式 2）
+  +-- 第 8 步：更新会话日志 + 方案状态改为 COMPLETED</code></pre>
+
+      <div class="callout tip">
+        <div class="callout-title">💡 每周回顾</div>
+        <p>对于多项目的学者，每周开始时请 Claude 读取过去一周的所有会话日志，综合生成状态报告，列出优先级和待解决问题。会话日志基础设施已经捕获了你需要的一切——每周回顾只是一个综合提示：<em>"读取本周所有会话日志。总结：完成了什么、什么受阻、我下一步应该优先处理什么？"</em></p>
+      </div>
+    </section>
+
+    <section id="s5-2">
+      <h3>模式 2：承包商模式（编排器）</h3>
+      <p>方案批准后，编排器接管。它是模式 1 的自然延续：方案说<em>做什么</em>，编排器自主处理<em>怎么做</em>。</p>
+
+      <h4>心智模型</h4>
+      <p>将编排器想象成<strong>总承包商</strong>。你是甲方。你描述想要什么。计划优先协议是蓝图阶段。一旦你批准蓝图，承包商接管：雇用合适的专家（Agent）、检查他们的工作（验证）、让他们回去修复问题（审阅-修复循环），只有在工程通过验收（质量门控）时才来找你。</p>
+
+      <h4>编排器循环</h4>
+      <div class="diagram">用户："将第 5 讲转换为 Quarto"
+  |
+  |-- 计划优先（模式 1）：起草方案，保存到磁盘，获得批准
+  |
+  |-- 用户："已批准"
+  |
+  +-- 编排器激活：
+        |
+        第 1 步：实施
+        |  执行方案步骤（创建 QMD、翻译内容等）
+        |
+        第 2 步：验证
+        |  运行验证器：渲染 Quarto，检查 HTML 产出
+        |  如果渲染失败 -> 修复 -> 重新渲染
+        |
+        第 3 步：审阅（根据文件类型选择 Agent）
+        |  +--- proofreader --------+
+        |  +--- slide-auditor ------+  （并行）
+        |  +--- pedagogy-reviewer --+
+        |  +--- quarto-critic ------+  （需要其他 Agent 先完成）
+        |
+        第 4 步：修复
+        |  应用修复：严重 -> 重要 -> 次要
+        |  对于 quarto-critic 的问题：调用 quarto-fixer
+        |
+        第 5 步：重新验证
+        |  再次渲染，确认修复是干净的
+        |
+        第 6 步：评分
+        |  应用质量门控评分标准
+        |
+        +-- 分数 >= 80？
+              是 -> 向用户呈现摘要
+              否 -> 循环回第 3 步（最多 5 轮）</div>
+
+      <h4>"直接做"模式</h4>
+      <p>有时你不想批准最终结果——你只想要它完成：</p>
+      <blockquote style="border-left:3px solid var(--accent);padding-left:16px;margin:16px 0;color:var(--ink-faint);font-style:italic">"将第 5 讲转换为 Quarto。直接做。"</blockquote>
+      <p>在这种模式下，编排器仍然运行完整的验证-审阅-修复循环（质量是不可妥协的），但跳过最终批准暂停，如果分数 80 分及以上则自动 commit。它仍然呈现摘要，让你看到做了什么。</p>
+
+      <div class="callout tip">
+        <div class="callout-title">💡 何时使用 Skill vs. 编排器</div>
+        <p><strong>编排器</strong>（自动）："将第 5 讲转换为 Quarto" — 编排器决定调用哪些 Agent。</p>
+        <p><strong>Skill</strong>（明确）："/qa-quarto Lecture5" — 你特别想要对抗性评审者-修复者循环，不需要其他的。</p>
+        <p>两者都有效。编排器是"我信任你，处理它"的路径。Skill 是"我确切知道我想要什么"的路径。</p>
+      </div>
+    </section>
+
+    <section id="s5-3">
+      <h3>模式 3：创建新讲座</h3>
+      <p><code>/create-lecture</code> Skill 引导你完成结构化的讲座创建工作流——从收集原始材料到部署精良幻灯片：</p>
+      <div class="diagram">/create-lecture
+  |
+  +-- 第 1 阶段：收集材料（论文、大纲）
+  +-- 第 2 阶段：设计幻灯片结构
+  +-- 第 3 阶段：起草 Beamer 幻灯片
+  +-- 第 4 阶段：生成 R 图表
+  +-- 第 5 阶段：打磨与验证
+  |     +-- /slide-excellence（领域 + 视觉 + 教学法）
+  |     +-- /proofread（语法/错别字）
+  |     +-- /visual-audit（布局）
+  +-- 第 6 阶段：部署
+        +-- /translate-to-quarto（可选）
+        +-- /deploy</div>
+    </section>
+
+    <section id="s5-4">
+      <h3>模式 4：Beamer 转 Quarto</h3>
+      <p>转换保留所有内容，同时适配格式，将 TikZ 转换为 SVG，将 ggplot 图转换为交互式 Plotly 图：</p>
+      <div class="diagram">/translate-to-quarto Lecture5_Topic.tex
+  |
+  +-- 第 1-3 阶段：环境映射 + 内容翻译
+  +-- 第 4-5 阶段：图示转换（TikZ -> SVG）
+  +-- 第 6-7 阶段：交互式图表（ggplot -> plotly）
+  +-- 第 8-9 阶段：渲染 + 验证
+  +-- 第 10-11 阶段：/qa-quarto 对抗性 QA
+        +-- 评审者：发现问题
+        +-- 修复者：应用修复
+        +-- 评审者：重审
+        +-- ... （直到 APPROVED 或 5 轮）</div>
+    </section>
+
+    <section id="s5-5">
+      <h3>模式 5：复现优先编码</h3>
+      <p>当处理有复现包的论文时：</p>
+      <pre><code>第 1 阶段：清点原始代码
+  +-- 记录"黄金标准"数字（表 X，列 Y = Z.ZZ）
+
+第 2 阶段：翻译（如 Stata -> R）
+  +-- 完全匹配原始规格（相同协变量、相同聚类）
+
+第 3 阶段：验证匹配
+  +-- 比较每个目标：论文值 vs. 我们的值
+  +-- 容忍度：估计值 < 0.01，标准误 < 0.05
+  +-- 如果不匹配：停止。在继续之前调查。
+
+第 4 阶段：只有这之后才扩展
+  +-- 新的估计器、新的规格、课程特定图表</code></pre>
+
+      <div class="callout important">
+        <div class="callout-title">⚠️ 永远不要跳过复现</div>
+        <p>在一门课程中，我们发现一个广泛使用的 R 包由于一个微妙的规格问题静默地产生了<strong>错误的估计值</strong>。这个 bug 在不同脚本中被发现了 3 次。没有复现优先协议，这些错误数字就会教给博士生了。</p>
+      </div>
+    </section>
+
+    <section id="s5-6">
+      <h3>模式 6：多 Agent 审阅</h3>
+      <p><code>/slide-excellence</code> Skill 并行运行最多 6 个 Agent：</p>
+      <div class="diagram">/slide-excellence Lecture5_Topic.tex
+  |
+  +-- Agent 1：视觉审计（slide-auditor）
+  +-- Agent 2：教学法审阅（pedagogy-reviewer）
+  +-- Agent 3：校对（proofreader）
+  +-- Agent 4：TikZ 审阅（tikz-reviewer，如适用）
+  +-- Agent 5：内容一致性（如存在 Quarto 版本）
+  +-- Agent 6：实质性审阅（domain-reviewer）
+  |
+  +-- 综合：综合质量分数 + 优先级修复清单</div>
+    </section>
+
+    <section id="s5-7">
+      <h3>模式 7：自我提升循环</h3>
+      <p>自我提升有两个层次：通过 <code>[LEARN]</code> 标签进行<strong>快速纠错</strong>，以及通过 <code>/learn</code> 进行<strong>完整技能提取</strong>。</p>
+
+      <h4>7.1 快速纠错：[LEARN] 标签</h4>
+      <p>每条纠错都被标记以供将来在 MEMORY.md 中参考：</p>
+      <pre><code>## 纠错日志
+- [LEARN:notation] T_t = 1{t=2} 是确定性的 -> 使用 T_i in {1,2}
+- [LEARN:citation] Post-LASSO 是 Belloni (2013)，不是 Belloni (2014)
+- [LEARN:r-code] 包 X：设计矩阵中务必包含截距
+- [LEARN:workflow] 每次 Beamer 编辑必须自动同步到 Quarto</code></pre>
+
+      <h4>7.2 自动化技能捕获：/learn</h4>
+      <p>对于值得超过一行标签的发现，使用 <code>/learn</code> 创建完整技能：</p>
+      <pre><code>/learn fixest-missing-covariate-handling</code></pre>
+      <p><code>/learn</code> Skill 引导你完成 4 阶段工作流：</p>
+      <div class="diagram">第 1 阶段：评估
+  "这不是显而易见的吗？未来的我会受益吗？"
+  → 如果对任一问题回答是，继续
+         ↓
+第 2 阶段：检查现有
+  在 .claude/skills/ 中搜索相关技能
+  → 没有相关的？创建新的。有重叠？更新现有的。
+         ↓
+第 3 阶段：创建技能
+  写入 .claude/skills/[名称]/SKILL.md
+  • 问题陈述
+  • 触发条件（确切的错误、症状）
+  • 逐步解决方案
+  • 验证步骤
+         ↓
+第 4 阶段：质量门控
+  • 描述有具体触发条件？
+  • 解决方案已验证有效？
+  • 具体到可操作？
+  • 通用到可复用？</div>
+
+      <h4>何时使用 /learn vs. [LEARN] 标签</h4>
+      <div class="table-wrap"><table>
+        <tr><th>情况</th><th>使用</th></tr>
+        <tr><td>一行修复</td><td>MEMORY.md 中的 <code>[LEARN:类别]</code> 标签</td></tr>
+        <tr><td>多步骤工作流</td><td><code>/learn</code> 创建完整技能</td></tr>
+        <tr><td>错误 + 根本原因 + 解决方案</td><td>可复用用 <code>/learn</code>，否则用 <code>[LEARN]</code></td></tr>
+        <tr><td>包的怪癖</td><td>如果影响多个项目用 <code>/learn</code></td></tr>
+      </table></div>
+    </section>
+
+    <section id="s5-8">
+      <h3>模式 8：魔鬼代言人</h3>
+      <p>在任何设计决策点，调用魔鬼代言人：</p>
+      <blockquote style="border-left:3px solid var(--accent);padding-left:16px;margin:16px 0;color:var(--ink-faint);font-style:italic">"创建一个魔鬼代言人。让它用 5–7 个具体的教学法问题挑战这个幻灯片设计。逐一分析每个挑战，告诉我哪些经得起考验。"</blockquote>
+      <p>这能发现：</p>
+      <ul>
+        <li>未陈述的假设</li>
+        <li>可能更有效的替代顺序</li>
+        <li>可能让学生困惑的符号</li>
+        <li>形式化之前缺失的直觉</li>
+        <li>认知负荷问题</li>
+      </ul>
+
+      <div class="callout tip">
+        <div class="callout-title">💡 全新上下文批评</div>
+        <p>一个更强的变体：通过 Task 工具生成一个新 Agent，<strong>不</strong>让它访问原始对话。只给它产物和一个批评提示。全新的 Agent 对工作没有沉没成本，会毫不留情。</p>
+        <blockquote style="font-style:italic;">"生成一个新 Agent。让它只读我的论文草稿——不是我们的对话。让它找出 5 个最薄弱的点，并建议一个充满敌意的审稿人会如何攻击每一点。"</blockquote>
+        <p>就像把你的草稿交给一个没在你写稿时在场的同事。</p>
+      </div>
+    </section>
+
+    <section id="s5-9">
+      <h3>模式 9–12：研究工作流</h3>
+
+      <h4>模式 9：并行 Agent 处理研究任务</h4>
+      <p>Claude Code 可以使用 Task 工具<strong>同时生成多个 Agent</strong>。这不限于审阅——你可以用它处理任何独立子任务可以同时运行的研究或分析任务。</p>
+      <div class="table-wrap"><table>
+        <tr><th>场景</th><th>串行（慢）</th><th>并行（快）</th></tr>
+        <tr><td>审阅讲座</td><td>依次运行校对、审计、教学法</td><td>同时运行全部 3 个</td></tr>
+        <tr><td>分析 3 篇论文</td><td>依次读论文 1、2、3</td><td>生成 3 个 Agent，各读一篇</td></tr>
+        <tr><td>生成图表</td><td>依次创建图 1、2、3</td><td>为独立图表生成 Agent</td></tr>
+        <tr><td>比较估计器</td><td>依次运行模拟 1、2、3</td><td>为每个模拟生成 Agent</td></tr>
+        <tr><td>辩论研究设计</td><td>依次考虑 DiD、SC、RDD</td><td>3 个 Agent 各自倡导一种方法</td></tr>
+      </table></div>
+      <p><strong>Agent 辩论：</strong>给每个并行 Agent 一个<strong>不同的方法论视角</strong>，让它们争论。不要问"我应该使用哪个估计器？"，而是生成 3 个 Agent——一个倡导 DiD，一个倡导合成控制，一个倡导 RDD——每个 Agent 都全力论证为什么它的方法最适合你的研究问题，并批评其他方法。将辩论综合成决策矩阵。</p>
+      <p><strong>实际限制：</strong>3 个 Agent 是最佳数量。超过这个数量增加了开销而没有成比例的加速。</p>
+
+      <h4>模式 10：研究探索工作流</h4>
+      <p>所有实验性工作先放到 <code>explorations/</code>：</p>
+      <pre><code>explorations/
+├── [活跃项目]/
+│   ├── README.md           # 目标、假设、状态
+│   ├── R/                  # 代码迭代（_v1, _v2）
+│   ├── scripts/            # 测试脚本
+│   └── output/             # 结果
+└── ARCHIVE/
+    ├── completed_[名称]/   # 已升级到生产
+    └── abandoned_[名称]/   # 记录了放弃原因</code></pre>
+
+      <p><strong>快速通道 vs. 计划优先决策树：</strong></p>
+      <div class="table-wrap"><table>
+        <tr><th>问题</th><th>答案</th><th>工作流</th></tr>
+        <tr><td>"这会发布吗？"</td><td>是</td><td>计划优先（80/100 质量）</td></tr>
+        <tr><td>"我在测试一个想法吗？"</td><td>是</td><td>快速通道（60/100 质量）</td></tr>
+        <tr><td>"这能改善项目吗？"</td><td>否</td><td>不要构建</td></tr>
+      </table></div>
+
+      <h4>模式 11：研究技能</h4>
+      <div class="table-wrap"><table>
+        <tr><th>Skill</th><th>功能</th><th>何时使用</th></tr>
+        <tr><td><code>/lit-review [主题]</code></td><td>搜索、综合文献，识别研究空白</td><td>开始新项目或新章节</td></tr>
+        <tr><td><code>/research-ideation [主题]</code></td><td>生成研究问题、假设和实证策略</td><td>头脑风暴阶段</td></tr>
+        <tr><td><code>/interview-me [主题]</code></td><td>互动采访，将模糊想法形式化为具体规格</td><td>你有直觉但没有计划时</td></tr>
+        <tr><td><code>/review-paper [文件]</code></td><td>完整论文审阅，含审稿人反对意见</td><td>投稿前或草稿完成后</td></tr>
+        <tr><td><code>/data-analysis [数据]</code></td><td>端到端 R 分析：探索、回归、生成发表级产出</td><td>实证分析阶段</td></tr>
+      </table></div>
+
+      <h4>模式 12：使用 Git Worktrees 进行分支隔离（高级）</h4>
+      <div class="callout note">
+        <div class="callout-title">📌 高级模式</div>
+        <p>此模式是可选的，主要对大规模翻译、高风险重构或多天项目有用。大多数日常工作不需要它。</p>
+      </div>
+      <p>Git worktrees 创建一个链接到同一仓库的<strong>独立工作目录</strong>：</p>
+      <pre><code>your-project/                     ← main 分支（保持干净）
+.worktrees/lecture-06-quarto/     ← 隔离分支（Claude 在这里工作）</code></pre>
+      <div class="table-wrap"><table>
+        <tr><th>优势</th><th>示例</th></tr>
+        <tr><td>安全实验</td><td>翻译第 6 讲——如果失败，main 不受影响</td></tr>
+        <tr><td>干净历史</td><td>50 个中间 commit 压缩成一个干净的 commit</td></tr>
+        <tr><td>轻松丢弃</td><td>方法不对？删除 worktree，main 无痕迹</td></tr>
+        <tr><td>多会话工作</td><td>第二天继续，无上下文丢失</td></tr>
+        <tr><td>并行工作</td><td>处理幻灯片（main）的同时 Claude 在翻译（worktree）</td></tr>
+      </table></div>
+    </section>
+
+    <section id="s5-10">
+      <h3>模式 13–14：高级模式</h3>
+
+      <h4>模式 13：可复现性与复现合规</h4>
+      <p>模式 5 讲的是在扩展别人的结果之前先<em>匹配</em>它。本模式是补充：将<em>你自己的</em>工作打包，让他人——以及期刊数据编辑——能够验证它。</p>
+
+      <h5>AEA 数据编辑标准</h5>
+      <p><a href="https://social-science-data-editors.github.io/template_README/">社会科学复现包模板 README</a> 是 AEA、经济研究评论、经济学期刊等主要期刊的合规标准。它要求 8 个结构化部分：</p>
+      <div class="table-wrap"><table>
+        <tr><th>部分</th><th>涵盖内容</th></tr>
+        <tr><td>概述</td><td>代码做什么、数据来源、软件、运行时间</td></tr>
+        <tr><td>数据可用性声明</td><td>每个数据来源的出处、访问权限、再分发权限</td></tr>
+        <tr><td>数据集列表</td><td>每个数据文件：来源、格式、是否提供</td></tr>
+        <tr><td>计算需求</td><td>软件版本、包、随机种子、内存、运行时间</td></tr>
+        <tr><td>程序描述</td><td>目录结构、执行顺序、依赖关系</td></tr>
+        <tr><td>复现者指南</td><td>编号步骤——理想情况下一条命令</td></tr>
+        <tr><td>表格/图形映射</td><td>每个展示物映射到生成它的具体程序和行号</td></tr>
+        <tr><td>参考文献</td><td>所有数据来源的正式书目引用</td></tr>
+      </table></div>
+
+      <p><strong>推荐目录结构：</strong></p>
+      <pre><code>project/
+├── README.pdf              # 遵循 AEA 模板
+├── LICENSE.txt             # 代码：MIT/BSD；数据：CC-BY
+├── data/
+│   ├── raw/                # 原始数据（未修改）
+│   └── derived/            # 处理后/分析用数据
+├── code/
+│   ├── 00_setup.R          # 安装依赖
+│   ├── 01_dataprep/        # 数据清理
+│   ├── 02_analysis/        # 主要结果
+│   └── 03_appendix/        # 附录结果
+└── results/                # 产出表格、图表</code></pre>
+
+      <h4>模式 14：幻灯片的修辞学</h4>
+      <p>slide-auditor 检查<em>技术</em>质量（溢出、间距）。pedagogy-reviewer 检查<em>教学</em>质量（符号密度、先决条件）。两者都不处理<em>修辞</em>质量——幻灯片是否有说服力、论述是否流畅、美感是否服务于功能。</p>
+
+      <h5>三大法则</h5>
+      <p><strong>法则一：美就是功能。</strong>漂亮的幻灯片不是装饰过度的幻灯片。美感是让清晰度变得可见。每个元素都有存在的理由。没有任何东西会分散对核心内容的注意力。"没有功能的装饰就是噪音。"</p>
+      <p><strong>法则二：认知负荷是敌人。</strong>每张幻灯片一个想法。一个。这不是指导原则——这是法则。观众的工作记忆有限。每个不必要的词、数据点或"以防万一"的内容都在抢夺传递真实信息所需的带宽。</p>
+      <p><strong>法则三：幻灯片服务于口头表达。</strong>"如果你的幻灯片不需要你说话就能被理解，你写的是一份文档，却把它叫做演示。"幻灯片是口头表达的视觉锚点——注意力的焦点，记忆的钩子。</p>
+
+      <h5>边际效益 / 边际成本等价</h5>
+      <p>本框架最独特的贡献——将边际分析应用于幻灯片设计：</p>
+      <blockquote style="border-left:3px solid var(--accent);padding-left:16px;margin:16px 0;color:var(--ink-faint);">最优修辞使所有幻灯片的边际效益与边际成本之比相等：MB₁/MC₁ = MB₂/MC₂ = … = MBₙ/MCₙ</blockquote>
+      <p><strong>实践含义：</strong></p>
+      <ul>
+        <li><strong>过载的幻灯片</strong>（MB/MC 太低）：文字延伸到页脚、相互竞争的想法、观众放弃</li>
+        <li><strong>欠载的幻灯片</strong>（MB/MC 太高）：浪费机会，注意力被捕获但未被利用</li>
+        <li><strong>目标是流畅</strong>——整个演示保持一致的认知负荷</li>
+      </ul>
+
+      <h5>可操作原则</h5>
+      <div class="table-wrap"><table>
+        <tr><th>原则</th><th>原因</th><th>反例</th></tr>
+        <tr><td>标题是断言</td><td>"处理使距离增加了 61 英里"承载了论点</td><td>"结果"什么都没告诉观众</td></tr>
+        <tr><td>项目符号是失败</td><td>列表说"我找不到结构"</td><td>找到顺序、对比、层次或因果链</td></tr>
+        <tr><td>留白彰显自信</td><td>拥挤的幻灯片表示恐惧——怕沉默、怕忘词</td><td>用文字填满每个像素</td></tr>
+        <tr><td>直接标注，不用图例</td><td>图例让眼睛来回移动；标注待在数据旁</td><td>需要颜色对照表的图例</td></tr>
+        <tr><td>每张图一个信息</td><td>如果不能用一句话解释，它太复杂了</td><td>有多个竞争故事的多面板图</td></tr>
+        <tr><td>正文至少 24pt，最多 2 种字体</td><td>无衬线字体用于投影；从后排测试</td><td>12pt 文字、装饰性字体</td></tr>
+      </table></div>
+    </section>
+  </section>
+
+  <hr>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="s6">
+    <h2><span class="num">第六章</span>生态系统：他人构建的成果</h2>
+    <p>本仓库提供基础——基础设施模式（计划优先、编排器、质量门控、对抗性审阅、上下文存续），适用于任何学术任务。其他人已将这些模式进一步发展，为特定需求构建了专业化工作流。</p>
+
+    <div class="table-wrap"><table>
+      <tr><th>原则</th><th>来源</th><th>如何在此实施</th></tr>
+      <tr><td>对抗性审阅（而非自我审阅）</td><td>所有</td><td>使用全新上下文批评（模式 8）或工作者-评审者配对</td></tr>
+      <tr><td>结构化中间文件</td><td>Xu & Yang</td><td>将每个计算对象保存到磁盘；Agent 通过文件通信</td></tr>
+      <tr><td>阶段适当的严格性</td><td>clo-author</td><td>探索轻度审阅（60/100），投稿完整对抗性（95/100）</td></tr>
+      <tr><td>保留声音</td><td>claudeblattman</td><td>维护一份含你写作风格的参考文档；作为上下文加载</td></tr>
+      <tr><td>模板-执行器分离</td><td>Xu & Yang</td><td>规格 = 衡量什么，编排器 = 如何执行</td></tr>
+      <tr><td>自我改进配置</td><td>claudeblattman</td><td>使用 <code>/learn</code> 捕获发现；定期回顾 MEMORY.md</td></tr>
+      <tr><td>人类判断，AI 执行</td><td>Xu & Yang</td><td>你设计诊断；Claude 运行它</td></tr>
+      <tr><td>美就是功能</td><td>MixtapeTools</td><td>每个视觉元素都要赚到它的存在；没有功能的装饰是噪音</td></tr>
+    </table></div>
+
+    <h3>6.1 clo-author：以论文为中心的研究工作流</h3>
+    <p><strong>仓库：</strong><a href="https://github.com/hsantanna88/clo-author">hsantanna88/clo-author</a> &nbsp;·&nbsp; <strong>作者：</strong>Hugo Sant'Anna（UAB）</p>
+    <p>clo-author 将整个工作流从幻灯片重新定向到<strong>研究论文</strong>。论文（<code>Paper/main.tex</code>）成为唯一事实来源；演讲和附件从中派生。核心架构创新是<strong>对抗性工作者-评审者 Agent 配对</strong>：每个创作 Agent 都配有一个专用评审 Agent，权力严格分离（评审者从不创作，创作者从不自我评分）。</p>
+    <p>主要新增内容：15 个专业 Agent 组成工作者-评审者配对；阶段化严格程度梯度；含组件最低分要求的加权综合评分；模拟盲审同行评审；AI 写作模式去除；领域档案系统；完整投稿流水线（含期刊定向、修改-重新提交响应路由、封面信生成）。</p>
+    <p><strong>何时使用：</strong>你的主要产出是研究论文，并且你想要从文献综述到期刊投稿和修回全生命周期的生产级基础设施。</p>
+
+    <h3>6.2 claudeblattman：非技术学者工作流</h3>
+    <p><strong>网站：</strong><a href="https://claudeblattman.com">claudeblattman.com</a> &nbsp;·&nbsp; <strong>作者：</strong>Chris Blattman（芝加哥大学）</p>
+    <p>claudeblattman 是一份面向不写代码的学者的全面指南，由一位政治经济学家创建，他自述"从未写过一行代码"。它展示了 Claude Code 工作流远超技术任务，延伸到日常学术生活。</p>
+    <p>主要新增内容：行政助理工作流（晨间简报、智能邮件分类、待办管理）；课题申请写作；全新上下文批评（Agent 辩论的核心）；写作风格规则（数字优于形容词，主题句提出主张，不使用开场白）。</p>
+    <p><strong>何时使用：</strong>你刚接触 Claude Code，想要超出编码范围的实用日常工作流，或者想看一个非程序员学者如何构建复杂系统。</p>
+
+    <h3>6.3 Xu & Yang (2026)：作为架构的可复现性</h3>
+    <p><strong>论文：</strong>Yiqing Xu 和 Leo Yang Yang，"扩展可复现性：用于大规模重新分析的 AI 辅助工作流"，斯坦福大学，2026年</p>
+    <p>本论文形式化了此工作流直觉上使用的许多原则。它展示了一个 AI 辅助流水线，在 92 篇论文（215 个规格）中实现了 <strong>100% 可复现性</strong>（在数据和代码可访问的条件下），每篇论文的处理时间不到四分钟。</p>
+    <p>关键原则：模板-执行器分离；三层架构；结构化中间文件；版本控制知识积累；跨运行（而非运行中）适应。</p>
+
+    <h3>6.4 MixtapeTools：幻灯片的修辞学</h3>
+    <p><strong>仓库：</strong><a href="https://github.com/scunning1975/MixtapeTools">scunning1975/MixtapeTools</a> &nbsp;·&nbsp; <strong>作者：</strong>Scott Cunningham（贝勒大学）</p>
+    <p>MixtapeTools 为学术演示设计提供哲学和实践框架（见模式 14）。还包括：系统性 5 审计对抗协议（用于审阅和复现实证工作）；经过测试的幻灯片生成 Prompt；含专业配色方案的示例幻灯片；自定义 ggplot2 主题 <code>theme_rhetoric()</code>。</p>
+
+    <h3>6.5 AEA 数据编辑模板</h3>
+    <p><strong>网站：</strong><a href="https://social-science-data-editors.github.io/template_README/">social-science-data-editors.github.io/template_README</a> &nbsp;·&nbsp; <strong>维护者：</strong>Lars Vilhuber（康奈尔大学）等</p>
+    <p>5 个以上主要经济学期刊复现包的合规标准（见模式 13）。提供 Markdown、Word、LaTeX 和 PDF 格式。</p>
+    <p><strong>何时使用：</strong>你正在为期刊投稿准备复现包，需要数据编辑会核对的确切模板。</p>
+  </section>
+
+  <hr>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="s7">
+    <h2><span class="num">第七章</span>领域定制化</h2>
+
+    <h3>7.1 第一步：构建你的知识库</h3>
+    <p>知识库（<code>.claude/rules/knowledge-base-template.md</code>）是最具领域特色的组件。它提供了符号约定、讲座进度、应用、设计原则、反例和 R 代码陷阱的骨架表格。在开发项目时逐步填写——你不需要一开始就填好所有内容。</p>
+
+    <h4>7.1.1 符号注册表</h4>
+    <div class="table-wrap"><table>
+      <tr><th>符号</th><th>含义</th><th>引入</th><th>反例</th></tr>
+      <tr><td>$\beta$</td><td>回归系数</td><td>第 1 讲</td><td>不要用 $b$</td></tr>
+      <tr><td>$\hat{\theta}$</td><td>估计器</td><td>第 2 讲</td><td>不同估计目标不要用 $\hat{\beta}$</td></tr>
+    </table></div>
+
+    <h4>7.1.2 应用数据库</h4>
+    <div class="table-wrap"><table>
+      <tr><th>应用</th><th>论文</th><th>数据集</th><th>包</th><th>讲座</th></tr>
+      <tr><td>最低工资</td><td>Card & Krueger (1994)</td><td>NJ/PA 快餐</td><td>fixest</td><td>3</td></tr>
+    </table></div>
+
+    <h3>7.2 第二步：创建你的领域审阅器</h3>
+    <p>复制 <code>.claude/agents/domain-reviewer.md</code>，针对你的领域定制 5 个视角。模板提供结构；你填写领域特定的检查项。</p>
+
+    <h3>7.3 第三步：适配你的主题</h3>
+    <p>模板包含一个示例 Quarto 主题 SCSS 文件。定制步骤：</p>
+    <ol>
+      <li>将配色方案改为你所在机构的颜色</li>
+      <li>如需要，更新 CSS 类名</li>
+      <li>修改 beamer-translator 环境映射以匹配你的类</li>
+    </ol>
+
+    <h3>7.4 第四步：创建自定义 Skills</h3>
+    <p>指南包含 22 个 Skill 用于常见学术任务。但如果你有特定于领域的重复工作流，你可以创建自己的。</p>
+
+    <h4>7.4.1 何时创建 Skill</h4>
+    <ul>
+      <li>你反复向 Claude 解释同样的 3 步以上工作流</li>
+      <li>你需要领域特定的质量检查（引用风格、符号一致性、实验室协议）</li>
+      <li>你执行特定领域的输出格式（论文结构、期刊模板）</li>
+      <li>你协调多工具工作流（数据 → 分析 → 论文）</li>
+    </ul>
+    <p><strong>不要为以下内容创建 Skill：</strong>一次性任务 · 经常变化的工作流 · 简单的 1–2 步操作</p>
+
+    <h4>7.4.2 Skill 结构</h4>
+    <pre><code>---
+name: your-skill-name
+description: [功能] + [何时使用] + [关键能力]
+argument-hint: "[用户的简短提示]"
+allowed-tools: ["Read", "Write", "Edit", "Bash", "Task"]
+---
+
+# 技能名称
+
+## 说明
+第 1 步：[第一个操作及详情]
+第 2 步：[第二个操作]
+...
+
+## 示例
+示例 1：[常见场景]
+...
+
+## 故障排除
+错误：[常见错误]
+解决方案：[如何修复]</code></pre>
+
+    <h4>7.4.3 编写有效的触发描述</h4>
+    <p><code>description</code> 字段决定 Claude 何时加载你的 Skill：</p>
+    <div class="callout tip">
+      <div class="callout-title">✅ 好的示例（引用风格执行）</div>
+      <p>description: 强制执行 APA 第 7 版引用格式。当用户要求"检查引用"、"修复参考文献"、"应用 APA 格式"时，或在审阅含参考文献的 .tex/.qmd 文件时使用。</p>
+    </div>
+    <div class="callout warning">
+      <div class="callout-title">❌ 不好的示例</div>
+      <p>description: 帮助处理引用（过于模糊）</p>
+    </div>
+
+    <h3>7.5 6 次以上迭代会话的心得</h3>
+    <ol>
+      <li><strong>保持 CLAUDE.md 在 150 行以内。</strong>Claude 可靠地遵守约 150 条指令。400 行的 CLAUDE.md 意味着规则会被静默忽略。对详细标准使用路径限定规则。</li>
+      <li><strong>增量式添加规则。</strong>不要试图预先写好所有规则。发现模式时再添加。使用 <code>paths:</code> 前置信息使其只在相关时加载。</li>
+      <li><strong>使用 [LEARN] 格式。</strong>每条纠错都被标记并持久化到 MEMORY.md。这能防止跨会话重复错误。</li>
+      <li><strong>信任对抗性模式。</strong>评审者-修复者循环会发现你发现不了的问题。让它运行。</li>
+      <li><strong>验证一切。</strong>验证规则的存在是有原因的。永远不要跳过编译或渲染检查。</li>
+      <li><strong>会话日志很重要。</strong>记录设计决策，而不只是改变了什么。未来的你会感谢现在的你。</li>
+      <li><strong>魔鬼代言人要早用。</strong>在你已经在摇摇欲坠的基础上构建了 50 张幻灯片之前，先挑战幻灯片结构。</li>
+      <li><strong>渐进式披露。</strong>从 CLAUDE.md + 2–3 条规则开始。随着工作流成熟再添加更多。新手不应该第一天就面对 18 条规则。</li>
+      <li><strong>用 <code>CLAUDE.local.md</code> 做个人覆盖。</strong>此文件自动被 gitignore，与 <code>CLAUDE.md</code> 一起加载。在这里放机器特定的路径、个人偏好和本地工具版本——它们不会污染共享仓库。</li>
+    </ol>
+  </section>
+
+  <hr>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="s8">
+    <h2><span class="num">第八章</span>附录：文件参考</h2>
+
+    <h3>8.1 所有 Agents</h3>
+    <div class="table-wrap"><table>
+      <tr><th>Agent</th><th>文件</th><th>用途</th></tr>
+      <tr><td>Proofreader</td><td><code>.claude/agents/proofreader.md</code></td><td>语法、错别字、一致性</td></tr>
+      <tr><td>Slide Auditor</td><td><code>.claude/agents/slide-auditor.md</code></td><td>视觉布局、溢出、间距</td></tr>
+      <tr><td>Pedagogy Reviewer</td><td><code>.claude/agents/pedagogy-reviewer.md</code></td><td>叙事弧、符号清晰度</td></tr>
+      <tr><td>R Reviewer</td><td><code>.claude/agents/r-reviewer.md</code></td><td>R 代码质量、可复现性</td></tr>
+      <tr><td>TikZ Reviewer</td><td><code>.claude/agents/tikz-reviewer.md</code></td><td>图示视觉质量</td></tr>
+      <tr><td>Beamer Translator</td><td><code>.claude/agents/beamer-translator.md</code></td><td>LaTeX 转 Quarto 翻译</td></tr>
+      <tr><td>Quarto Critic</td><td><code>.claude/agents/quarto-critic.md</code></td><td>对抗性 Quarto QA</td></tr>
+      <tr><td>Quarto Fixer</td><td><code>.claude/agents/quarto-fixer.md</code></td><td>应用评审者的修复</td></tr>
+      <tr><td>Verifier</td><td><code>.claude/agents/verifier.md</code></td><td>任务完成验证</td></tr>
+      <tr><td>Domain Reviewer</td><td><code>.claude/agents/domain-reviewer.md</code></td><td>你的领域专属实质性审阅</td></tr>
+    </table></div>
+
+    <h3>8.2 所有 Skills</h3>
+    <div class="table-wrap"><table>
+      <tr><th>Skill</th><th>目录</th><th>用途</th></tr>
+      <tr><td><code>/compile-latex</code></td><td><code>.claude/skills/compile-latex/</code></td><td>XeLaTeX 三遍编译</td></tr>
+      <tr><td><code>/deploy</code></td><td><code>.claude/skills/deploy/</code></td><td>Quarto 渲染 + GitHub Pages 同步</td></tr>
+      <tr><td><code>/extract-tikz</code></td><td><code>.claude/skills/extract-tikz/</code></td><td>TikZ 转 SVG</td></tr>
+      <tr><td><code>/proofread</code></td><td><code>.claude/skills/proofread/</code></td><td>运行校对 Agent</td></tr>
+      <tr><td><code>/visual-audit</code></td><td><code>.claude/skills/visual-audit/</code></td><td>运行布局审计 Agent</td></tr>
+      <tr><td><code>/pedagogy-review</code></td><td><code>.claude/skills/pedagogy-review/</code></td><td>运行教学法审阅 Agent</td></tr>
+      <tr><td><code>/review-r</code></td><td><code>.claude/skills/review-r/</code></td><td>运行 R 代码审阅 Agent</td></tr>
+      <tr><td><code>/qa-quarto</code></td><td><code>.claude/skills/qa-quarto/</code></td><td>评审者-修复者对抗循环</td></tr>
+      <tr><td><code>/slide-excellence</code></td><td><code>.claude/skills/slide-excellence/</code></td><td>综合多 Agent 审阅</td></tr>
+      <tr><td><code>/translate-to-quarto</code></td><td><code>.claude/skills/translate-to-quarto/</code></td><td>Beamer 转 Quarto 翻译</td></tr>
+      <tr><td><code>/validate-bib</code></td><td><code>.claude/skills/validate-bib/</code></td><td>参考文献验证</td></tr>
+      <tr><td><code>/devils-advocate</code></td><td><code>.claude/skills/devils-advocate/</code></td><td>设计挑战问题</td></tr>
+      <tr><td><code>/create-lecture</code></td><td><code>.claude/skills/create-lecture/</code></td><td>完整讲座创建</td></tr>
+      <tr><td><code>/commit</code></td><td><code>.claude/skills/commit/</code></td><td>暂存、commit、PR、合并</td></tr>
+      <tr><td><code>/lit-review</code></td><td><code>.claude/skills/lit-review/</code></td><td>文献搜索与综合</td></tr>
+      <tr><td><code>/research-ideation</code></td><td><code>.claude/skills/research-ideation/</code></td><td>研究问题与策略</td></tr>
+      <tr><td><code>/interview-me</code></td><td><code>.claude/skills/interview-me/</code></td><td>互动研究采访</td></tr>
+      <tr><td><code>/review-paper</code></td><td><code>.claude/skills/review-paper/</code></td><td>论文审阅</td></tr>
+      <tr><td><code>/data-analysis</code></td><td><code>.claude/skills/data-analysis/</code></td><td>端到端 R 分析</td></tr>
+      <tr><td><code>/learn</code></td><td><code>.claude/skills/learn/</code></td><td>将发现提取为持久技能</td></tr>
+      <tr><td><code>/context-status</code></td><td><code>.claude/skills/context-status/</code></td><td>显示会话健康状态和上下文使用情况</td></tr>
+      <tr><td><code>/deep-audit</code></td><td><code>.claude/skills/deep-audit/</code></td><td>全仓库一致性审计</td></tr>
+    </table></div>
+
+    <h3>8.3 所有 Rules</h3>
+    <p><strong>始终加载（每次会话）：</strong></p>
+    <div class="table-wrap"><table>
+      <tr><th>规则</th><th>文件</th><th>用途</th></tr>
+      <tr><td>计划优先工作流</td><td><code>plan-first-workflow.md</code></td><td>规划模式 + 上下文保存</td></tr>
+      <tr><td>编排器协议</td><td><code>orchestrator-protocol.md</code></td><td>承包商模式循环</td></tr>
+      <tr><td>会话日志</td><td><code>session-logging.md</code></td><td>三种日志触发器</td></tr>
+      <tr><td>元治理</td><td><code>meta-governance.md</code></td><td>模板 vs 工作项目区分</td></tr>
+    </table></div>
+    <p><strong>路径限定（只在操作匹配文件时加载）：</strong></p>
+    <div class="table-wrap"><table>
+      <tr><th>规则</th><th>文件</th><th>触发条件</th></tr>
+      <tr><td>验证协议</td><td><code>verification-protocol.md</code></td><td><code>.tex</code>, <code>.qmd</code>, <code>docs/</code></td></tr>
+      <tr><td>单一事实来源</td><td><code>single-source-of-truth.md</code></td><td><code>Figures/</code>, <code>.tex</code>, <code>.qmd</code></td></tr>
+      <tr><td>质量门控</td><td><code>quality-gates.md</code></td><td><code>.tex</code>, <code>.qmd</code>, <code>*.R</code></td></tr>
+      <tr><td>R 代码规范</td><td><code>r-code-conventions.md</code></td><td><code>*.R</code></td></tr>
+      <tr><td>TikZ 质量</td><td><code>tikz-visual-quality.md</code></td><td><code>.tex</code></td></tr>
+      <tr><td>Beamer-Quarto 同步</td><td><code>beamer-quarto-sync.md</code></td><td><code>.tex</code>, <code>.qmd</code></td></tr>
+      <tr><td>PDF 处理</td><td><code>pdf-processing.md</code></td><td><code>master_supporting_docs/</code></td></tr>
+      <tr><td>校对协议</td><td><code>proofreading-protocol.md</code></td><td><code>.tex</code>, <code>.qmd</code>, <code>quality_reports/</code></td></tr>
+      <tr><td>无暂停</td><td><code>no-pause-beamer.md</code></td><td><code>.tex</code></td></tr>
+      <tr><td>复现协议</td><td><code>replication-protocol.md</code></td><td><code>*.R</code></td></tr>
+      <tr><td>知识库</td><td><code>knowledge-base-template.md</code></td><td><code>.tex</code>, <code>.qmd</code>, <code>*.R</code></td></tr>
+      <tr><td>研究编排器</td><td><code>orchestrator-research.md</code></td><td><code>*.R</code>, <code>explorations/</code></td></tr>
+      <tr><td>探索文件夹</td><td><code>exploration-folder-protocol.md</code></td><td><code>explorations/</code></td></tr>
+      <tr><td>探索快速通道</td><td><code>exploration-fast-track.md</code></td><td><code>explorations/</code></td></tr>
+    </table></div>
+
+    <h3>8.4 Hooks</h3>
+    <div class="table-wrap"><table>
+      <tr><th>钩子</th><th>类型</th><th>配置</th></tr>
+      <tr><td>会话日志提醒</td><td>Stop（命令）</td><td><code>.claude/hooks/log-reminder.py</code></td></tr>
+      <tr><td>桌面通知</td><td>Notification（命令）</td><td><code>.claude/hooks/notify.sh</code></td></tr>
+      <tr><td>文件保护</td><td>PreToolUse（命令）</td><td><code>.claude/hooks/protect-files.sh</code></td></tr>
+      <tr><td>上下文状态捕获</td><td>PreCompact（命令）</td><td><code>.claude/hooks/pre-compact.py</code></td></tr>
+      <tr><td>上下文恢复</td><td>SessionStart（命令）</td><td><code>.claude/hooks/post-compact-restore.py</code></td></tr>
+      <tr><td>上下文监控</td><td>PostToolUse（命令）</td><td><code>.claude/hooks/context-monitor.py</code></td></tr>
+      <tr><td>验证提醒</td><td>PostToolUse（命令）</td><td><code>.claude/hooks/verify-reminder.py</code></td></tr>
+    </table></div>
+
+    <h3>8.5 故障排除</h3>
+
+    <h4>8.5.1 LaTeX 无法编译</h4>
+    <p><strong>症状：</strong><code>xelatex</code> 报错或缺少包。</p>
+    <p><strong>修复：</strong>检查是否安装了 XeLaTeX：<code>which xelatex</code>；确保 <code>TEXINPUTS</code> 包含 <code>Preambles/</code>（<code>/compile-latex</code> Skill 处理此事）；缺少包？通过 TeX Live 安装：<code>tlmgr install [包名]</code></p>
+
+    <h4>8.5.2 Quarto 无法渲染</h4>
+    <p><strong>症状：</strong><code>quarto render</code> 失败或产生损坏的 HTML。</p>
+    <p><strong>修复：</strong>检查 Quarto 版本：<code>quarto --version</code>（需要 1.3+）；检查 YAML 前置信息中的语法错误；缺少 TikZ SVG？先运行 <code>/extract-tikz</code></p>
+
+    <h4>8.5.3 钩子不触发</h4>
+    <p><strong>症状：</strong>没有上下文警告，没有验证提醒。</p>
+    <p><strong>修复：</strong>检查钩子是否已配置：<code>cat .claude/settings.json | grep hooks</code>；确保 Python 3 可用：<code>which python3</code>；检查钩子文件权限：<code>ls -la .claude/hooks/</code></p>
+
+    <h4>8.5.4 Claude 忽略规则</h4>
+    <p><strong>症状：</strong>Claude 不遵循 <code>.claude/rules/</code> 中的约定。</p>
+    <p><strong>修复：</strong>规则使用 <code>paths:</code> 前置信息——检查路径是否与你的文件匹配；规则太多？Claude 可靠遵守约 150 条指令，合并规则；尝试：<em>"读取 <code>.claude/rules/[规则].md</code> 并在此任务中遵循它"</em></p>
+
+    <h4>8.5.5 压缩后上下文丢失</h4>
+    <p><strong>症状：</strong>Claude 忘记了你在处理什么。</p>
+    <p><strong>修复：</strong>指引 Claude 找到方案；检查会话日志；<code>post-compact-restore.py</code> 钩子应该自动打印恢复信息</p>
+
+    <h4>8.5.6 质量分数太低</h4>
+    <p><strong>症状：</strong>分数卡在 80 以下，无法 commit。</p>
+    <p><strong>修复：</strong>运行 <code>/slide-excellence</code> 获取详细问题分解；首先修复严重问题（每个扣 10–20 分）；问 Claude："剩余的严重问题是什么？"</p>
+
+    <h4>8.5.7 Skills 没有自动调用</h4>
+    <p><strong>症状：</strong>描述任务时 Claude 不使用 Skill。</p>
+    <p><strong>修复：</strong>在请求中明确一些："审阅我的幻灯片的语法和布局问题"；检查 Skill 是否启用了自动调用；Skill 描述帮助 Claude 知道何时使用它——检查描述是否清晰</p>
+  </section>
+
+  <hr>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="s9">
+    <h2><span class="num">第九章</span>致谢</h2>
+    <p>本指南建立在众多工作之上，向所有贡献者致谢。</p>
+
+    <h3>核心基础设施</h3>
+    <ul>
+      <li><a href="https://code.claude.com/docs/en/overview">Claude Code</a>，由 Anthropic 开发——使这一切成为可能的 CLI 工具、VS Code 插件和 Desktop 应用</li>
+    </ul>
+
+    <h3>研究工作流</h3>
+    <ul>
+      <li><a href="https://github.com/hsantanna88/clo-author">clo-author</a>，作者：Hugo Sant'Anna（UAB）——以论文为中心的研究工作流，含对抗性 Agent 配对、模拟同行评审和完整研究生命周期管理</li>
+      <li><a href="https://github.com/chrisblattman/claudeblattman">claudeblattman</a>，作者：Chris Blattman（芝加哥大学）——面向非技术学者的全面工作流：行政助理、课题申请写作、项目管理和全新上下文批评模式</li>
+    </ul>
+
+    <h3>可复现性与数据管理</h3>
+    <ul>
+      <li>Yiqing Xu 和 Leo Yang Yang (2026)，"扩展可复现性：用于大规模重新分析的 AI 辅助工作流"，斯坦福大学——模板-执行器架构和可复现 AI 辅助研究的原则</li>
+      <li><a href="https://social-science-data-editors.github.io/template_README/">社会科学复现包模板 README</a>，作者：Lars Vilhuber 等（康奈尔大学）——主要经济学期刊采用的 AEA 数据编辑合规标准</li>
+    </ul>
+
+    <h3>演示设计</h3>
+    <ul>
+      <li><a href="https://github.com/scunning1975/MixtapeTools/tree/main/presentations">MixtapeTools / 幻灯片的修辞学</a>，作者：Scott Cunningham（贝勒大学）——学术演示设计的哲学与实践框架</li>
+      <li>Scott Cunningham，<em><a href="https://mixtape.scunning.com">因果推断：混音带</a></em>——开发上述演示框架的教科书作者</li>
+    </ul>
+
+    <h3>起源</h3>
+    <p>本工作流提取自 Emory 大学由 Pedro Sant'Anna 开发的 <strong>Econ 730：因果面板数据</strong>课程。以计量经济学为起点只是其中一个应用——这些模式是领域无关的，已被其他人扩展应用于各个领域。</p>
+  </section>
+
+</main>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+
+<script>
+  // Active TOC highlighting
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('#toc a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    links.forEach(l => {
+      l.classList.remove('active');
+      if (l.getAttribute('href') === '#' + current) l.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

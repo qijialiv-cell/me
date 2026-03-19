@@ -1,0 +1,215 @@
+{
+  "profile": {
+    "name": "Qijia Liao",
+    "badge": "PhD Candidate · Marketing",
+    "institution": "University of Liverpool Management School",
+    "location": "Liverpool, UK",
+    "description": "I am a quantitative marketing scholar employing experimental design, causal inference, and machine learning to examine strategic marketing phenomena in digital environments. My research integrates marketing strategy, consumer behavior, and artificial intelligence.",
+    "highlights": [
+      { "icon": "fa-award",               "text": "PhD Viva Passed · Feb 2026" },
+      { "icon": "fa-chalkboard-teacher",  "text": "300+ Hours Teaching Assistant" },
+      { "icon": "fa-brain",               "text": "AI & Machine Learning" }
+    ],
+    "social": [
+      { "icon": "fas fa-graduation-cap", "url": "https://scholar.google.com/citations?user=s2lwLxMAAAAJ&hl=en", "title": "Google Scholar" },
+      { "icon": "fab fa-linkedin-in",    "url": "https://www.linkedin.com/in/liaoqijia",                        "title": "LinkedIn" },
+      { "icon": "fab fa-github",         "url": "https://github.com/qijialiv-cell/",                            "title": "GitHub" }
+    ]
+  },
+
+  "research": {
+    "intro": "My research lies at the intersection of marketing strategy and consumer behavior, with a focus on digital marketing, brand activism, and artificial intelligence in marketing. I employ quantitative methods—experimental design, causal inference, and machine learning—to investigate strategic phenomena in digital environments.",
+    "streams": [
+      {
+        "title": "Brand Activism",
+        "body": "Investigating brand activism in non-Western institutional contexts and its impact on consumer and investor behavior. My work introduces the concept of <em>System-Threat Activism (STA)</em> and examines its effects on consumer responses through identity-threat mechanisms."
+      },
+      {
+        "title": "AI, Digital Platforms & Marketing Analytics",
+        "body": "Examining artificial intelligence and algorithmic systems in digital marketing environments using large-scale data and deep learning. This stream explores influencer marketing effectiveness and algorithmic valuation anomalies in digital platforms."
+      }
+    ],
+    "publications": [
+      {
+        "authors": "Liao, Q., Yang, L., & Lim, E. J. (2023)",
+        "title": "A bibliometric and content analysis of marketing-finance interface research from 1986–2021",
+        "venue": "Journal of Business & Finance Librarianship",
+        "details": "28(4), 278–301"
+      },
+      {
+        "authors": "Liao, Q., Byrom, J., Guenther, M., & Song, F.",
+        "title": "When Brand Activism Threatens Consumers' Identity: An Investigation of System-Threat Activism",
+        "venue": "AMA Winter Conference 2025",
+        "details": "Phoenix, AZ"
+      }
+    ]
+  },
+
+  "teaching": {
+    "intro": "I have accumulated 300 working hours as a Teaching Assistant across undergraduate and postgraduate courses at the University of Liverpool. Approximately 80% of my TA work involves seminar and online support for statistics, text analysis, and sentiment analysis using RStudio. I also handle marking of assignments, proposals, infographics, and presentations.",
+    "philosophy": "I focus on hands-on support, helping students develop analytical skills through practical engagement with real-world marketing problems and industry datasets. My approach emphasises active learning and problem-solving, enabling students to generate actionable managerial insights from data.",
+    "courses": [
+      {
+        "code": "MKIB340",
+        "title": "Marketing & Digital Analytics",
+        "level": "UG & PG",
+        "description": "100–150 students · Seminar support and online tutoring of RStudio: debugging, code interpretation, text analysis, and sentiment analysis.",
+        "skills": ["RStudio", "Sentiment Analysis", "LDA Topic Modeling"]
+      },
+      {
+        "code": "MKIB256",
+        "title": "Market Research",
+        "level": "UG",
+        "description": "~100 students · Supporting seminars on applied statistics; one-hour sessions on experimental methods. Marking market research proposals.",
+        "skills": ["Statistics", "Experimental Design", "SPSS"]
+      },
+      {
+        "code": "MKIB153",
+        "title": "Fundamentals of Marketing",
+        "level": "UG",
+        "description": "Marking assignments covering core marketing concepts and principles.",
+        "skills": ["Marketing Fundamentals", "Assessment"]
+      },
+      {
+        "code": "MKIB372",
+        "title": "Corporate Communications",
+        "level": "UG",
+        "description": "Marking assignments and presentations on corporate communication strategies.",
+        "skills": ["Corporate Communications", "Presentations"]
+      }
+    ],
+    "interests": [
+      "Digital Marketing & Social Media Strategy",
+      "Marketing Analytics / Research Methods",
+      "Consumer Behavior",
+      "Business Statistics & Data Analysis",
+      "AI in Marketing / ML for Business",
+      "Marketing Strategy"
+    ]
+  },
+
+  "cv": {
+    "education": [
+      {
+        "degree": "PhD in Marketing",
+        "period": "Oct 2021 – Present",
+        "institution": "University of Liverpool Management School, Liverpool, UK",
+        "note": "PhD Viva Passed (February 2026)"
+      },
+      {
+        "degree": "MBA, Marketing Concentration",
+        "period": "Jul 2017 – Jan 2020",
+        "institution": "University of Macau, Macau"
+      },
+      {
+        "degree": "Erasmus Exchange Program",
+        "period": "Feb – Jul 2019",
+        "institution": "ISEG, University of Lisbon, Portugal"
+      },
+      {
+        "degree": "B.A. in English",
+        "period": "Sep 2010 – Jun 2014",
+        "institution": "Chengdu Institute, Sichuan International Studies University, China"
+      }
+    ],
+    "academic_experience": [
+      {
+        "role": "Teaching Assistant & Tutor",
+        "period": "2021 – Present",
+        "institution": "University of Liverpool Management School, Liverpool, UK",
+        "description": "Marketing & Digital Analytics · Market Research · Fundamentals of Marketing · Corporate Communications"
+      }
+    ],
+    "work_experience": [
+      {
+        "role": "Subject Specialist, Library",
+        "period": "Dec 2020 – Sep 2021",
+        "institution": "Wenzhou-Kean University, Wenzhou, China"
+      },
+      {
+        "role": "Sales Representative",
+        "period": "Dec 2016 – Jun 2017",
+        "institution": "PT. Konstruksi Indo Machinery, Jakarta, Indonesia"
+      },
+      {
+        "role": "Sales Representative",
+        "period": "Sep 2015 – Nov 2016",
+        "institution": "Sany Heavy Industries Co., Ltd, Jakarta, Indonesia"
+      },
+      {
+        "role": "English–Chinese Translator",
+        "period": "Apr 2014 – Jul 2015",
+        "institution": "Sinohydro Corporation, Tbilisi, Georgia"
+      }
+    ],
+    "publications": [
+      {
+        "authors": "Liao, Q., Yang, L., & Lim, E. J. (2023)",
+        "title": "A bibliometric and content analysis of marketing-finance interface research from 1986–2021",
+        "venue": "Journal of Business & Finance Librarianship",
+        "details": "28(4), 278–301"
+      },
+      {
+        "authors": "Liao, Q., Byrom, J., Guenther, M., & Song, F.",
+        "venue": "AMA Winter Conference 2025",
+        "title": "When Brand Activism Threatens Consumers' Identity: An Investigation of System-Threat Activism"
+      }
+    ],
+    "awards": [
+      {
+        "title": "Conference Grant",
+        "period": "2025",
+        "description": "AMA Winter Conference, Phoenix, AZ — funded by University of Liverpool"
+      },
+      {
+        "title": "Graduate Teaching Fellowship",
+        "period": "4 Years",
+        "description": "University of Liverpool"
+      },
+      {
+        "title": "Outgoing Exchange Scholarship",
+        "description": "University of Macau"
+      },
+      {
+        "title": "Luso International Bank Scholarship",
+        "description": "University of Macau"
+      },
+      {
+        "title": "Merit Student Scholarship (2-tier)",
+        "description": "Chengdu Institute, Sichuan International Studies University"
+      }
+    ],
+    "teaching_training": [
+      "300 working hours as Teaching Assistant across UG and PG courses",
+      "FLTHE Stage 1 — Introduction to Supporting Student Learning (compulsory UK PhD teacher training, completed)"
+    ]
+  },
+
+  "skills": {
+    "categories": [
+      {
+        "title": "Programming & Machine Learning",
+        "items": ["R (Tidyverse, tidymodels)", "Python (Scikit-learn, XGBoost)", "Deep Learning (fastai, PyTorch)", "NLP (Hugging Face, BERT)"]
+      },
+      {
+        "title": "Statistical Methods",
+        "items": ["Structural Equation Modeling", "Mediation Analysis", "Event Studies", "Propensity Score Weighting", "Causal Inference", "Experimental Design"]
+      },
+      {
+        "title": "Tools & Platforms",
+        "items": ["RStudio", "SPSS", "Stata", "Qualtrics", "Prolific", "GitHub", "Shiny", "WRDS", "DataStream", "Eikon"]
+      },
+      {
+        "title": "Languages",
+        "items": ["Chinese (Native)", "English (Proficient)"]
+      }
+    ]
+  },
+
+  "contact": {
+    "email": "q.liao3@liverpool.ac.uk",
+    "institution": "University of Liverpool Management School",
+    "address": "Chatham Street, Liverpool, L69 7ZH, UK",
+    "job_market": "Available for Assistant Professor or Postdoctoral positions in Marketing (August 2026 or earlier). Please feel free to reach out — I welcome inquiries about my research, teaching, and availability."
+  }
+}

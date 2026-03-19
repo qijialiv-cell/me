@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code 官方最佳实践 — 中文翻译版</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-light: #4a4a4a;
+    --ink-faint: #888;
+    --bg: #fafaf7;
+    --bg-warm: #f4f2ec;
+    --accent: #c0392b;
+    --accent-light: #e74c3c;
+    --accent-pale: #fdf0ef;
+    --blue: #2471a3;
+    --blue-pale: #eaf3fb;
+    --green: #1a7a4a;
+    --green-pale: #eafaf1;
+    --gold: #b7770d;
+    --gold-pale: #fef9e7;
+    --border: #ddd8cc;
+    --code-bg: #f0ede6;
+    --sidebar-width: 280px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Serif SC', Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 2;
+    font-size: 18px;
+  }
+
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--ink);
+    color: #eee;
+    overflow-y: auto;
+    z-index: 100;
+    padding: 0 0 40px 0;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+
+  #sidebar-header {
+    padding: 28px 20px 20px;
+    border-bottom: 1px solid #333;
+  }
+
+  #sidebar-header .logo {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 8px;
+  }
+
+  #sidebar-header h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ddd;
+    line-height: 1.5;
+  }
+
+  #toc { padding: 16px 0; }
+
+  .toc-section > a {
+    display: block;
+    padding: 8px 20px;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+  }
+
+  .toc-section > a:hover,
+  .toc-section > a.active {
+    color: #fff;
+    background: #2a2a2a;
+    border-left-color: var(--accent-light);
+  }
+
+  #main {
+    margin-left: var(--sidebar-width);
+    max-width: 900px;
+    padding: 60px 64px 100px;
+  }
+
+  #hero {
+    padding-bottom: 48px;
+    margin-bottom: 48px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  #hero .label {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  #hero h1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  #hero .subtitle {
+    font-size: 18px;
+    color: var(--ink-light);
+    line-height: 1.8;
+    max-width: 680px;
+    margin-bottom: 24px;
+  }
+
+  .meta {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    color: var(--ink-faint);
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 56px 0 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2 .num {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 40px 0 18px;
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 32px 0 14px;
+  }
+
+  p {
+    margin-bottom: 18px;
+    color: var(--ink-light);
+    font-size: 18px;
+    line-height: 2;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  a:hover { border-bottom-color: var(--blue); }
+
+  ul, ol {
+    margin: 16px 0 24px 20px;
+    color: var(--ink-light);
+  }
+
+  li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  li strong { color: var(--ink); }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    background: var(--code-bg);
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: var(--accent);
+  }
+
+  pre {
+    background: var(--code-bg);
+    padding: 20px 24px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .callout {
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin: 28px 0;
+  }
+
+  .callout-title {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .callout p { margin-bottom: 0; font-size: 17px; }
+
+  .callout-tip {
+    background: var(--green-pale);
+    border-left: 4px solid var(--green);
+  }
+
+  .callout-tip .callout-title { color: var(--green); }
+
+  .callout-warning {
+    background: var(--gold-pale);
+    border-left: 4px solid var(--gold);
+  }
+
+  .callout-warning .callout-title { color: var(--gold); }
+
+  .callout-important {
+    background: var(--accent-pale);
+    border-left: 4px solid var(--accent);
+  }
+
+  .callout-important .callout-title { color: var(--accent); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 16px;
+  }
+
+  th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  th {
+    background: var(--bg-warm);
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  td { color: var(--ink-light); }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--ink);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+  }
+
+  .back-link:hover {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+  }
+
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; padding: 40px 24px 80px; }
+    #hero h1 { font-size: 30px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 20px; }
+    p, li { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Official Translation</div>
+    <h2>Claude Code 官方最佳实践<br>中文翻译版 + CLI 实战案例</h2>
+  </div>
+  <div id="toc">
+    <div class="toc-section"><a href="#hero">关于本文档</a></div>
+    <div class="toc-section"><a href="#section-01">1. 定制你的开发环境</a></div>
+    <div class="toc-section"><a href="#section-02">2. 给 Claude 更多工具</a></div>
+    <div class="toc-section"><a href="#section-03">3. 常见工作流</a></div>
+    <div class="toc-section"><a href="#section-04">4. 优化你的工作流</a></div>
+    <div class="toc-section"><a href="#section-05">5. Headless 模式自动化</a></div>
+    <div class="toc-section"><a href="#section-06">6. 多 Claude 并行工作流</a></div>
+    <div class="toc-section"><a href="#section-cli">CLI 实战案例补充</a></div>
+    <div class="toc-section"><a href="#section-commands">核心命令速查</a></div>
+  </div>
+</nav>
+
+<main id="main">
+
+<section id="hero">
+  <div class="label">Anthropic 官方工程博客译文</div>
+  <h1>Claude Code 官方最佳实践</h1>
+  <p class="subtitle">中文翻译版 + CLI 实战案例</p>
+  <p class="meta">译自 anthropic.com/engineering/claude-code-best-practices · 2025</p>
+  <p style="margin-top: 20px; font-size: 16px;">原文链接：<a href="https://anthropic.com/engineering/claude-code-best-practices" target="_blank">anthropic.com/engineering/claude-code-best-practices</a></p>
+</section>
+
+<div class="callout callout-tip">
+<div class="callout-title">关于本文档</div>
+<p>这是 Anthropic 官方工程博客文章《Claude Code: Best practices for agentic coding》的中文翻译，发布于 2025 年 4 月 18 日，内容忠实原文并补充了 CLI 实战命令案例。</p>
+</div>
+
+<h2 id="section-01"><span class="num">1</span>定制你的开发环境</h2>
+<p>通过环境调优让 Claude 更快、更准、更省 token</p>
+
+<p>Claude Code 是一个会自动将上下文拉入 prompt 的 agentic 编程助手。这种上下文收集消耗时间和 token，但可以通过环境调优来优化。</p>
+
+<h3>a. 创建 CLAUDE.md 文件</h3>
+<p>CLAUDE.md 是 Claude 在每次对话开始时自动拉入上下文的特殊文件。适合放以下内容：</p>
+
+<table>
+<thead>
+<tr><th>适合写入 CLAUDE.md 的内容</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td>常用 bash 命令</td><td>构建、测试、类型检查等命令，让 Claude 随时知道怎么跑项目</td></tr>
+<tr><td>核心文件和工具函数</td><td>关键文件路径、常用工具的位置</td></tr>
+<tr><td>代码风格规范</td><td>ES modules vs CommonJS、命名规范、格式要求等</td></tr>
+<tr><td>测试说明</td><td>如何跑测试、跑哪些测试、测试框架约定</td></tr>
+<tr><td>仓库规范</td><td>分支命名、merge vs rebase、PR 要求等</td></tr>
+<tr><td>开发环境</td><td>pyenv 版本、编译器要求、环境变量说明</td></tr>
+<tr><td>项目特有的坑</td><td>已知的奇怪行为、警告、需要注意的地方</td></tr>
+</tbody>
+</table>
+
+<p>没有固定格式要求，保持简洁可读即可。</p>
+
+<h4>CLAUDE.md 示例</h4>
+<pre><code># Bash 命令
+- npm run build: 构建项目
+- npm run typecheck: 运行类型检查
+
+# 代码风格
+- 使用 ES modules (import/export)，不用 CommonJS (require)
+- 尽量解构导入，如 import { foo } from 'bar'
+
+# 工作流
+- 改完一批代码后记得跑类型检查
+- 优先跑单个测试，不要每次跑全套（太慢）</code></pre>
+
+<h4>CLAUDE.md 文件位置</h4>
+<table>
+<thead>
+<tr><th>文件位置</th><th>作用范围</th></tr>
+</thead>
+<tbody>
+<tr><td>项目根目录 CLAUDE.md</td><td>最常用。提交进 git 可跨 session 共享给团队</td></tr>
+<tr><td>项目根目录 CLAUDE.local.md</td><td>本地私有，加入 .gitignore，不共享给他人</td></tr>
+<tr><td>父目录 CLAUDE.md</td><td>适合 monorepo：运行时自动读取所有父级文件</td></tr>
+<tr><td>子目录 CLAUDE.md</td><td>按需读取：处理子目录文件时自动拉入</td></tr>
+<tr><td>~/.claude/CLAUDE.md</td><td>全局生效：对所有 claude session 都有效</td></tr>
+</tbody>
+</table>
+
+<div class="callout callout-tip">
+<div class="callout-title">💡 用 /init 自动生成初稿</div>
+<p>运行 /init，Claude 会自动扫描项目生成初始 CLAUDE.md。编码过程中按 # 键可以给 Claude 发指令，Claude 会自动写入对应的 CLAUDE.md。</p>
+</div>
+
+<h3>b. 调优你的 CLAUDE.md</h3>
+<p>CLAUDE.md 会成为 Claude prompt 的一部分，所以应该像调优常用 prompt 一样去打磨它。常见错误是堆砌大量内容却不验证效果。要持续实验，找出真正有效的指令。</p>
+
+<div class="callout callout-important">
+<div class="callout-title">⚠️ 越精简越有效</div>
+<p>如果 Claude 不看 CLAUDE.md 就能做对，就删掉那条指令，或转成 hook。重要规则加 IMPORTANT 或 YOU MUST 能显著提高遵守率。</p>
+</div>
+
+<h3>c. 管理 Claude 的工具许可清单</h3>
+<p>Claude Code 默认对所有可能修改系统的操作都会询问权限（文件写入、bash 命令、MCP 工具等）。你可以把安全的、或容易撤销的操作加入许可清单，避免重复确认。</p>
+
+<table>
+<thead>
+<tr><th>许可管理方式</th><th>使用场景</th></tr>
+</thead>
+<tbody>
+<tr><td>会话中选择 Always allow</td><td>临时快速授权</td></tr>
+<tr><td>/permissions 命令</td><td>交互式添加/删除，如 Edit、Bash(git commit:*)</td></tr>
+<tr><td>编辑 .claude/settings.json</td><td>持久化项目级许可，推荐提交进 git 共享给团队</td></tr>
+<tr><td>编辑 ~/.claude.json</td><td>持久化个人全局许可</td></tr>
+<tr><td>--allowedTools CLI 参数</td><td>针对单次 session 的临时许可</td></tr>
+</tbody>
+</table>
+
+<h4>CLI 案例：预先授权常用操作</h4>
+<pre><code># 启动时预先允许文件编辑和 git commit
+$ claude --allowedTools Edit,Bash(git commit:*)
+
+# 在 session 内用 /permissions 添加
+> /permissions add Edit
+> /permissions add Bash(git commit:*)
+> /permissions add mcp__puppeteer__puppeteer_navigate</code></pre>
+
+<h3>d. 安装 gh CLI（GitHub 用户必装）</h3>
+<p>Claude 知道如何使用 gh CLI 与 GitHub 交互——创建 issue、开 PR、读评论等。没有 gh 时 Claude 也能用 GitHub API 或 MCP server，但 gh 最顺手。</p>
+
+<pre><code># macOS
+$ brew install gh
+$ gh auth login
+
+# Ubuntu/Debian
+$ sudo apt install gh
+$ gh auth login</code></pre>
+
+<h2 id="section-02"><span class="num">2</span>给 Claude 更多工具</h2>
+<p>bash 工具、MCP、自定义斜杠命令</p>
+
+<h3>a. 配合 bash 工具使用</h3>
+<p>Claude Code 继承你的 bash 环境，能访问所有已安装工具。但 Claude 不会自动知道你的自定义脚本，需要你明确告知：</p>
+
+<table>
+<thead>
+<tr><th>告知方式</th><th>示例</th></tr>
+</thead>
+<tbody>
+<tr><td>直接在 prompt 里说工具名和用法</td><td>"用 my-deploy 脚本部署，my-deploy --help 看参数"</td></tr>
+<tr><td>让 Claude 自己跑 --help</td><td>"运行 my-tool --help 了解用法，然后帮我执行"</td></tr>
+<tr><td>写入 CLAUDE.md</td><td>把高频工具的名称和用法写进 CLAUDE.md 永久记录</td></tr>
+</tbody>
+</table>
+
+<h4>CLI 案例：管道传入数据</h4>
+<pre><code># 把日志直接喂给 Claude 分析
+$ cat error.log | claude '找出所有 500 错误，告诉我根因'
+
+# 把 CSV 数据传入做清洗
+$ cat survey_raw.csv | claude '找出 speeders 和 straight-liners，输出清洗后的版本'
+
+# 让 Claude 读脚本 help 再执行
+$ claude '先运行 ./scripts/deploy.sh --help，然后帮我部署到 staging'</code></pre>
+
+<h3>b. 配合 MCP 使用</h3>
+<p>Claude Code 既是 MCP 服务端也是客户端。作为客户端可连接任意 MCP server。</p>
+
+<table>
+<thead>
+<tr><th>配置层级</th><th>适用场景</th><th>文件位置</th></tr>
+</thead>
+<tbody>
+<tr><td>项目级 config</td><td>在该目录运行 Claude 时生效</td><td>.claude/settings.json</td></tr>
+<tr><td>全局 config</td><td>所有项目都生效</td><td>~/.claude.json</td></tr>
+<tr><td>提交进 .mcp.json</td><td>整个团队开箱即用</td><td>项目根目录 .mcp.json</td></tr>
+</tbody>
+</table>
+
+<h4>CLI 案例：添加和调试 MCP server</h4>
+<pre><code># 添加本地 MCP server
+$ claude mcp add my-server /path/to/server
+
+# 添加远程 SSE MCP server
+$ claude mcp add --transport sse remote https://api.example.com/sse
+
+# 启动时开启 MCP debug 模式（排查配置问题用）
+$ claude --mcp-debug</code></pre>
+
+<h4>.mcp.json 示例：团队共享 Puppeteer + Sentry</h4>
+<pre><code>{
+  "mcpServers": {
+    "puppeteer": { "command": "npx", "args": ["@mcp/puppeteer"] },
+    "sentry": { "command": "npx", "args": ["@mcp/sentry"] }
+  }
+}</code></pre>
+
+<h3>c. 自定义斜杠命令</h3>
+<p>把重复用的工作流（debug 循环、日志分析等）存为 Markdown 文件，放在 .claude/commands/ 目录，就能通过 / 菜单调用。支持 $ARGUMENTS 传参。提交进 git 可以共享给整个团队。</p>
+
+<h4>.claude/commands/fix-github-issue.md 示例</h4>
+<pre><code># 分析并修复 GitHub issue: $ARGUMENTS
+
+步骤：
+1. 用 `gh issue view $ARGUMENTS` 获取 issue 详情
+2. 理解问题描述
+3. 搜索代码库找到相关文件
+4. 实现必要的改动修复问题
+5. 编写并运行测试验证修复
+6. 确保代码通过 lint 和类型检查
+7. 写一个清晰的 commit message
+8. push 并创建 PR
+
+所有 GitHub 相关操作统一用 gh CLI。</code></pre>
+
+<h4>CLI 案例：使用自定义斜杠命令</h4>
+<pre><code># 调用：修复 issue #1234
+> /project:fix-github-issue 1234
+
+# 个人命令（放 ~/.claude/commands/，所有 session 可用）
+# 例：~/.claude/commands/daily-review.md
+> /user:daily-review</code></pre>
+
+<h2 id="section-03"><span class="num">3</span>常见工作流</h2>
+<p>这些模式在各类代码库和语言中被证明有效</p>
+
+<h3>a. 探索 → 规划 → 编码 → 提交</h3>
+<p>适用于大多数问题的通用工作流：</p>
+
+<table>
+<thead>
+<tr><th>步骤</th><th>操作</th><th>关键提示</th></tr>
+</thead>
+<tbody>
+<tr><td>① 探索</td><td>让 Claude 读相关文件/图片/URL</td><td>明确告诉它：先不要写代码</td></tr>
+<tr><td>② 规划</td><td>让 Claude 制定解决方案计划</td><td>用 think / think hard / ultrathink 触发深度思考</td></tr>
+<tr><td>③ 编码</td><td>让 Claude 实现方案</td><td>让它边实现边验证合理性</td></tr>
+<tr><td>④ 提交</td><td>让 Claude 提交并创建 PR</td><td>可顺便让它更新 README / changelog</td></tr>
+</tbody>
+</table>
+
+<div class="callout callout-important">
+<div class="callout-title">⚠️ 步骤 ① ② 是关键</div>
+<p>跳过就会直接乱写代码。不先探索和规划，Claude 倾向于直接开始写代码。对需要深度思考的问题，先研究和规划能显著提升输出质量。</p>
+</div>
+
+<h4>CLI 案例：探索-规划-编码流程</h4>
+<pre><code># 步骤 1：让 Claude 先只读代码，不写
+> 读一下 auth/ 目录下处理 JWT 的文件，先不要写任何代码
+
+# 步骤 2：触发深度规划
+> think hard：给我一个把 JWT 换成 OAuth2 的迁移方案
+
+# 步骤 3：确认计划后再执行
+> 计划看起来没问题，开始实现，边做边验证每一步的合理性
+
+# 步骤 4：提交并建 PR
+> 提交改动，创建 PR，更新 CHANGELOG.md</code></pre>
+
+<h3>b. TDD 工作流：先写测试，再写代码</h3>
+<p>Anthropic 内部最喜欢的工作流，适用于能用单测/集成测试/端到端测试验证的改动。TDD + agentic 编程威力倍增：</p>
+
+<table>
+<thead>
+<tr><th>步骤</th><th>操作</th><th>注意</th></tr>
+</thead>
+<tbody>
+<tr><td>①</td><td>让 Claude 根据预期输入/输出写测试</td><td>明确说是 TDD，避免它写 mock 实现</td></tr>
+<tr><td>②</td><td>让 Claude 跑测试，确认测试会失败</td><td>明确禁止此阶段写任何实现代码</td></tr>
+<tr><td>③</td><td>满意后让 Claude 提交测试</td><td>单独提交测试</td></tr>
+<tr><td>④</td><td>让 Claude 写代码让测试通过，不允许改测试</td><td>让它持续循环直到全部通过</td></tr>
+<tr><td>⑤</td><td>满意后提交实现代码</td><td>可让子 agent 验证没有过拟合测试</td></tr>
+</tbody>
+</table>
+
+<h3>c. UI 工作流：写代码 → 截图 → 迭代</h3>
+<p>类似 TDD，但用视觉截图替代测试作为验证标准：</p>
+
+<pre><code># 给 Claude 设计稿 + 截图能力（Puppeteer MCP）
+> 这是设计稿 [拖入图片]，用 Puppeteer 截图对比结果，
+  迭代直到和设计稿一致再提交
+
+# 没有 Puppeteer 时手动截图
+> 实现这个组件，我会把截图粘给你，你来对比迭代
+
+# 结果不够好时明确要求迭代
+> 间距和设计稿不一致，再调整两到三轮</code></pre>
+
+<div class="callout callout-tip">
+<div class="callout-title">💡 Claude 的输出经过 2-3 轮迭代通常会好很多</div>
+<p>第一版可能还不错，但给 Claude 看到结果（截图/测试输出/报错）让它自己看、自己调，2-3 轮后质量会显著提升。</p>
+</div>
+
+<h3>d. Safe YOLO 模式（跳过所有权限确认）</h3>
+<p>用 --dangerously-skip-permissions 跳过所有权限询问，让 Claude 不中断地跑完。适合修 lint 错误、生成样板代码等低风险场景。</p>
+
+<div class="callout callout-warning">
+<div class="callout-title">⚠️ 高风险！建议只在 Docker 容器内用</div>
+<p>跳过权限可能导致数据丢失、系统损坏，或通过 prompt injection 泄露数据。生产环境务必在无外网的容器里运行。参考 Docker Dev Containers 实现参考。</p>
+</div>
+
+<pre><code># 在 Docker 容器内使用
+$ docker run --rm -v $(pwd):/app my-claude-sandbox \
+  claude --dangerously-skip-permissions \
+  -p '修复所有 ESLint 错误，跑完测试确认没有破坏任何东西'</code></pre>
+
+<h3>e. 用 Claude 探索和理解代码库</h3>
+<p>入职新项目时，用 Claude Code 做探索和学习。可以问和问同事一样的问题，Claude 会自动搜索代码库找答案：</p>
+
+<pre><code>> logging 是怎么实现的？
+> 怎么新增一个 API endpoint？
+> foo.rs 第 134 行的 async move { ... } 是干什么的？
+> CustomerOnboardingFlowImpl 处理了哪些 edge case？
+> 为什么第 333 行调的是 foo() 而不是 bar()？
+> baz.py 第 334 行的 Java 等价写法是什么？</code></pre>
+
+<p>Anthropic 内部已把这个作为核心入职工作流，显著缩短新人 ramp-up 时间，减少对其他工程师的打扰。不需要特殊的 prompt，直接问就好。</p>
+
+<h3>f. 用 Claude 操作 git</h3>
+<p>Anthropic 工程师 90%+ 的 git 操作都用 Claude 完成：</p>
+
+<table>
+<thead>
+<tr><th>git 操作</th><th>怎么用 Claude</th></tr>
+</thead>
+<tbody>
+<tr><td>搜索历史</td><td>"v1.2.3 版本包含了哪些改动？"</td></tr>
+<tr><td>让 Claude 搜 git log</td><td>写 commit message</td></tr>
+<tr><td>"帮我写 commit message"</td><td>Claude 自动看改动和历史</td></tr>
+<tr><td>复杂 git 操作</td><td>回滚文件、解决 rebase 冲突、比较和移植 patch</td></tr>
+</tbody>
+</table>
+
+<h3>g. 用 Claude 操作 GitHub</h3>
+<p>Claude Code 可以处理大量 GitHub 日常操作，不用再背 gh 命令语法：</p>
+
+<pre><code># 创建 PR（Claude 自动根据 diff 生成标题和描述）
+> pr
+
+# 一键修复 code review 评论
+> 修复 PR #456 上所有 review 评论，改完 push 回同一分支
+
+# 修 CI 失败
+> 看一下 PR #456 的 CI 失败日志，找到原因并修复
+
+# 批量处理 issues
+> 遍历所有 open issues，按照 bug/feature/question 打标签</code></pre>
+
+<h3>h. 配合 Jupyter Notebook 使用</h3>
+<p>Anthropic 的研究员和数据科学家用 Claude Code 读写 Jupyter notebook。Claude 能解读输出内容包括图片，是探索数据的快速通道。推荐工作方式：Claude Code 和 .ipynb 文件在 VS Code 中并排打开。</p>
+
+<pre><code># 提交给同事前清理 notebook
+> 帮我清理这个 notebook，删掉多余的 cell，
+  让数据可视化在视觉上更美观
+
+# 让图表更好看
+> 把这些 matplotlib 图表改得 aesthetically pleasing，
+  优化颜色、字体大小、标题格式</code></pre>
+
+<h2 id="section-04"><span class="num">4</span>优化你的工作流</h2>
+<p>适用于所有工作流的通用建议</p>
+
+<h3>a. 指令越具体，结果越好</h3>
+<p>具体的指令能显著提升 Claude Code 的成功率，尤其是第一次尝试。前期说清楚，后期少纠偏。</p>
+
+<table>
+<thead>
+<tr><th>写法不佳</th><th>改进写法</th></tr>
+</thead>
+<tbody>
+<tr><td>add tests for foo.py</td><td>foo.py 里处理用户输入的 edge case 写测试，用 mock 隔离数据库</td></tr>
+<tr><td>why does ExecutionFactory have such a weird api?</td><td>ExecutionFactory 的 API 设计历史上有什么考量？用 git log 找最初设计</td></tr>
+<tr><td>add a calendar widget</td><td>在 HotDogWidget.php 第 47 行下面加一个日历 widget</td></tr>
+</tbody>
+</table>
+
+<div class="callout callout-tip">
+<div class="callout-title">💡 Claude 能推断意图，但不会读心术</div>
+<p>具体 = 更符合预期。</p>
+</div>
+
+<h3>b. 给 Claude 图片</h3>
+<p>Claude 能处理截图和设计稿，三种方式传入：</p>
+
+<table>
+<thead>
+<tr><th>传入方式</th><th>操作</th></tr>
+</thead>
+<tbody>
+<tr><td>截图粘贴</td><td>macOS: Cmd+Ctrl+Shift+4 截图到剪贴板，Ctrl+V 粘贴（注意不是 Cmd+V）</td></tr>
+<tr><td>拖拽图片</td><td>直接拖入 prompt 输入框</td></tr>
+<tr><td>文件路径</td><td>在 prompt 里写图片文件路径</td></tr>
+</tbody>
+</table>
+
+<div class="callout callout-tip">
+<div class="callout-title">💡 没有图片时也要明确说明视觉要求</div>
+<p>即使不传截图，告诉 Claude「结果要好看」也有帮助。对 UI 工作，视觉 mock 作为参照点能大幅提升质量。</p>
+</div>
+
+<h3>c. 指定文件和 URL</h3>
+<p>用 Tab 键补全文件路径，快速引用任意目录下的文件。粘贴 URL 让 Claude 直接获取并阅读。对于频繁访问的域名（如 docs.foo.com），用 /permissions 加入许可清单避免重复授权。</p>
+
+<pre><code># 指定文件（Tab 补全）
+> 看一下 src/auth/[Tab]token.py，找出验证逻辑的问题
+
+# 直接给 URL
+> 读一下 https://docs.stripe.com/api/charges 然后帮我实现支付接口
+
+# 添加域名到许可清单（不再每次询问）
+> /permissions add WebFetch(docs.stripe.com)</code></pre>
+
+<h3>d. 早纠偏、常纠偏</h3>
+<p>auto-accept 模式（Shift+Tab 切换）让 Claude 自主工作，但主动协作通常能得到更好的结果。</p>
+
+<p>四个纠偏工具：</p>
+
+<table>
+<thead>
+<tr><th>工具</th><th>操作</th><th>适用场景</th></tr>
+</thead>
+<tbody>
+<tr><td>先要计划</td><td>让 Claude 先做计划，确认后再编码</td><td>防止跑偏方向</td></tr>
+<tr><td>Escape</td><td>中断当前操作（思考/工具调用/文件编辑），重新引导</td><td>发现方向错了</td></tr>
+<tr><td>双击 Escape</td><td>回到历史，编辑之前的 prompt</td><td>想走另一条路</td></tr>
+<tr><td>让 Claude 撤销</td><td>撤销改动，通常配合双击 Escape</td><td>实现方式完全不对</td></tr>
+</tbody>
+</table>
+
+<h3>e. 用 /clear 保持 context 聚焦</h3>
+<p>长 session 中 context 会被无关对话、文件内容和命令填满，影响性能甚至干扰 Claude。任务间频繁使用 /clear 重置 context。</p>
+
+<pre><code># 完成一个任务后清空 context 再开始下一个
+> /clear
+
+# context 快满时压缩（保留核心状态继续工作）
+> /compact
+
+# 重要决策持久化——不靠记忆靠文件
+> 把我们刚才讨论的架构决策写进 DECISIONS.md</code></pre>
+
+<h3>f. 用清单和草稿本处理复杂工作流</h3>
+<p>对于大型任务（代码迁移、批量修 lint、复杂构建脚本），让 Claude 用 Markdown 文件作为清单和工作草稿本：</p>
+
+<pre><code># 步骤 1：让 Claude 列出所有错误并生成清单
+> 跑 npm run lint，把所有错误（含文件名和行号）写入 lint-todo.md，
+  格式：[ ] filename:line error_message
+
+# 步骤 2：逐一修复并勾选
+> 按照 lint-todo.md 的清单逐条修复，
+  每修完一条在清单上打勾，再修下一条</code></pre>
+
+<h3>g. 向 Claude 传入数据</h3>
+<table>
+<thead>
+<tr><th>传入方式</th><th>命令示例</th><th>最适合</th></tr>
+</thead>
+<tbody>
+<tr><td>直接粘贴</td><td>粘入 prompt</td><td>小段数据 / 报错</td></tr>
+<tr><td>管道传入</td><td>cat foo.txt | claude</td><td>日志/CSV/大文件</td></tr>
+<tr><td>bash 命令拉取</td><td>"跑 git log -20 然后分析"</td><td>git 历史/命令输出</td></tr>
+<tr><td>MCP 工具拉取</td><td>通过 MCP 拿数据库 schema</td><td>实时外部数据</td></tr>
+<tr><td>让 Claude 读文件</td><td>"读 /src/config.py 再动手"</td><td>理解项目结构</td></tr>
+<tr><td>让 Claude 抓 URL</td><td>"读 https://... 然后实现"</td><td>API 文档/页面内容</td></tr>
+</tbody>
+</table>
+
+<p>大多数 session 会混合使用多种方式。例如：管道传入日志，再让 Claude 用工具拉取更多上下文来 debug。</p>
+
+<h2 id="section-05"><span class="num">5</span>Headless 模式自动化你的基础设施</h2>
+<p>CI、pre-commit hook、构建脚本、自动化流水线</p>
+
+<p>Claude Code 的 headless 模式用于非交互场景。用 -p 参数传入 prompt 启用，--output-format stream-json 获取流式 JSON 输出。</p>
+
+<div class="callout callout-important">
+<div class="callout-title">⚠️ 注意</div>
+<p>headless 模式不跨 session 保持状态，每次 trigger 都是新 session。</p>
+</div>
+
+<h3>a. 用 Claude 做 issue 分类</h3>
+<p>Headless 模式可以由 GitHub 事件触发的自动化调用。例如 Claude Code 官方仓库用 Claude 在新 issue 创建时自动打标签。</p>
+
+<h4>CLI 案例：issue 自动分类（GitHub Actions）</h4>
+<pre><code># .github/workflows/triage.yml
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Triage with Claude
+        run: |
+          gh issue view ${{ github.event.issue.number }} | \
+          claude -p "分析这个 issue，用 gh 打上合适的 label：
+            bug/feature/question/docs，并回复一句说明" \
+          --output-format stream-json
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}</code></pre>
+
+<h3>b. 用 Claude 做代码 lint 审查</h3>
+<p>Claude Code 能做传统 linting 工具检测不到的主观代码审查：typo、过期注释、误导性函数名/变量名等。</p>
+
+<h4>CLI 案例：pre-commit hook + 自动文档</h4>
+<pre><code># .git/hooks/pre-commit
+#!/bin/bash
+
+# 1. 让 Claude 做主观代码审查
+git diff --cached | claude -p \
+  "审查这次改动：找 typo、过期注释、误导性命名。
+   有问题就列出来阻止提交" \
+  --output-format stream-json
+
+# 2. 给新函数自动加 JSDoc（headless 模式）
+STAGED=$(git diff --cached --name-only --diff-filter=A)
+if [ -n "$STAGED" ]; then
+  claude -p "给以下文件中所有新函数添加 JSDoc 注释: $STAGED"
+fi</code></pre>
+
+<h2 id="section-06"><span class="num">6</span>多 Claude 并行工作流</h2>
+<p>最强大的进阶用法——多实例协作</p>
+
+<h3>a. 一个写代码，另一个审查</h3>
+<p>让一个 Claude 写代码，另一个独立 context 的 Claude 来 review 或测试。类似多工程师协作，分离 context 往往能得到更好的结果。</p>
+
+<h4>CLI 案例：写代码+审查流水线</h4>
+<pre><code># 终端 1：Claude 写代码
+$ claude
+> 实现 UserAuth 模块的 OAuth2 登录功能
+
+# 终端 2：另一个 Claude 独立审查
+$ claude
+> 读一下刚写的 src/auth/oauth.py，
+  从安全角度 review，找潜在漏洞和 edge case
+
+# 终端 3：第三个 Claude 综合改进
+$ claude
+> 读 src/auth/oauth.py 和 review_feedback.md，
+  根据 review 意见修改代码</code></pre>
+
+<p>测试也可以类似方式：一个 Claude 写测试，另一个 Claude 写让测试通过的代码。甚至可以给它们各自的草稿本文件，让它们互相通信。</p>
+
+<h3>b. 多个仓库 checkout 并行任务</h3>
+<p>Anthropic 内部很多工程师的做法：</p>
+
+<table>
+<thead>
+<tr><th>步骤</th><th>操作</th></tr>
+</thead>
+<tbody>
+<tr><td>①</td><td>在不同文件夹创建 3-4 个 git checkout</td></tr>
+<tr><td>②</td><td>在不同终端标签页分别打开每个文件夹</td></tr>
+<tr><td>③</td><td>每个文件夹启动 Claude，分配不同任务</td></tr>
+<tr><td>④</td><td>轮流检查进度，批准/拒绝权限请求</td></tr>
+</tbody>
+</table>
+
+<h3>c. 使用 git worktree（更轻量的并行方式）</h3>
+<p>Git worktree 是多 checkout 的轻量替代方案。每个 worktree 有独立工作目录，但共享 git 历史和 reflog。适合多个互不依赖的任务并行执行。</p>
+
+<h4>CLI 案例：git worktree 并行开发</h4>
+<pre><code># 创建 worktree 跑两个独立任务
+$ git worktree add ../project-oauth feature/oauth
+$ git worktree add ../project-dataviz feature/dataviz
+
+# 终端 1：在 worktree 1 里启动 Claude
+$ cd ../project-oauth && claude
+> 重构认证系统，换成 OAuth2
+
+# 终端 2：在 worktree 2 里启动另一个 Claude
+$ cd ../project-dataviz && claude
+> 实现数据可视化仪表板组件
+
+# 两个任务完全独立，互不干扰
+
+# 完成后清理
+$ git worktree remove ../project-oauth
+$ git worktree remove ../project-dataviz</code></pre>
+
+<h2 id="section-cli"><span class="num">★</span>CLI 实战案例补充</h2>
+<p>gh CLI / 管道 / Headless / 自动化脚本 | 本节为译文补充内容</p>
+
+<h3>① gh CLI 全流程速查</h3>
+<table>
+<thead>
+<tr><th>场景</th><th>命令</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td>读 issue 开发</td><td>gh issue view 42 | claude '告诉我实现方案'</td><td>直接从 issue 出发</td></tr>
+<tr><td>列出 open issues</td><td>gh issue list --state open | claude '按优先级排序'</td><td>批量分析</td></tr>
+<tr><td>创建 PR</td><td>git diff main | claude '写 PR 描述' > desc.txt && gh pr create --body-file desc.txt</td><td>AI 写描述</td></tr>
+<tr><td>查 CI 失败</td><td>gh run view --log-failed | claude '找失败原因'</td><td>自动 debug CI</td></tr>
+<tr><td>回应 review 评论</td><td>gh pr view 456 --comments | claude '逐条修复'</td><td>批量修改</td></tr>
+<tr><td>打 release tag</td><td>claude '生成 v1.2.0 的 changelog' | gh release create v1.2.0 --notes-file -</td><td>全自动发布</td></tr>
+<tr><td>查 PR CI 状态</td><td>gh pr checks 456 | claude '哪个 check 失败了？'</td><td>快速定位</td></tr>
+</tbody>
+</table>
+
+<h3>② 数据管道：把任何命令输出喂给 Claude</h3>
+<pre><code># 分析日志
+$ tail -n 500 production.log | claude '找出异常模式，列出需要关注的条目'
+
+# 分析测试失败
+$ python -m pytest --tb=short 2>&1 | claude '解释失败原因，给出修复建议'
+
+# 分析 git 历史
+$ git log --oneline -30 | claude '总结最近改了什么，有没有潜在风险'
+
+# 分析 Docker 构建失败
+$ docker build . 2>&1 | claude '找到构建失败的根因'
+
+# 分析数据集（研究用）
+$ head -100 survey_data.csv | claude '描述这个数据集的结构，有什么数据质量问题'
+
+# 环境变量检查
+$ env | grep -i api | claude '这些 API key 配置有没有问题？'</code></pre>
+
+<h3>③ CI/CD 自动化脚本</h3>
+
+<h4>GitHub Actions 全自动 PR 工作流</h4>
+<pre><code># .github/workflows/ai-pr-review.yml
+name: AI PR Review
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+      - name: AI Code Review
+        run: |
+          git diff origin/main...HEAD | \
+          claude -p "这是一个 PR 的 diff。请做代码审查：
+            1) 找 bug 和安全问题
+            2) 检查测试覆盖
+            3) 评估代码可读性
+           以 markdown 格式输出" \
+          --output-format json > review.json
+
+          # 把审查结果发到 PR 评论
+          cat review.json | jq -r '.result' | \
+          gh pr comment ${{ github.event.pull_request.number }} --body-file -
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}</code></pre>
+
+<h3>④ 本地自动化脚本</h3>
+
+<h4>daily-dev.sh：每日开发启动脚本</h4>
+<pre><code>#!/bin/bash
+# 每天开始工作时运行
+
+echo '=== 今日代码状态 ==='
+git log --oneline -5 | claude -p \
+  "用一句话总结最近 5 次提交的进展" --output-format json | jq -r '.result'
+
+echo '=== 待处理 Issues ==='
+gh issue list --assignee @me --state open | claude -p \
+  "按优先级排序这些 issue，最重要的放前面" --output-format json | jq -r '.result'
+
+echo '=== 未完成 PR ==='
+gh pr list --author @me | claude -p \
+  "哪些 PR 需要我今天跟进？" --output-format json | jq -r '.result'</code></pre>
+
+<h2 id="section-commands">核心命令速查</h2>
+<table>
+<thead>
+<tr><th>命令 / 操作</th><th>作用</th><th>来自官方哪节</th></tr>
+</thead>
+<tbody>
+<tr><td>/init</td><td>生成 CLAUDE.md 初稿</td><td>1a</td></tr>
+<tr><td># 键</td><td>追加内容到 CLAUDE.md</td><td>1b</td></tr>
+<tr><td>/permissions add X</td><td>添加工具到许可清单</td><td>1c</td></tr>
+<tr><td>--allowedTools X,Y</td><td>session 级别预授权</td><td>1c</td></tr>
+<tr><td>--mcp-debug</td><td>MCP 配置调试</td><td>2b</td></tr>
+<tr><td>think / think hard / ultrathink</td><td>触发不同深度的思考</td><td>3a</td></tr>
+<tr><td>/clear</td><td>重置 context</td><td>4e</td></tr>
+<tr><td>/compact</td><td>压缩历史释放空间</td><td>4e</td></tr>
+<tr><td>cat file | claude -p '...'</td><td>headless 管道模式</td><td>5</td></tr>
+<tr><td>-p '...' --output-format json</td><td>Headless + 结构化输出</td><td>5</td></tr>
+<tr><td>git worktree add ../dir branch</td><td>创建独立 worktree</td><td>6c</td></tr>
+<tr><td>/doctor</td><td>检查环境配置</td><td>通用</td></tr>
+</tbody>
+</table>
+
+<div class="callout callout-important" style="margin-top: 48px;">
+<div class="callout-title">📚 官方文档</div>
+<p><a href="https://anthropic.com/engineering/claude-code-best-practices" target="_blank">anthropic.com/engineering/claude-code-best-practices</a>（英文原版）<br>
+<a href="https://claude.ai/code" target="_blank">claude.ai/code</a>（完整文档，含更多示例和高级技巧）</p>
+</div>
+
+<p style="margin-top: 48px;">
+  <a href="../../index.html#blog" class="back-link">← 返回博客</a>
+</p>
+
+</main>
+
+</body>
+</html>

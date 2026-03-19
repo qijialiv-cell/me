@@ -1,24 +1,37 @@
-# Ignore files not needed for the website
+# Ignore system files
 .DS_Store
-AGENTS.md
-HKSY.pdf
-Qijia_PhD_CV (2).pdf
-Screenshot*
-!Screenshot 2026-03-02 at 17.26.00.png
-Desktop/
-Documents/
+.Rhistory
+
+# Ignore parent directories
 ../
 ../../
+
+# Ignore development files
 *.py
 *.R
+
+# Ignore specific large files
 *.pdf
 *.docx
 *.doc
 *.txt
 *.csv
-*.json
+
+# Keep project essentials
 !assets/
+!assets/data/
+!assets/data/*.json
+!assets/documents/*.html
+!assets/images/
 !css/
 !js/
+!.github/
+!tests/
+!.gitignore
+!.nojekyll
 !index.html
 !README.md
+!package.json
+!package-lock.json
+!playwright.config.js
+!AGENTS.md

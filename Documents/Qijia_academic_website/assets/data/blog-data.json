@@ -1,0 +1,47 @@
+{
+  "categories": [
+    { "id": "all", "name": "All", "icon": "fas fa-th-large", "count": 3 },
+    { "id": "ai", "name": "AI & ML", "icon": "fas fa-brain", "count": 3 },
+    { "id": "workflow", "name": "Workflow", "icon": "fas fa-project-diagram", "count": 1 }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Claude Code 最佳实践手册 — PhD / Research Edition",
+      "excerpt": "专为 PhD 研究者打造的 Claude Code 最佳实践指南，涵盖 fastai、HuggingFace、GitHub CLI 与定量研究工作流。说人话版，一读就懂。",
+      "category": "ai",
+      "date": "2025-03-19",
+      "readTime": "15 min",
+      "tags": ["Claude Code", "AI Tools", "Research Workflow", "PhD", "Best Practices"],
+      "content": "<h3>概述</h3><p>这是 Claude Code 最佳实践手册的说人话版，专为 PhD 研究者设计。涵盖 8 个核心章节：CLAUDE.md 配置、先规划后执行、Session 管理、验证文化、调查范围控制、MCP 工具接入、Hooks 强制执行、喂好素材。</p><h3>ML 研究者专项</h3><p>包含 fastai 项目配置、HuggingFace 工作流、GitHub CLI 配合使用、定量研究高频场景（SEM/CFA、Mediation、Power Analysis、Qualtrics 清洗等），以及给未来 AP 的课程代码库管理建议。</p>",
+      "featured": true,
+      "externalUrl": "assets/documents/claude-code-best-practices-phd.html"
+    },
+    {
+      "id": 2,
+      "title": "Claude Code 官方最佳实践 — 中文翻译版",
+      "excerpt": "Anthropic 官方工程博客文章《Claude Code: Best practices for agentic coding》的中文翻译，忠实原文并补充 CLI 实战命令案例。",
+      "category": "ai",
+      "date": "2025-03-19",
+      "readTime": "25 min",
+      "tags": ["Claude Code", "中文资源", "CLI 实战", "官方翻译"],
+      "language": "zh",
+      "content": "<h3>关于本文档</h3><p>这是 Anthropic 官方工程博客文章《Claude Code: Best practices for agentic coding》的中文翻译，发布于 2025 年 4 月 18 日，内容忠实原文并补充了 CLI 实战命令案例。</p><h3>核心章节</h3><ul><li><strong>1. 定制你的开发环境</strong> — CLAUDE.md、权限管理、gh CLI、MCP 配置</li><li><strong>2. 给 Claude 更多工具</strong> — bash 工具、MCP、自定义斜杠命令</li><li><strong>3. 常见工作流</strong> — 探索规划、TDD、截图迭代、git、GitHub、Jupyter</li><li><strong>4. 优化你的工作流</strong> — 指令精确、图片、文件、URL、纠偏、上下文、清单</li><li><strong>5. Headless 模式自动化</strong> — issue 分类、代码 lint</li><li><strong>6. 多 Claude 并行工作流</strong> — 互相审查、多分支、git worktree</li></ul>",
+      "featured": true,
+      "externalUrl": "assets/documents/claude-code-official-translation.html"
+    },
+    {
+      "id": 3,
+      "title": "我的 Claude Code 工作流配置 — 中文版",
+      "excerpt": "个人 Claude Code 工作流配置详解，包含环境搭建、常用命令、MCP Server 配置、自定义斜杠命令等实用技巧。",
+      "category": "workflow",
+      "date": "2025-03-15",
+      "readTime": "20 min",
+      "tags": ["Claude Code", "Workflow", "MCP", "Configuration", "中文"],
+      "language": "zh",
+      "content": "<h3>环境配置</h3><p>详细介绍 Claude Code 的环境配置，包括全局设置、项目级配置、权限管理等。</p><h3>MCP Server 配置</h3><p>包含 Puppeteer、GitHub、PostgreSQL 等常用 MCP Server 的配置方法和使用技巧。</p><h3>自定义斜杠命令</h3><p>展示如何创建和使用自定义斜杠命令来提高工作效率。</p>",
+      "featured": true,
+      "externalUrl": "assets/documents/workflow-guide-zh.html"
+    }
+  ]
+}

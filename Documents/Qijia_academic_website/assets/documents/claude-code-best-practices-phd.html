@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code 最佳实践手册 — PhD / Research Edition</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-light: #4a4a4a;
+    --ink-faint: #888;
+    --bg: #fafaf7;
+    --bg-warm: #f4f2ec;
+    --accent: #c0392b;
+    --accent-light: #e74c3c;
+    --accent-pale: #fdf0ef;
+    --blue: #2471a3;
+    --blue-pale: #eaf3fb;
+    --green: #1a7a4a;
+    --green-pale: #eafaf1;
+    --gold: #b7770d;
+    --gold-pale: #fef9e7;
+    --border: #ddd8cc;
+    --code-bg: #f0ede6;
+    --sidebar-width: 280px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Serif SC', Georgia, serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 2;
+    font-size: 18px;
+  }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--ink);
+    color: #eee;
+    overflow-y: auto;
+    z-index: 100;
+    padding: 0 0 40px 0;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+
+  #sidebar-header {
+    padding: 28px 20px 20px;
+    border-bottom: 1px solid #333;
+  }
+
+  #sidebar-header .logo {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 8px;
+  }
+
+  #sidebar-header h2 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ddd;
+    line-height: 1.5;
+  }
+
+  #toc { padding: 16px 0; }
+
+  .toc-section {
+    padding: 4px 0;
+  }
+
+  .toc-section > a {
+    display: block;
+    padding: 8px 20px;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+    border-left: 3px solid transparent;
+  }
+
+  .toc-section > a:hover,
+  .toc-section > a.active {
+    color: #fff;
+    background: #2a2a2a;
+    border-left-color: var(--accent-light);
+  }
+
+  /* ── MAIN CONTENT ── */
+  #main {
+    margin-left: var(--sidebar-width);
+    max-width: 900px;
+    padding: 60px 64px 100px;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    padding-bottom: 48px;
+    margin-bottom: 48px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  #hero .label {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  #hero h1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  #hero .subtitle {
+    font-size: 18px;
+    color: var(--ink-light);
+    line-height: 1.8;
+    max-width: 680px;
+    margin-bottom: 24px;
+  }
+
+  .meta {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    color: var(--ink-faint);
+  }
+
+  /* ── HEADINGS ── */
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 56px 0 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h2 .num {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 40px 0 18px;
+  }
+
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 32px 0 14px;
+  }
+
+  /* ── TEXT ── */
+  p {
+    margin-bottom: 18px;
+    color: var(--ink-light);
+    font-size: 18px;
+    line-height: 2;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  a {
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  a:hover { border-bottom-color: var(--blue); }
+
+  /* ── LISTS ── */
+  ul, ol {
+    margin: 16px 0 24px 20px;
+    color: var(--ink-light);
+  }
+
+  li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  li strong { color: var(--ink); }
+
+  /* ── CODE ── */
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    background: var(--code-bg);
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: var(--accent);
+  }
+
+  pre {
+    background: var(--code-bg);
+    padding: 20px 24px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ── CALLOUTS ── */
+  .callout {
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin: 28px 0;
+  }
+
+  .callout-title {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .callout p { margin-bottom: 0; font-size: 17px; }
+
+  .callout-tip {
+    background: var(--green-pale);
+    border-left: 4px solid var(--green);
+  }
+
+  .callout-tip .callout-title { color: var(--green); }
+
+  .callout-warning {
+    background: var(--gold-pale);
+    border-left: 4px solid var(--gold);
+  }
+
+  .callout-warning .callout-title { color: var(--gold); }
+
+  .callout-important {
+    background: var(--accent-pale);
+    border-left: 4px solid var(--accent);
+  }
+
+  .callout-important .callout-title { color: var(--accent); }
+
+  /* ── TABLES ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 16px;
+  }
+
+  th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  th {
+    background: var(--bg-warm);
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  td { color: var(--ink-light); }
+
+  /* ── BACK LINK ── */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--ink);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+  }
+
+  .back-link:hover {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #sidebar { display: none; }
+    #main { margin-left: 0; padding: 40px 24px 80px; }
+    #hero h1 { font-size: 30px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 20px; }
+    p, li { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">PhD / Research Edition</div>
+    <h2>Claude Code 最佳实践手册</h2>
+  </div>
+  <div id="toc">
+    <div class="toc-section"><a href="#hero">概述</a></div>
+    <div class="toc-section"><a href="#section-01">01 CLAUDE.md 配置</a></div>
+    <div class="toc-section"><a href="#section-02">02 先规划后执行</a></div>
+    <div class="toc-section"><a href="#section-03">03 Session 管理</a></div>
+    <div class="toc-section"><a href="#section-04">04 验证文化</a></div>
+    <div class="toc-section"><a href="#section-05">05 调查范围控制</a></div>
+    <div class="toc-section"><a href="#section-06">06 MCP 工具接入</a></div>
+    <div class="toc-section"><a href="#section-07">07 Hooks 强制执行</a></div>
+    <div class="toc-section"><a href="#section-08">08 喂好素材</a></div>
+    <div class="toc-section"><a href="#section-ml">ML 研究者专项</a></div>
+    <div class="toc-section"><a href="#section-commands">快速命令速查</a></div>
+  </div>
+</nav>
+
+<main id="main">
+
+<section id="hero">
+  <div class="label">Claude Code 最佳实践手册</div>
+  <h1>说人话版 — PhD / Research Edition</h1>
+  <p class="subtitle">fastai · HuggingFace · GitHub CLI · 定量研究</p>
+  <p class="meta">2025 · Claude Code v1 · 高阶版</p>
+</section>
+
+<h2 id="section-overview">章节概览</h2>
+<table>
+<thead>
+<tr><th>章节</th><th>一句话总结</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>01</strong></td><td>CLAUDE.md 配置 — 把不变的规则写文件，不要每次重复说</td></tr>
+<tr><td><strong>02</strong></td><td>先规划后执行 — 像写论文先立 outline 再动笔</td></tr>
+<tr><td><strong>03</strong></td><td>Session 管理 — 上下文是钱，别乱花</td></tr>
+<tr><td><strong>04</strong></td><td>验证文化 — 没有 test 的代码等于没写</td></tr>
+<tr><td><strong>05</strong></td><td>调查范围控制 — 问题越具体，答案越有用</td></tr>
+<tr><td><strong>06</strong></td><td>MCP 工具接入 — 让 Claude 直接操作外部服务</td></tr>
+<tr><td><strong>07</strong></td><td>Hooks 强制执行 — 不信任记忆，用自动化兜底</td></tr>
+<tr><td><strong>08</strong></td><td>喂好素材 — 垃圾进垃圾出，上下文决定质量</td></tr>
+</tbody>
+</table>
+
+<h2 id="section-01"><span class="num">01</span>CLAUDE.md — 把规则写进文件，一劳永逸</h2>
+<p><strong>每次 session 自动生效，不用反复交代</strong></p>
+
+<h3>它是什么？</h3>
+<p>Claude Code 每次启动先读项目根目录的 CLAUDE.md。你把「这个项目的规矩」写在里面，Claude 永远记得——不用每次 session 重新说一遍。本质是一个<strong>持久化的 system prompt</strong>。</p>
+
+<h3>/init 一键生成</h3>
+<pre><code>$ /init
+# Claude 自动扫描项目生成 CLAUDE.md</code></pre>
+
+<h3>该写什么？</h3>
+<table>
+<thead>
+<tr><th>分类</th><th>典型内容</th><th>重要度</th></tr>
+</thead>
+<tbody>
+<tr><td>常用命令</td><td>npm run test / python -m pytest</td><td>必写</td></tr>
+<tr><td>代码风格</td><td>TypeScript strict / PEP8 / 命名规范</td><td>必写</td></tr>
+<tr><td>目录约定</td><td>数据在 /data/raw，模型存 /models/</td><td>必写</td></tr>
+<tr><td>禁止操作</td><td>不改 /legacy / 不直接 push main</td><td>推荐</td></tr>
+<tr><td>工作流</td><td>PR 前跑 lint，commit 格式要求</td><td>可选</td></tr>
+</tbody>
+</table>
+
+<div class="callout callout-tip">
+<div class="callout-title">💡 Tips</div>
+<p><strong>越短越有效</strong> — 超过 150 行就等于没写。Claude 自己能判断的别写，只写它推断不出来的。能做成 hook 的不要放这里。</p>
+</div>
+
+<h2 id="section-02"><span class="num">02</span>先规划后执行，开两个 session</h2>
+<p><strong>边想边做是最大的浪费</strong></p>
+
+<h3>为什么要分开 session？</h3>
+<p>规划时的「讨论噪音」会污染执行阶段的 context。新 session + SPEC.md = Claude 专注执行，不被之前的来回干扰。</p>
+
+<ol>
+<li>一句话描述 — 你先说需求</li>
+<li>访谈 Claude — 问你问题</li>
+<li>SPEC.md — 写下来确认</li>
+<li>新 session — 干净执行</li>
+<li>验证 — 跑测试截图</li>
+</ol>
+
+<div class="callout callout-tip">
+<div class="callout-title">💡 让 Claude 问你</div>
+<p>开头只给一句话，然后说「你来问我问题」。Claude 会把你没想到的坑提前暴露。</p>
+</div>
+
+<h3>访谈维度 — Claude 应该问的</h3>
+<table>
+<thead>
+<tr><th>维度</th><th>问题</th></tr>
+</thead>
+<tbody>
+<tr><td>技术选型</td><td>用哪个库？有没有可复用的现有代码？</td></tr>
+<tr><td>成功标准</td><td>怎样算做完？测试怎么写？</td></tr>
+<tr><td>边界情况</td><td>空数据？并发？权限？报错怎么展示？</td></tr>
+<tr><td>下游影响</td><td>改了这里会不会破坏其他模块？</td></tr>
+<tr><td>可还原性</td><td>出错了怎么回滚？数据会不会丢？</td></tr>
+</tbody>
+</table>
+
+<h2 id="section-03"><span class="num">03</span>Session 管理 — 上下文是稀缺资源</h2>
+<p><strong>用完就清，别让垃圾堆积</strong></p>
+
+<h3>核心原则：一个 session 只做一件事</h3>
+<p>把不相关任务混在一个 session 里，Claude 的注意力被稀释，输出变差。像浏览器标签页，一个任务一个 session。</p>
+
+<h3>关键技巧</h3>
+<ol>
+<li><strong>两次纠错失败 → 立刻 /clear</strong><br>继续纠正只会越来越乱。清空重来，把教训写进初始 prompt。</li>
+<li><strong>/compact：长 session 续命</strong><br>快到 context 上限时用 /compact，Claude 自动摘要历史，释放约 60% 空间继续干。</li>
+<li><strong>重要决策写文件持久化</strong><br>跨 session 要记住的东西别靠记忆——写进 DECISIONS.md，下次 session 开头读一遍。</li>
+<li><strong>每次开头给 Claude 一个锚点</strong><br>把 SPEC.md / 报错日志 / 关键文件路径粘到第一条消息，Claude 立刻知道在做什么。</li>
+</ol>
+
+<h2 id="section-04"><span class="num">04</span>没有验证，别说做完了</h2>
+<p><strong>Claude 看上去没问题 != 真的没问题</strong></p>
+
+<h3>先给成功标准，再让 Claude 动手</h3>
+<p>没有测试时 Claude 在猜你要什么。有了测试，它有明确目标，能自主迭代到通过。Test-first 不是仪式，是给 Claude 安装了一个目标函数。</p>
+
+<h3>应该给 Claude 的</h3>
+<ul>
+<li>提前给 Claude 测试脚本 / pytest</li>
+<li>截图展示预期效果</li>
+<li>明确的成功 / 失败标准</li>
+<li>需要覆盖的 edge case</li>
+<li>容易踩的坑</li>
+</ul>
+
+<h3>常见错误</h3>
+<ul>
+<li>「看上去对了」就合并</li>
+<li>只测 happy path</li>
+<li>让 Claude 自己定义完成</li>
+<li>跳过边界情况上线</li>
+</ul>
+
+<h2 id="section-05"><span class="num">05</span>问题越具体，答案越有用</h2>
+<p><strong>范围不限 = token 黑洞</strong></p>
+
+<p>「帮我看看这个 bug」是最贵的 prompt。不限范围让 Claude 读几百个文件、填满 context，最终给你一个表浅结论。把范围收到文件级，答案质量翻倍，token 消耗大幅下降。</p>
+
+<table>
+<thead>
+<tr><th>太宽的问法</th><th>正确做法</th></tr>
+</thead>
+<tbody>
+<tr><td>"帮我找这个 bug"</td><td>"在 auth/jwt.py 第 47 行找 token 过期的原因"</td></tr>
+<tr><td>"分析整个项目性能"</td><td>"分析 db.py 里查询超 500ms 的函数"</td></tr>
+<tr><td>"重构这个项目"</td><td>"把 Table 组件拆成 headless + styled 两层"</td></tr>
+<tr><td>"理解这个报错"</td><td>"读 error.log 前 30 行，找 CORS 冲突根因"</td></tr>
+</tbody>
+</table>
+
+<div class="callout callout-tip">
+<div class="callout-title">💡 用 subagent 做大任务</div>
+<p>复杂任务先拆成独立子任务，每个子任务单开 session，主 context 不被污染。</p>
+</div>
+
+<h2 id="section-06"><span class="num">06</span>MCP — 让 Claude 直接操作外部服务</h2>
+<p><strong>不只是写代码，而是真的执行</strong></p>
+
+<h3>MCP 是什么？</h3>
+<p>Model Context Protocol。连接后 Claude Code 可以直接查数据库、创 issue、读设计稿——不是帮你写代码，是它自己动手做。</p>
+
+<h3>添加 MCP Server</h3>
+<pre><code>$ claude mcp add local-server /path/to/server
+$ claude mcp add --transport sse remote https://api.example.com/sse
+$ claude mcp list</code></pre>
+
+<h3>MCP Server 能力一览</h3>
+<table>
+<thead>
+<tr><th>MCP Server</th><th>Claude 能直接做什么</th></tr>
+</thead>
+<tbody>
+<tr><td>GitHub</td><td>读 PR diff → 写 review → 合并通过 CI 的 PR</td></tr>
+<tr><td>PostgreSQL / SQLite</td><td>查 schema → 生成 migration → 验证数据一致性</td></tr>
+<tr><td>Notion / Linear</td><td>从 issue 读需求 → 实现完自动关闭 ticket</td></tr>
+<tr><td>Sentry / Datadog</td><td>拉线上报错 → 定位源码 → 自动 patch</td></tr>
+<tr><td>HuggingFace Hub</td><td>查模型 metadata → 下载 checkpoint → 更新 model card</td></tr>
+</tbody>
+</table>
+
+<h2 id="section-07"><span class="num">07</span>Hooks — 不信任记忆，用自动化兜底</h2>
+<p><strong>CLAUDE.md 是建议，Hooks 是法律</strong></p>
+
+<h3>CLAUDE.md vs Hooks</h3>
+<table>
+<thead>
+<tr><th></th><th>CLAUDE.md 指令</th><th>Hooks</th></tr>
+</thead>
+<tbody>
+<tr><td>执行率</td><td>Claude 会尽量遵守</td><td>100% 执行，无例外</td></tr>
+<tr><td>复杂任务</td><td>可能忘记</td><td>独立于 Claude 推理之外</td></tr>
+<tr><td>适合场景</td><td>风格 / 偏好 / 约定</td><td>必须做的操作</td></tr>
+<tr><td>语气</td><td>「最好这样做」</td><td>「必须这样做」</td></tr>
+</tbody>
+</table>
+
+<h3>Hook 类型</h3>
+<ol>
+<li><strong>PostToolUse：写完自动格式化</strong><br>Claude 每次改完代码，自动跑 black / prettier。不用担心它忘记。</li>
+<li><strong>PreToolUse：危险命令拦截</strong><br>执行 bash 前检查是否含 rm -rf / sudo 等危险操作，拦截并提示确认。</li>
+<li><strong>Stop：完成前验证</strong><br>任务结束前检查测试是否全过，没过则阻止 Claude 报告完成。</li>
+<li><strong>Notification：操作审计日志</strong><br>把所有 Claude 操作写入 audit.log，方便复查和合规。</li>
+</ol>
+
+<h3>Hook 配置示例</h3>
+<pre><code>// settings.json
+{
+  "hooks": {
+    "PostToolUse": [{
+      "matcher": "Write|Edit",
+      "hooks": [{"type": "command",
+        "command": "black . && isort ."}]
+    }]
+  }
+}</code></pre>
+
+<h2 id="section-08"><span class="num">08</span>喂给 Claude 好素材</h2>
+<p><strong>你给的上下文质量决定输出质量</strong></p>
+
+<table>
+<thead>
+<tr><th>输入方式</th><th>怎么用</th><th>适合场景</th></tr>
+</thead>
+<tbody>
+<tr><td>管道传入</td><td>cat error.log | claude '帮我看看'</td><td>日志 / 报错分析</td></tr>
+<tr><td>URL 文档</td><td>prompt 里直接粘 API 文档链接</td><td>接入第三方 API</td></tr>
+<tr><td>截图 / 图片</td><td>直接拖进终端或粘贴</td><td>UI bug / 设计还原</td></tr>
+<tr><td>文件路径</td><td>"先读 /src/config.py 再动手"</td><td>理解项目结构</td></tr>
+<tr><td>MCP 实时拉取</td><td>通过 MCP 拿 schema / issue 内容</td><td>数据任务 / PM 工具</td></tr>
+<tr><td>Bash 输出</td><td>"跑 git log -20 告诉我最近改了啥"</td><td>代码审查 / debug</td></tr>
+</tbody>
+</table>
+
+<h2 id="section-ml"><span class="num">★</span>ML 研究者专项</h2>
+<p>fastai | HuggingFace | GitHub CLI | 定量研究 | PhD / AP</p>
+<p>以下是官方文档没写、但做 ML 研究的 PhD 每天都会碰到的场景。</p>
+
+<h3>① fastai — CLAUDE.md 怎么配</h3>
+
+<pre><code># CLAUDE.md 示例
+# Python 3.10 | CUDA 11.8 | fastai 2.7
+
+Run tests: python -m pytest tests/ -v
+Export nb: jupyter nbconvert --to script nbs/*.ipynb
+
+# 目录约定
+data/raw/     原始数据
+data/proc/    处理后数据
+models/       .pkl checkpoint
+nbs/          Jupyter notebooks (source of truth)
+
+# 注意
+Path(__file__).parent 不要 hardcode
+DataBlock API 容易出参数组合错误</code></pre>
+
+<div class="callout callout-tip">
+<div class="callout-title">💡 DataBlock debug</div>
+<p>把你的 DataBlock 定义截图给 Claude，让它检查 get_items / splitter / get_y 的逻辑，比自己 debug 快很多。</p>
+</div>
+
+<h3>② HuggingFace — Claude Code 能帮你做什么</h3>
+<table>
+<thead>
+<tr><th>任务</th><th>怎么用 Claude Code</th></tr>
+</thead>
+<tbody>
+<tr><td>选模型</td><td>把任务描述 + 数据规模给 Claude，让它推荐 Hub 上合适的 checkpoint</td></tr>
+<tr><td>写 Trainer 配置</td><td>给 Claude 你的数据 schema，直接生成 TrainingArguments + 回调</td></tr>
+<tr><td>Debug tokenizer</td><td>tokenizer 输出 | claude，检查 input_ids 是否符合预期</td></tr>
+<tr><td>写 model card</td><td>Claude 读训练 log，自动生成标准格式的 README.md</td></tr>
+<tr><td>PEFT / LoRA</td><td>说清楚基座模型和任务，Claude 生成 LoraConfig + 训练脚本</td></tr>
+<tr><td>数据集上传 Hub</td><td>Claude 写 push_to_hub 脚本 + 自动填 dataset card</td></tr>
+</tbody>
+</table>
+
+<h3>③ GitHub CLI (gh) — 配合 Claude Code 的工作流</h3>
+<table>
+<thead>
+<tr><th>场景</th><th>Claude Code + gh 怎么用</th></tr>
+</thead>
+<tbody>
+<tr><td>从 issue 开发</td><td>Claude 读 gh issue view 123，理解需求，自动建 branch 开始开发</td></tr>
+<tr><td>PR 创建</td><td>改完后 Claude 跑 gh pr create，自动填标题 + 描述（基于 commit）</td></tr>
+<tr><td>Review 回应</td><td>Claude 读 gh pr view --comments，针对每条 review 直接修改代码</td></tr>
+<tr><td>CI 失败处理</td><td>gh run view 拉 CI 日志 | claude，自动定位失败原因并 fix</td></tr>
+<tr><td>Release 管理</td><td>Claude 生成 changelog + 跑 gh release create，全自动打 tag</td></tr>
+</tbody>
+</table>
+
+<h3>④ 定量研究 — PhD 高频场景</h3>
+<table>
+<thead>
+<tr><th>统计任务</th><th>Claude Code 最快用法</th></tr>
+</thead>
+<tbody>
+<tr><td>SEM / CFA</td><td>截图测量模型结构 → Claude 生成 lavaan / semopy 代码</td></tr>
+<tr><td>Mediation/Moderation</td><td>粘贴 PROCESS 输出 → Claude 解释 indirect effect + Bootstrap CI</td></tr>
+<tr><td>量表信效度</td><td>给 item 列表 → 生成 Cronbach alpha + CFA + AVE/CR 报告</td></tr>
+<tr><td>面板数据</td><td>描述数据结构 → 生成 plm / linearmodels 代码 + FE vs RE 逻辑</td></tr>
+<tr><td>Power Analysis</td><td>说清研究设计 → 生成 G*Power 等效 Python 代码 + 参数解释</td></tr>
+<tr><td>Qualtrics 清洗</td><td>给导出规则 → 写脚本处理 speeders / straight-liners / attention check</td></tr>
+<tr><td>文献综述</td><td>给 PDF 路径 → 提取 RQ/方法/样本/发现，输出统一格式 note</td></tr>
+</tbody>
+</table>
+
+<h3>⑤ 给未来 AP：管理课程代码库</h3>
+<ol>
+<li><strong>CLAUDE.md 定义课程代码规范</strong> — 注释语言、数据集路径、变量命名——一次写好，维护成本降到零。</li>
+<li><strong>Hook 自动生成学生版</strong> — 教师版改完，PostToolUse Hook 自动删答案生成学生练习版。</li>
+<li><strong>gh CLI 批量处理学生提交</strong> — Claude 写脚本 clone 所有 fork → 跑测试 → 生成反馈报告。</li>
+<li><strong>每门课独立 repo + CLAUDE.md</strong> — Context 隔离，不同课程互不干扰，每次 session 定位精准。</li>
+</ol>
+
+<h2 id="section-commands">快速命令速查</h2>
+<table>
+<thead>
+<tr><th>命令 / 操作</th><th>干什么</th><th>什么时候用</th></tr>
+</thead>
+<tbody>
+<tr><td>/init</td><td>生成 CLAUDE.md 初稿</td><td>项目初始化</td></tr>
+<tr><td>/clear</td><td>重置 context</td><td>连续出错后重来</td></tr>
+<tr><td>/compact</td><td>压缩历史释放空间</td><td>长 session 快满了</td></tr>
+<tr><td>cat file | claude</td><td>管道传入内容</td><td>日志 / 数据分析</td></tr>
+<tr><td>claude mcp add</td><td>注册 MCP server</td><td>接入外部服务</td></tr>
+<tr><td>SPEC.md + 新 session</td><td>规划执行分离</td><td>所有中大型功能</td></tr>
+<tr><td>gh issue view N | claude</td><td>从 issue 直接开发</td><td>任务驱动开发</td></tr>
+<tr><td>gh run view --log-failed | claude</td><td>CI 失败自动修</td><td>Pipeline 挂了</td></tr>
+<tr><td>/doctor</td><td>检查环境配置</td><td>出现奇怪问题时</td></tr>
+</tbody>
+</table>
+
+<div class="callout callout-important" style="margin-top: 48px;">
+<div class="callout-title">📚 官方文档</div>
+<p><a href="https://docs.anthropic.com/en/docs/claude-code/best-practices" target="_blank">docs.anthropic.com/en/docs/claude-code/best-practices</a> — 所有内容的一手来源</p>
+</div>
+
+<p style="margin-top: 48px;">
+  <a href="../../index.html#blog" class="back-link">← 返回博客</a>
+</p>
+
+</main>
+
+</body>
+</html>

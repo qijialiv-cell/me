@@ -1863,12 +1863,17 @@ a:hover { color: var(--gold); }
     cursor: pointer;
     transition: all var(--transition-fast);
     white-space: nowrap;
+    line-height: 1;
 }
 
 .filter-btn i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 14px;
-    text-align: center;
     font-size: 0.75rem;
+    margin-right: 4px;
+    flex-shrink: 0;
 }
 
 .filter-btn:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }

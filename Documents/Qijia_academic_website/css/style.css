@@ -211,8 +211,10 @@ a:hover { color: var(--gold); }
     min-width: 100%;
     min-height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: var(--space-xl) 0 var(--space-3xl);
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 /* Thin scrollbar */
@@ -1713,6 +1715,107 @@ a:hover { color: var(--gold); }
 /* ============================================
    Print
    ============================================ */
+
+/* ============================================
+   Collapsible Sections
+   ============================================ */
+.collapsible-section {
+    margin-bottom: var(--space-xl);
+}
+
+.collapsible-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--border);
+    transition: all var(--transition-fast);
+    user-select: none;
+}
+
+.collapsible-header:hover {
+    border-bottom-color: var(--gold);
+}
+
+.collapsible-header h3 {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.collapsible-header h3::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.collapsible-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.collapsible-toggle:hover {
+    background: var(--primary);
+    color: var(--paper);
+    border-color: var(--primary);
+}
+
+.collapsible-header:hover .collapsible-toggle {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 0, 0.1, 1), 
+                padding 0.4s cubic-bezier(0.25, 0, 0.1, 1),
+                opacity 0.3s ease;
+    opacity: 0;
+    padding: 0;
+}
+
+.collapsible-section.open .collapsible-content {
+    max-height: 3000px;
+    opacity: 1;
+    padding: var(--space-md) 0 0;
+}
+
+.collapsible-section.open .collapsible-toggle {
+    transform: rotate(180deg);
+}
+
+/* Collapsed state indicator */
+.collapsible-count {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    margin-left: 8px;
+}
+
 /* ============================================
    Blog Section — List Layout
    ============================================ */
@@ -1739,9 +1842,15 @@ a:hover { color: var(--gold); }
 .blog-filter-tabs {
     display: flex;
     gap: 0;
+    align-items: stretch;
 }
 
 .filter-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 32px;
     padding: 6px 18px;
     background: transparent;
     border: 1px solid var(--border);
@@ -1754,6 +1863,12 @@ a:hover { color: var(--gold); }
     cursor: pointer;
     transition: all var(--transition-fast);
     white-space: nowrap;
+}
+
+.filter-btn i {
+    width: 14px;
+    text-align: center;
+    font-size: 0.75rem;
 }
 
 .filter-btn:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }

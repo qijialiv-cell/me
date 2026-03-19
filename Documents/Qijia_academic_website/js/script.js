@@ -69,10 +69,20 @@ function renderResearch(data) {
 
     el.innerHTML = `
         <p class="research-intro">${data.intro}</p>
-        <h3 class="research-stream-title">Research Streams</h3>
-        ${streams}
-        <h3 class="research-stream-title">Publications</h3>
-        <div class="publication-list">${pubs}</div>
+        <div class="collapsible-section open" data-collapsible="research-streams">
+            <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
+                <h3>Research Streams <span class="collapsible-count">(${data.streams.length})</span></h3>
+                <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="collapsible-content">${streams}</div>
+        </div>
+        <div class="collapsible-section open" data-collapsible="research-pubs">
+            <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
+                <h3>Publications <span class="collapsible-count">(${data.publications.length})</span></h3>
+                <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="collapsible-content"><div class="publication-list">${pubs}</div></div>
+        </div>
     `;
 }
 
@@ -132,15 +142,49 @@ function renderCV(data) {
         i === 0 ? `<p>${t}</p>` : `<p><em>${t}</em></p>`
     ).join('');
 
+    // Create collapsible sections for CV
     el.innerHTML = `
-        <div class="cv-category"><h3>Education</h3>${cvItems(data.education)}</div>
-        <div class="cv-category"><h3>Academic Experience</h3>${cvItems(data.academic_experience)}</div>
-        <div class="cv-category"><h3>Work Experience</h3>${cvItems(data.work_experience)}</div>
-        <div class="cv-category"><h3>Publications</h3>${cvItems(data.publications)}</div>
-        <div class="cv-category"><h3>Awards &amp; Grants</h3>${cvItems(data.awards)}</div>
-        <div class="cv-category">
-            <h3>Teaching &amp; Training</h3>
-            <div class="cv-item">${trainingItems}</div>
+        <div class="collapsible-section open" data-collapsible="cv-education">
+            <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
+                <h3>Education <span class="collapsible-count">(${data.education.length})</span></h3>
+                <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="collapsible-content">${cvItems(data.education)}</div>
+        </div>
+        <div class="collapsible-section open" data-collapsible="cv-academic">
+            <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
+                <h3>Academic Experience <span class="collapsible-count">(${data.academic_experience.length})</span></h3>
+                <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="collapsible-content">${cvItems(data.academic_experience)}</div>
+        </div>
+        <div class="collapsible-section" data-collapsible="cv-work">
+            <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
+                <h3>Work Experience <span class="collapsible-count">(${data.work_experience.length})</span></h3>
+                <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="collapsible-content">${cvItems(data.work_experience)}</div>
+        </div>
+        <div class="collapsible-section open" data-collapsible="cv-pubs">
+            <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
+                <h3>Publications <span class="collapsible-count">(${data.publications.length})</span></h3>
+                <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="collapsible-content">${cvItems(data.publications)}</div>
+        </div>
+        <div class="collapsible-section" data-collapsible="cv-awards">
+            <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
+                <h3>Awards &amp; Grants <span class="collapsible-count">(${data.awards.length})</span></h3>
+                <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="collapsible-content">${cvItems(data.awards)}</div>
+        </div>
+        <div class="collapsible-section open" data-collapsible="cv-teaching">
+            <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
+                <h3>Teaching &amp; Training</h3>
+                <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="collapsible-content"><div class="cv-item">${trainingItems}</div></div>
         </div>
     `;
 }
@@ -195,6 +239,32 @@ function renderFooter(social) {
     `;
 }
 
+// ============================================
+// Collapsible Section Toggle
+// ============================================
+function toggleCollapsible(section) {
+    if (!section) return;
+    section.classList.toggle('open');
+    
+    // Save state to localStorage
+    const id = section.dataset.collapsible;
+    if (id) {
+        const isOpen = section.classList.contains('open');
+        localStorage.setItem(`collapsible-${id}`, isOpen);
+    }
+}
+
+// Restore collapsible states from localStorage
+function restoreCollapsibleStates() {
+    document.querySelectorAll('.collapsible-section[data-collapsible]').forEach(section => {
+        const id = section.dataset.collapsible;
+        const savedState = localStorage.getItem(`collapsible-${id}`);
+        if (savedState !== null) {
+            section.classList.toggle('open', savedState === 'true');
+        }
+    });
+}
+
 // Bootstrap: load site-data.json then render all sections
 async function initSiteData() {
     try {
@@ -206,6 +276,9 @@ async function initSiteData() {
         renderSkills(data.skills);
         renderContact(data.contact);
         renderFooter(data.profile.social);
+        
+        // Restore collapsible section states after rendering
+        restoreCollapsibleStates();
     } catch (err) {
         console.error('Failed to load site data:', err);
     }
@@ -939,7 +1012,21 @@ function renderBlogPosts(posts) {
         return;
     }
 
-    blogGrid.innerHTML = postsToRender.map(post => createBlogCard(post)).join('');
+    // Wrap blog list in collapsible section
+    blogGrid.innerHTML = `
+        <div class="collapsible-section open" data-collapsible="blog-posts">
+            <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
+                <h3>Articles <span class="collapsible-count">(${postsToRender.length})</span></h3>
+                <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div class="collapsible-content">
+                ${postsToRender.map(post => createBlogCard(post)).join('')}
+            </div>
+        </div>
+    `;
+
+    // Restore collapsible state
+    restoreCollapsibleStates();
 
     // After render: stamp heading IDs for TOC links, attach progress listeners
     postsToRender.forEach(post => {

@@ -1,9 +1,5 @@
 {
-  "categories": [
-    { "id": "all", "name": "All", "icon": "fas fa-th-large", "count": 3 },
-    { "id": "ai", "name": "AI & ML", "icon": "fas fa-brain", "count": 3 },
-    { "id": "workflow", "name": "Workflow", "icon": "fas fa-project-diagram", "count": 1 }
-  ],
+  "categories": [],
   "posts": [
     {
       "id": 1,

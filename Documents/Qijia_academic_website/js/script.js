@@ -1152,8 +1152,13 @@ function getFilteredPosts() {
 // Initialize Filter Buttons
 function initFilterButtons() {
     const filterContainer = document.getElementById('filterContainer');
-    if (!filterContainer || !blogData || !blogData.categories) return;
+    if (!filterContainer || !blogData || !blogData.categories || blogData.categories.length === 0) {
+        // Hide filter container if no categories
+        if (filterContainer) filterContainer.style.display = 'none';
+        return;
+    }
 
+    filterContainer.style.display = 'flex';
     filterContainer.innerHTML = blogData.categories.map(cat => `
         <button class="filter-btn ${cat.id === 'all' ? 'active' : ''}" 
                 data-category="${cat.id}"

@@ -69,14 +69,14 @@ function renderResearch(data) {
 
     el.innerHTML = `
         <p class="research-intro">${data.intro}</p>
-        <div class="collapsible-section open" data-collapsible="research-streams">
+        <div class="collapsible-section" data-collapsible="research-streams">
             <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
                 <h3>Research Streams <span class="collapsible-count">(${data.streams.length})</span></h3>
                 <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
             </div>
             <div class="collapsible-content">${streams}</div>
         </div>
-        <div class="collapsible-section open" data-collapsible="research-pubs">
+        <div class="collapsible-section" data-collapsible="research-pubs">
             <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
                 <h3>Publications <span class="collapsible-count">(${data.publications.length})</span></h3>
                 <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
@@ -144,14 +144,14 @@ function renderCV(data) {
 
     // Create collapsible sections for CV
     el.innerHTML = `
-        <div class="collapsible-section open" data-collapsible="cv-education">
+        <div class="collapsible-section" data-collapsible="cv-education">
             <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
                 <h3>Education <span class="collapsible-count">(${data.education.length})</span></h3>
                 <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
             </div>
             <div class="collapsible-content">${cvItems(data.education)}</div>
         </div>
-        <div class="collapsible-section open" data-collapsible="cv-academic">
+        <div class="collapsible-section" data-collapsible="cv-academic">
             <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
                 <h3>Academic Experience <span class="collapsible-count">(${data.academic_experience.length})</span></h3>
                 <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
@@ -165,7 +165,7 @@ function renderCV(data) {
             </div>
             <div class="collapsible-content">${cvItems(data.work_experience)}</div>
         </div>
-        <div class="collapsible-section open" data-collapsible="cv-pubs">
+        <div class="collapsible-section" data-collapsible="cv-pubs">
             <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
                 <h3>Publications <span class="collapsible-count">(${data.publications.length})</span></h3>
                 <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
@@ -179,7 +179,7 @@ function renderCV(data) {
             </div>
             <div class="collapsible-content">${cvItems(data.awards)}</div>
         </div>
-        <div class="collapsible-section open" data-collapsible="cv-teaching">
+        <div class="collapsible-section" data-collapsible="cv-teaching">
             <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
                 <h3>Teaching &amp; Training</h3>
                 <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
@@ -1014,7 +1014,7 @@ function renderBlogPosts(posts) {
 
     // Wrap blog list in collapsible section
     blogGrid.innerHTML = `
-        <div class="collapsible-section open" data-collapsible="blog-posts">
+        <div class="collapsible-section" data-collapsible="blog-posts">
             <div class="collapsible-header" onclick="toggleCollapsible(this.parentElement)">
                 <h3>Articles <span class="collapsible-count">(${postsToRender.length})</span></h3>
                 <button class="collapsible-toggle" aria-label="Toggle section"><i class="fas fa-chevron-down"></i></button>
